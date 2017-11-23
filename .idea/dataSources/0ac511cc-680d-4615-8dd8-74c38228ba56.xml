@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="lzsendmail@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="lzsendmail">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="excel"/>
+    <schema id="4" parent="1" name="hotelmanager"/>
+    <schema id="5" parent="1" name="hpmoney"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="sakila"/>
+    <schema id="10" parent="1" name="sys"/>
+    <schema id="11" parent="1" name="weichat"/>
+    <schema id="12" parent="1" name="world"/>
+    <table id="13" parent="2" name="t_agency"/>
+    <table id="14" parent="2" name="t_mailhistory"/>
+    <table id="15" parent="2" name="t_mailmodule"/>
+    <table id="16" parent="2" name="t_type"/>
+    <table id="17" parent="2" name="t_user"/>
+    <column id="18" parent="13" name="id">
+      <Position>1</Position>
+      <Comment>经销商的编号</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="19" parent="13" name="companyName">
+      <Position>2</Position>
+      <Comment>经销商所属公司名称</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="20" parent="13" name="leader">
+      <Position>3</Position>
+      <Comment>经销商负责人</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="13" name="emailAcc">
+      <Position>4</Position>
+      <Comment>经销商邮箱</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="22" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="23" parent="14" name="id">
+      <Position>1</Position>
+      <Comment>邮件分类的编号</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="24" parent="14" name="srcsend">
+      <Position>2</Position>
+      <Comment>邮箱的发送者</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="14" name="endsend">
+      <Position>3</Position>
+      <Comment>邮箱的接受者</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="14" name="title">
+      <Position>4</Position>
+      <Comment>邮件的标题</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="14" name="COMMENT">
+      <Position>5</Position>
+      <Comment>邮箱的内容</Comment>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="14" name="accessoryPath">
+      <Position>6</Position>
+      <Comment>邮箱附件的地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="14" name="createTime">
+      <Position>7</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="30" parent="14" name="status">
+      <Position>8</Position>
+      <Comment>状态</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="31" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="15" name="id">
+      <Position>1</Position>
+      <Comment>邮件模板的编号</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="15" name="title">
+      <Position>2</Position>
+      <Comment>邮件模板的标题</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="15" name="content">
+      <Position>3</Position>
+      <Comment>邮件模板内容</Comment>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="15" name="accessoryPath">
+      <Position>4</Position>
+      <Comment>附件的地址</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="36" parent="15" name="userId">
+      <Position>5</Position>
+      <Comment>用户的id</Comment>
+      <DataType>mediumtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="37" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="16" name="id">
+      <Position>1</Position>
+      <Comment>邮件分类的编号</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="39" parent="16" name="typename">
+      <Position>2</Position>
+      <Comment>邮箱分类名称</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="16" name="userId">
+      <Position>3</Position>
+      <Comment>用户编号</Comment>
+      <DataType>mediumtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="16" name="agentyId">
+      <Position>4</Position>
+      <Comment>经销商的id多个经销商用逗号进行分割</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="16" name="createTime">
+      <Position>5</Position>
+      <Comment>邮箱分类创建的时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="43" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="44" parent="17" name="id">
+      <Position>1</Position>
+      <Comment>用户的编号</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="45" parent="17" name="loginAcc">
+      <Position>2</Position>
+      <Comment>用户的账号</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="17" name="loginPassword">
+      <Position>3</Position>
+      <Comment>登录密码</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="17" name="email">
+      <Position>4</Position>
+      <Comment>用户邮箱</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="17" name="password">
+      <Position>5</Position>
+      <Comment>用户邮箱登录密码</Comment>
+      <DataType>varchar(36)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="17" name="serverHost">
+      <Position>6</Position>
+      <Comment>邮箱服务器IP</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="17" name="serverPort">
+      <Position>7</Position>
+      <Comment>邮箱服务器端口号</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="17" name="status">
+      <Position>8</Position>
+      <Comment>用户状态</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="52" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
