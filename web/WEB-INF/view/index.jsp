@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
@@ -64,56 +65,34 @@
                         </li>
                     </ul>
                 </li>
-
                 <li>
                     <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">信箱 </span><span class="label label-warning pull-right">16</span></a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="mailbox.html">收件箱</a>
+                        <li>
+                            <a class="J_menuItem" href="<%=path%>/mailModule/mailModulePage">我的邮件模板</a>
                         </li>
-                        <li><a class="J_menuItem" href="mail_detail.html">查看邮件</a>
+                        <li>
+                            <a class="J_menuItem" href="<%=path%>/email/collection">收件箱</a>
                         </li>
-                        <li><a class="J_menuItem" href="mail_compose.html">写信</a>
+                        <li><a class="J_menuItem" href="<%=path%>/email/lookCollection">查看邮件</a>
+                        </li>
+                        <li><a class="J_menuItem" href="<%=path%>/email/writeCollection">写信</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">用户管理</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="form_basic.html">基本表单</a>
-                        </li>
-                        <li><a class="J_menuItem" href="form_validate.html">表单验证</a>
-                        </li>
-                        <li><a class="J_menuItem" href="form_advanced.html">高级插件</a>
-                        </li>
-                        <li><a class="J_menuItem" href="form_wizard.html">表单向导</a>
+                        <c:if test="${userVo.loginAcc=='admin'}">
+                            <li>
+                                <a class="J_menuItem" href="<%=path%>/user/userPage">用户列表</a>
+                            </li>
+                        </c:if>
+                        <li>
+                            <a class="J_menuItem" href="<%=path%>/agency/agencyPage">经销商列表</a>
                         </li>
                         <li>
-                            <a href="#">文件上传 <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li><a class="J_menuItem" href="form_webuploader.html">百度WebUploader</a>
-                                </li>
-                                <li><a class="J_menuItem" href="form_file_upload.html">DropzoneJS</a>
-                                </li>
-                                <li><a class="J_menuItem" href="form_avatar.html">头像裁剪上传</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">编辑器 <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li><a class="J_menuItem" href="form_editors.html">富文本编辑器</a>
-                                </li>
-                                <li><a class="J_menuItem" href="form_simditor.html">simditor</a>
-                                </li>
-                                <li><a class="J_menuItem" href="form_markdown.html">MarkDown编辑器</a>
-                                </li>
-                                <li><a class="J_menuItem" href="code_editor.html">代码编辑器</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a class="J_menuItem" href="suggest.html">搜索自动补全</a>
-                        </li>
-                        <li><a class="J_menuItem" href="layerdate.html">日期选择器layerDate</a>
+                            <a class="J_menuItem" href="<%=path%>/type/typePage">分类管理</a>
                         </li>
                     </ul>
                 </li>

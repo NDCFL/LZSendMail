@@ -126,7 +126,7 @@
     <column id="35" parent="15" name="accessoryPath">
       <Position>4</Position>
       <Comment>附件的地址</Comment>
-      <DataType>varchar(20)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
     </column>
     <column id="36" parent="15" name="userId">
       <Position>5</Position>
@@ -199,31 +199,26 @@
       <Position>4</Position>
       <Comment>用户邮箱</Comment>
       <DataType>varchar(20)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="48" parent="17" name="password">
       <Position>5</Position>
       <Comment>用户邮箱登录密码</Comment>
       <DataType>varchar(36)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="49" parent="17" name="serverHost">
       <Position>6</Position>
       <Comment>邮箱服务器IP</Comment>
       <DataType>varchar(20)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="50" parent="17" name="serverPort">
       <Position>7</Position>
       <Comment>邮箱服务器端口号</Comment>
       <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="51" parent="17" name="status">
       <Position>8</Position>
       <Comment>用户状态</Comment>
       <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <key id="52" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>

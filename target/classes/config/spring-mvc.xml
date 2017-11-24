@@ -16,6 +16,8 @@
     <mvc:resources mapping="/img/**" location="/img/" cache-period="31556926"/>
     <mvc:resources mapping="/fonts/**" location="/fonts/" cache-period="31556926"/>
     <mvc:resources mapping="/plugins/**" location="/plugins/" cache-period="31556926"/>
+    <mvc:resources mapping="/ueditor/**" location="/ueditor/" cache-period="31556926"/>
+    <mvc:resources mapping="/upload/**" location="/upload/" cache-period="31556926"/>
     <mvc:annotation-driven>
         <!-- 返回json数据，使用@responseBody注解 -->
         <mvc:message-converters register-defaults="true">
@@ -36,7 +38,7 @@
         <property name="suffix" value=".jsp" />
     </bean>
     <!-- 配置文件上传 -->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <bean id="multipartResolver" class="com.fz.comment.CommonsMultipartResolver">
         <property name="defaultEncoding" value="UTF-8"/>
         <property name="maxUploadSize" value="209715200"/>
         <property name="maxInMemorySize" value="40960"/>

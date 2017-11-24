@@ -18,7 +18,6 @@
 </body>
 <script src="<%=path%>/js/jquery.min.js?v=2.1.4"></script>
 <script src="<%=path%>/js/bootstrap.min.js?v=3.3.5"></script>
-<script src="<%=path%>/js/content.min.js?v=1.0.0"></script>
 <script src="<%=path%>/js/plugins/validate/jquery.validate.min.js"></script>
 <script src="<%=path%>/js/plugins/validate/messages_zh.min.js"></script>
 <script src="<%=path%>/js/demo/form-validate-demo.min.js"></script>

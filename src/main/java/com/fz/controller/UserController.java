@@ -73,9 +73,9 @@ public class UserController {
     }
     @RequestMapping("checkReg")
     @ResponseBody
-    public Map<String, Boolean> checkReg(String acc) {
+    public Map<String, Boolean> checkReg(String loginAcc) {
         Map<String, Boolean> result = new HashMap<String, Boolean>();
-        int count = userService.checkReg(acc);
+        int count = userService.checkReg(loginAcc);
         if (count == 0) {
             result.put("valid", true);
         } else {
@@ -168,6 +168,11 @@ public class UserController {
     @ResponseBody
     public Message addSaveuser(UserVo user) throws  Exception {
         try{
+            user.setStatus(0);
+            user.setServerHost("smtp.qq.com");
+            user.setServerPort(465);
+            user.setEmail("未填写");
+            user.setLoginPassword(EncoderByMd5(user.getLoginPassword()));
             userService.add(user);
             return  Message.success("新增成功!");
         }catch (Exception E){
@@ -218,7 +223,7 @@ public class UserController {
     }
     @RequestMapping("/userPage")
     public String userPage() throws  Exception{
-        return "user/userList";
+        return "userList";
     }
     @RequestMapping("/updateInfo")
     public Message updateInfo(UserVo userVo){
@@ -228,6 +233,16 @@ public class UserController {
         }catch (Exception e){
             e.printStackTrace();
             return Message.success("修改失败!");
+        }
+    }
+    @RequestMapping("updateStatus/{id}/{status}")
+    @ResponseBody
+    public Message updateStatus(@PathVariable("id") long id,@PathVariable("status") int status) throws  Exception{
+        try{
+            userService.updateStatus(new StatusQuery(id,status));
+            return Message.success("ok");
+        }catch (Exception e){
+            return  Message.fail("fail");
         }
     }
     @InitBinder

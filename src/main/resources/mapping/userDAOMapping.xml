@@ -8,6 +8,9 @@
     <select id="checkAcc" resultType="int" parameterType="string">
         select count(*) from t_user where loginAcc=#{loginAcc}
     </select>
+    <select id="count" resultType="int">
+        select count(*) from t_user
+    </select>
     <select id="checkPwd" resultType="string">
         select loginPassword from t_user where loginAcc=#{loginAcc}
     </select>
@@ -25,6 +28,9 @@
     </update>
     <update id="updateEmailPwd">
         update t_user set password=#{password} where id=#{id}
+    </update>
+    <update id="updateStatus">
+        update t_user set status=#{status} where id=#{id}
     </update>
   <delete id="delete" parameterType="long">
         delete from t_user where id = #{id}

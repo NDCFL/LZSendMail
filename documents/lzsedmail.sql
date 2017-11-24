@@ -5,11 +5,11 @@ create table t_user(
   id BIGINT PRIMARY KEY  AUTO_INCREMENT COMMENT '用户的编号',
   loginAcc VARCHAR(20) NOT NULL COMMENT '用户的账号',
   loginPassword VARCHAR(36) not NULL COMMENT '登录密码',
-  email VARCHAR(20) not NULL COMMENT '用户邮箱',
-  password VARCHAR(36) not NULL COMMENT '用户邮箱登录密码',
-  serverHost VARCHAR(20) not NULL COMMENT '邮箱服务器IP',
-  serverPort int not NULL COMMENT '邮箱服务器端口号',
-  status int not null COMMENT '用户状态'
+  email VARCHAR(20) COMMENT '用户邮箱',
+  password VARCHAR(36)  COMMENT '用户邮箱登录密码',
+  serverHost VARCHAR(20)  COMMENT '邮箱服务器IP',
+  serverPort int  COMMENT '邮箱服务器端口号',
+  status int COMMENT '用户状态'
 )engine=innodb default charset=utf8;
 drop table IF EXISTS t_agency;
 create table t_agency(
