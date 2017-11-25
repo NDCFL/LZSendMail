@@ -6,7 +6,6 @@ import com.fz.comment.PagingBean;
 import com.fz.comment.StatusQuery;
 import com.fz.service.UserService;
 import com.fz.vo.UserVo;
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;

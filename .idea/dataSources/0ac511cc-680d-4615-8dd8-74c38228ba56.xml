@@ -205,9 +205,9 @@
       <Comment>用户邮箱登录密码</Comment>
       <DataType>varchar(36)|0</DataType>
     </column>
-    <column id="49" parent="17" name="serverHost">
+    <column id="49" parent="17" name="nickname">
       <Position>6</Position>
-      <Comment>邮箱服务器IP</Comment>
+      <Comment>发件昵称</Comment>
       <DataType>varchar(20)|0</DataType>
     </column>
     <column id="50" parent="17" name="serverPort">
@@ -215,12 +215,27 @@
       <Comment>邮箱服务器端口号</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="51" parent="17" name="status">
+    <column id="51" parent="17" name="serverHost">
       <Position>8</Position>
+      <Comment>邮箱服务器</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="52" parent="17" name="inserverPort">
+      <Position>9</Position>
+      <Comment>收件邮箱服务器端口号</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="53" parent="17" name="inserverHost">
+      <Position>10</Position>
+      <Comment>收件邮箱服务器</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="54" parent="17" name="status">
+      <Position>11</Position>
       <Comment>用户状态</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <key id="52" parent="17" name="PRIMARY">
+    <key id="55" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

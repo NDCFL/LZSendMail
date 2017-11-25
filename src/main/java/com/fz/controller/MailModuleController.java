@@ -6,7 +6,6 @@ import com.fz.comment.PagingBean;
 import com.fz.service.MailModuleService;
 import com.fz.vo.MailModuleVo;
 import com.fz.vo.UserVo;
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;

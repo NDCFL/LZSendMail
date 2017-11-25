@@ -7,10 +7,11 @@ public class TypeVo implements Serializable {
     private Long id;
     private String typename;
     private Long userId;
-    private Long agentyId;
+    private String agentyId;
     private Date createTime;
     private UserVo userVo;
     private AgencyVo agencyVo;
+    private String leader;
     public Long getId() {
         return id;
     }
@@ -35,11 +36,11 @@ public class TypeVo implements Serializable {
         this.userId = userId;
     }
 
-    public Long getAgentyId() {
+    public String getAgentyId() {
         return agentyId;
     }
 
-    public void setAgentyId(Long agentyId) {
+    public void setAgentyId(String agentyId) {
         this.agentyId = agentyId;
     }
 
@@ -65,5 +66,13 @@ public class TypeVo implements Serializable {
 
     public void setAgencyVo(AgencyVo agencyVo) {
         this.agencyVo = agencyVo;
+    }
+
+    public String getLeader() {
+        return leader;
+    }
+
+    public void setLeader(String leader) {
+        this.leader = leader;
     }
 }

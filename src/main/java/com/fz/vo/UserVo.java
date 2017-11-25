@@ -16,6 +16,9 @@ public class UserVo implements Serializable {
     private String password;
     private String serverHost;
     private Integer serverPort;
+    private String nickname;
+    private String inserverHost;
+    private Integer inserverPort;
     private Integer status;
 
     public Long getId() {
@@ -80,5 +83,29 @@ public class UserVo implements Serializable {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getInserverHost() {
+        return inserverHost;
+    }
+
+    public void setInserverHost(String inserverHost) {
+        this.inserverHost = inserverHost;
+    }
+
+    public Integer getInserverPort() {
+        return inserverPort;
+    }
+
+    public void setInserverPort(Integer inserverPort) {
+        this.inserverPort = inserverPort;
     }
 }

@@ -3,6 +3,7 @@ package com.fz.controller;
 import com.fz.comment.Message;
 import com.fz.comment.PageQuery;
 import com.fz.comment.PagingBean;
+import com.fz.service.AgencyService;
 import com.fz.service.TypeService;
 import com.fz.vo.TypeVo;
 import com.fz.vo.UserVo;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -26,6 +28,8 @@ import java.util.Date;
 public class TypeController  {
     @Resource
     private TypeService typeService;
+    @Resource
+    private AgencyService agencyService;
     @RequestMapping("typeList")
     @ResponseBody
     public PagingBean typeList(int pageSize, int pageIndex, HttpSession session) throws  Exception{
@@ -39,14 +43,25 @@ public class TypeController  {
     }
     @RequestMapping("/typeAddSave")
     @ResponseBody
-    public Message addSavetype(TypeVo type) throws  Exception {
+    public Message addSavetype(TypeVo type,HttpSession session) throws  Exception {
         try{
+            UserVo userVo = (UserVo) session.getAttribute("userVo");
+            type.setCreateTime(new Date());
+            type.setUserId(userVo.getId());
             typeService.add(type);
             return  Message.success("新增成功!");
         }catch (Exception E){
             return Message.fail("新增失败!");
         }
 
+    }
+    @RequestMapping("/initUpdateType/{id}")
+    public ModelAndView initUpdateType(@PathVariable("id") long id){
+        ModelAndView modelAndView= new ModelAndView();
+        modelAndView.setViewName("updateType");
+        modelAndView.addObject("id",id);
+        modelAndView.addObject("agencyList",agencyService.listAll());
+        return modelAndView;
     }
     @RequestMapping("/findType/{id}")
     @ResponseBody
@@ -92,6 +107,13 @@ public class TypeController  {
     @RequestMapping("/typePage")
     public String table() throws  Exception{
         return "typeList";
+    }
+    @RequestMapping("/addType")
+    public ModelAndView addType() throws  Exception{
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("addType");
+        modelAndView.addObject("agencyList",agencyService.listAll());
+        return modelAndView;
     }
     @InitBinder
     public void initBinder(WebDataBinder binder) {

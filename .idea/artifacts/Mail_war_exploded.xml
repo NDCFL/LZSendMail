@@ -40,6 +40,8 @@
           <element id="library" level="project" name="commons-codec-1.9" />
           <element id="library" level="project" name="json" />
           <element id="library" level="project" name="ueditor-1.1.2" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.6.0" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
         </element>
       </element>
     </root>

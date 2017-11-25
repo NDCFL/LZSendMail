@@ -47,4 +47,9 @@ public class AgencyServiceImpl implements AgencyService {
     public int count() {
         return agencyDAO.count();
     }
+
+    @Override
+    public List<AgencyVo> listAll() {
+        return agencyDAO.listAll();
+    }
 }

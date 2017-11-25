@@ -42,8 +42,15 @@ $('#mytab').bootstrapTable({
             sortable:true
         },
         {
+            title:'所属用户',
+            field:'userVo.loginAcc',
+            align:'center',
+            sortable:true
+        }
+        ,
+        {
             title:'经销商负责人',
-            field:'agencyVo.leader',
+            field:'leader',
             align:'center',
             sortable:true
         }
@@ -70,7 +77,7 @@ $('#mytab').bootstrapTable({
             align:'center',
             field:'',
             formatter: function (value, row, index) {
-                var e = '<a title="编辑" href="javascript:void(0);" id="type"  data-toggle="modal" data-id="\'' + row.id + '\'" data-target="#myModal" onclick="return edit(\'' + row.id + '\')"><i class="glyphicon glyphicon-pencil" alt="修改" style="color:green"></i></a> ';
+                var e = '<a title="编辑" href="javascript:void(0);" id="type"  onclick="return edit(\'' + row.id + '\')"><i class="glyphicon glyphicon-pencil" alt="修改" style="color:green"></i></a> ';
                 var d = '<a title="删除" href="javascript:void(0);" onclick="del('+row.id+','+row.status+')"><i class="glyphicon glyphicon-trash" alt="删除" style="color:red"></i></a> ';
                 var f='';
                 if(row.status==1){
@@ -132,12 +139,7 @@ function del(typeid,status){
     });
 }
 function edit(name){
-    $.post("/type/findType/"+name,
-        function(data){
-            $("#updateform").autofill(data);
-        },
-        "json"
-    );
+    location.href="/type/initUpdateType/"+name;
 }
 function updatestatus(id,status){
     $.post("/type/updateStatus/"+id+"/"+status,

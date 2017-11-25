@@ -8,6 +8,7 @@ public class MailModuleVo implements Serializable{
     private String content;
     private String accessoryPath;
     private long userId;
+    private String touser;
 
     public long getId() {
         return id;
@@ -47,5 +48,13 @@ public class MailModuleVo implements Serializable{
 
     public void setUserId(long userId) {
         this.userId = userId;
+    }
+
+    public String getTouser() {
+        return touser;
+    }
+
+    public void setTouser(String touser) {
+        this.touser = touser;
     }
 }

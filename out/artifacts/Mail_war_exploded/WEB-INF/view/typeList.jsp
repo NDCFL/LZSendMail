@@ -21,23 +21,6 @@
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>类别列表</h5>
-            <div class="ibox-tools">
-                <a class="collapse-link">
-                    <i class="fa fa-chevron-up"></i>
-                </a>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-wrench"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#">选项1</a>
-                    </li>
-                    <li><a href="#">选项2</a>
-                    </li>
-                </ul>
-                <a class="close-link">
-                    <i class="fa fa-times"></i>
-                </a>
-            </div>
         </div>
         <div class="ibox-content">
             <div class="panel panel-default">
@@ -49,7 +32,7 @@
                     <button id="btn_delete" onclick="deleteMany();" type="button" class="btn btn-default" style="display: block;">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true" ></span>批量删除
                     </button>
-                    <button id="btn_add" type="button" class="btn btn-default" data-toggle="modal" data-target="#webAdd">
+                    <button id="btn_add" type="button" class="btn btn-default" onclick="add();">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span>新增
                     </button>
                 </div>
@@ -166,4 +149,9 @@
         <%----%>
     <%--});--%>
 <%--</script>--%>
+<script>
+    function add(){
+        location.href="<%=path%>/type/addType";
+    }
+</script>
 </html>

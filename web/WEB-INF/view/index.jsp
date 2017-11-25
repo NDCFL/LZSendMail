@@ -25,14 +25,14 @@
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="nav-close"><i class="fa fa-times-circle"></i>
         </div>
-        <div class="sidebar-collapse">
+        <div class="sidebar-collapse" >
             <ul class="nav" id="side-menu">
                 <li class="nav-header">
-                    <div class="dropdown profile-element">
-                        <span><img alt="image" class="img-circle" src="<%=path%>/img/face.gif" style="width:80px;height:80px" /></span>
+                    <div class="dropdown profile-element" style="text-align: center">
+                        <span><img alt="image" class="img-circle" src="<%=path%>/img/face.png" style="width:80px;height:80px" /></span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
-                                <span class="text-muted text-xs block">${userVo.loginAcc}<b class="caret"></b></span>
+                                    <span class="text-muted text-xs block">${userVo.loginAcc}<b class="caret"></b></span>
                                 </span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -50,7 +50,7 @@
                     <div class="logo-element">lz
                     </div>
                 </li>
-                <li>
+                <li class="active">
                     <a href="#">
                         <i class="fa fa-home"></i>
                         <span class="nav-label">我的资料</span>
@@ -65,7 +65,7 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="active">
                     <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">信箱 </span><span class="label label-warning pull-right">16</span></a>
                     <ul class="nav nav-second-level">
                         <li>
@@ -78,9 +78,11 @@
                         </li>
                         <li><a class="J_menuItem" href="<%=path%>/email/writeCollection">写信</a>
                         </li>
+                        <li><a class="J_menuItem" href="<%=path%>/mail/sendPage">发邮件</a>
+                        </li>
                     </ul>
                 </li>
-                <li>
+                <li class="active">
                     <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">用户管理</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <c:if test="${userVo.loginAcc=='admin'}">
@@ -126,6 +128,15 @@
             <div class="btn-group roll-nav roll-right">
                 <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"></span>
                 </button>
+                <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                    <li class="J_tabShowActive"><a>定位当前选项卡</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
+                    </li>
+                    <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
+                    </li>
+                </ul>
             </div>
             <a href="login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
         </div>

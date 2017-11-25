@@ -5,34 +5,32 @@
         <id column="id" property="id"></id>
         <result column="typename" property="typename"></result>
         <result column="createTime" property="createTime"></result>
+        <result column="leader" property="leader"></result>
         <association property="userVo" javaType="userVo">
             <id column="userId" property="id"></id>
             <result column="loginAcc" property="loginAcc"></result>
         </association>
-        <association property="agencyVo" javaType="agencyVo">
-            <id column="agencyId" property="id"></id>
-            <result column="leader" property="leader"></result>
-        </association>
     </resultMap>
-    <select id="queryById" resultMap="typeMap" parameterType="long">
-        select t.*,u.id as userId,u.loginAcc,a.id as agencyId ,a.leader from t_type t,t_user u,t_agency a where  t.userId=u.id and t.agentyId=a.id and  t.id = #{id}
+    <resultMap id="typeVoMap" type="typeVo"></resultMap>
+    <select id="queryById" resultMap="typeVoMap" parameterType="long">
+        select * from t_type  where  id = #{id}
     </select>
     <delete id="delete" parameterType="long">
         delete from t_type where id = #{id}
     </delete>
     <select id="pageLists" resultMap="typeMap">
-        select t.*,u.id as userId,u.loginAcc,a.id as agencyId ,a.leader from t_type t,t_user u,t_agency a where  t.userId=u.id and t.agentyId=a.id and t.userId=#{userId}  limit #{pageQuery.pageNo},#{pageQuery.pageSize}
+        select t.*,group_concat(a.leader) as leader,u.id as userid,u.loginacc from t_type t left join t_agency a on find_in_set(a.id,t.agentyId) LEFT JOIN t_user u on t.userId=u.id where  t.userId=#{userId} group by t.id  limit #{pageQuery.pageNo},#{pageQuery.pageSize}
     </select>
     <select id="listAll" resultMap="typeMap">
-        select t.*,u.id as userId,u.loginAcc,a.id as agencyId ,a.leader from t_type t,t_user u,t_agency a where  t.userId=u.id and t.agentyId=a.id
+        select t.*,u.id as userId,u.loginAcc,(select group_concat(leader) from t_agency  where id in(#{agencyId})) as leader from t_type t,t_user u where  t.userId=u.id
     </select>
     <select id="count" resultType="int">
         select count(*) from t_type
     </select>
     <insert id="add" parameterType="typeVo">
-        insert into t_type (typename, userId, agentyId) values ( #{typename}, #{userId}, #{agentyId})
+        insert into t_type (typename, userId, agentyId,createTime) values ( #{typename}, #{userId}, #{agentyId},#{createTime})
     </insert>
     <update id="update">
-        update t_type set typename=#{typename},userId=#{userId},agentyId=#{agentyId} where id = #{id}
+        update t_type set typename=#{typename},agentyId=#{agentyId} where id = #{id}
     </update>
 </mapper>
