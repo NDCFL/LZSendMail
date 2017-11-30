@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fz.dao.FileDAO">
+    <resultMap id="fileMap" type="fileVo"></resultMap>
+    <select id="queryById" resultMap="fileMap" parameterType="long">
+        SELECT * from t_file where id=#{id}
+    </select>
+    <delete id="delete" parameterType="long">
+        delete from t_file where id = #{id}
+    </delete>
+    <select id="pagelist" resultMap="fileMap">
+        select * from t_file limit #{pageNo},#{pageSize}
+    </select>
+    <select id="pagelists" resultMap="fileMap">
+        select * from t_file where  userId=#{userId}  limit #{pageQuery.pageNo},#{pageQuery.pageSize}
+    </select>
+    <select id="listAll" resultMap="fileMap">
+        select * from t_file
+    </select>
+    <select id="count" resultType="int">
+        select count(*) from t_file
+    </select>
+    <select id="counts" resultType="int" parameterType="long">
+        select count(*) from t_file where userId=#{userId}
+    </select>
+    <delete id="deleteFile">
+        delete from t_file where userId=#{userId} and name=#{name} and path=#{path}
+    </delete>
+    <insert id="add" parameterType="fileVo">
+        insert into t_file (name, path, userId, createTime) values (#{name}, #{path}, #{userId}, #{createTime})
+    </insert>
+</mapper>

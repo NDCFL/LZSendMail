@@ -45,8 +45,8 @@ public class TypeServiceImpl implements TypeService{
     }
 
     @Override
-    public int count() {
-        return typeDAO.count();
+    public int count(PageQuery pageQuery) {
+        return typeDAO.count(pageQuery);
     }
 
     @Override

@@ -33,10 +33,11 @@ public class AgencyController {
     @ResponseBody
     public PagingBean agencyList(int pageSize, int pageIndex) throws  Exception{
         PagingBean pagingBean = new PagingBean();
-        pagingBean.setTotal(agencyService.count());
         pagingBean.setPageSize(pageSize);
         pagingBean.setCurrentPage(pageIndex);
-        pagingBean.setrows(agencyService.pagelist(new PageQuery(pagingBean.getStartIndex(),pagingBean.getPageSize())));
+        PageQuery p=new PageQuery(pagingBean.getStartIndex(),pagingBean.getPageSize());
+        pagingBean.setTotal(agencyService.count(p));
+        pagingBean.setrows(agencyService.pagelist(p));
         return pagingBean;
     }
     @RequestMapping("/agencyAddSave")

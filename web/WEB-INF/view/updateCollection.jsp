@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -17,93 +18,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>丽珠邮件系统- 写信</title>
     <jsp:include page="comment/modulecss.jsp"></jsp:include>
+    <link rel="stylesheet" href="<%=path%>/layui/css/layui.css"  media="all">
 </head>
 
 <body class="gray-bg">
 <div class="wrapper wrapper-content">
     <div class="row">
-        <div class="col-sm-3">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content mailbox-content">
-                    <div class="file-manager">
-                        <a class="btn btn-block btn-primary compose-mail" href="mail_compose.html">写信</a>
-                        <div class="space-25"></div>
-                        <h5>文件夹</h5>
-                        <ul class="folder-list m-b-md" style="padding: 0">
-                            <li>
-                                <a href="mailbox.html"> <i class="fa fa-inbox "></i> 收件箱 <span class="label label-warning pull-right">16</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailbox.html"> <i class="fa fa-envelope-o"></i> 发信</a>
-                            </li>
-                            <li>
-                                <a href="mailbox.html"> <i class="fa fa-certificate"></i> 重要</a>
-                            </li>
-                            <li>
-                                <a href="mailbox.html"> <i class="fa fa-file-text-o"></i> 草稿 <span class="label label-danger pull-right">2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailbox.html"> <i class="fa fa-trash-o"></i> 垃圾箱</a>
-                            </li>
-                        </ul>
-                        <h5>分类</h5>
-                        <ul class="category-list" style="padding: 0">
-                            <li>
-                                <a href="mail_compose.html#"> <i class="fa fa-circle text-navy"></i> 工作</a>
-                            </li>
-                            <li>
-                                <a href="mail_compose.html#"> <i class="fa fa-circle text-danger"></i> 文档</a>
-                            </li>
-                            <li>
-                                <a href="mail_compose.html#"> <i class="fa fa-circle text-primary"></i> 社交</a>
-                            </li>
-                            <li>
-                                <a href="mail_compose.html#"> <i class="fa fa-circle text-info"></i> 广告</a>
-                            </li>
-                            <li>
-                                <a href="mail_compose.html#"> <i class="fa fa-circle text-warning"></i> 客户端</a>
-                            </li>
-                        </ul>
-
-                        <h5 class="tag-title">标签</h5>
-                        <ul class="tag-list" style="padding: 0">
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 朋友</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 工作</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 家庭</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 孩子</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 假期</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 音乐</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 照片</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 电影</a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-9 animated fadeInRight">
+        <div class="col-sm-12 animated fadeInRight">
             <div class="mail-box-header">
-                <div class="pull-right tooltip-demo">
-                    <a href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="存为草稿"><i class="fa fa-pencil"></i> 存为草稿</a>
-                    <a href="mailbox.html" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="放弃"><i class="fa fa-times"></i> 放弃</a>
-                </div>
                 <h2>
                     写信
                 </h2>
             </div>
             <div class="mail-box">
                 <div class="mail-body">
-                    <form class="form-horizontal" method="post" id="form" onsubmit="update();">
+                    <form class="form-horizontal" method="post" id="form" >
                         <input type="hidden" name="id" id="id" value="${mailModule.id}">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">主题：</label>
@@ -117,23 +46,49 @@
                                 <textarea style="height:400px"  id="editor" name="content">${mailModule.content}</textarea>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">原附件地址：</label>
-                            <div class="col-sm-10">
-                                <textarea type="text" class="form-control" >${mailModule.accessoryPath}</textarea>
-                            </div>
-                        </div>
+                        <textarea id="updateFile" style="display: none" name="updateFile"></textarea>
                         <div class="mail-attachment">
                             <p>
-                                <span><i class="fa fa-paperclip"></i> 附件 - </span>
-                                <a onclick="upFiles();">上传附件</a>
+                                <span><i class="fa fa-paperclip"></i>附件列表(仅支持<b style="color:green;font-size: large">xls|xlsx|txt|doc|docs</b>)的格式文件</span>
                             </p>
+                            <div class="attachment" >
+                                <c:if test="${listFile!=null}">
+                                    <c:forEach items="${listFile}" var="l" varStatus="lf">
+                                        <div class="file-box" id="${lf.index}">
+                                            <input type="hidden" value="${l}">
+                                            <div class="file">
+                                                <a href="<%=path%>/upload/${l}">
+                                                    <span class="corner"></span>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                            ${l}
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <a onclick="$(this).parent('div').remove()" style="color:red;">删除附件</a>
+                                        </div>
+                                    </c:forEach>
+                                </c:if>
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
-                        <textarea id="file"  name="accessoryPath" style="display: none">${mailModule.accessoryPath}</textarea>
+                        <div class="layui-upload-list">
+                            <table class="layui-table">
+                                <thead>
+                                <tr><th>文件名</th>
+                                    <th>大小</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr></thead>
+                                <tbody id="demoList"></tbody>
+                            </table>
+                        </div>
+                        <button type="button" class="layui-btn layui-btn-radius" id="testList">选择附件</button>
+                        <button type="button"  class="layui-btn layui-btn-normal layui-btn-radius" id="testListAction">开始上传</button>
                         <div class="mail-body text-right tooltip-demo">
-                            <button type="submit" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Send"><i class="fa fa-reply"></i> 提交审核</button>
-                            <button type="button" href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Discard email"><i class="fa fa-times"></i> 放弃</button>
-                            <button type="button" href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Move to draft folder"><i class="fa fa-pencil"></i> 存为草稿</button>
+                            <button type="button" onclick="update();" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa fa-save"></i> 提交修改</button>
                         </div>
                     </form>
                 </div>
@@ -142,7 +97,7 @@
         </div>
     </div>
 </div>
-<textarea id="uploadFile"  style="display: none"></textarea>
+<textarea id="uploadFile"  style="display: none" onchange="getFileInfo();">${mailModule.accessoryPath}</textarea>
 <jsp:include page="comment/modulejs.jsp"></jsp:include>
 <script type="text/javascript" charset="utf-8" src="<%=path%>/js/webuploader.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="<%=path%>/ueditor/ueditor.config.js"></script>
@@ -151,7 +106,7 @@
 <script type="application/javascript">
     var ue = UE.getEditor('editor');
 </script>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script type="text/javascript" src="<%=path%>/layui/layui.all.js" charset="utf-8"></script>
 </body>
 <script type="text/javascript">
     var _editor = UE.getEditor("uploadFile",{
@@ -164,20 +119,27 @@
         var myFiles = _editor.getDialog("attachment");
         myFiles.open();
     }
-    _editor.ready(function () {
-        _editor.hide();
-        _editor.addListener('afterUpfile', function (t, arg) {
-            console.log(arg.length);
-            var pathVal="";
-            for(var i=0;i<arg.length;i++){
-                pathVal+=arg[i].url+";";
-            }
-            $("#file").html( pathVal);
-        })
-    });
+    function getFileInfo() {
+        $("#fileinfo").html(_editor.getContent());
+        $("#file").html( _editor.getContent());
+    }
+    setInterval("getFileInfo()","500");
 </script>
 <script>
     function update(){
+        var path = "";
+        $(".attachment input ").each(function(){
+            if($(this).val()!=""){
+                path +=$(this).val()+";";
+            }
+        });
+        var path1 = "";
+        $("input[name='file']").each(function(){
+            if($(this).val()!=""){
+                path1 +=$(this).val()+";";
+            }
+        });
+        $("#updateFile").html(path+path1);
         $.post(
             "<%=path%>/mailModule/mailModuleUpdateSave",
             $("#form").serialize(),
@@ -194,5 +156,89 @@
             "json"
         );
     }
+</script>
+<script>
+    layui.use('upload', function(){
+        var files="";
+        var $ = layui.jquery
+            ,upload = layui.upload;
+        //多文件列表示例
+        var demoListView = $('#demoList')
+            ,uploadListIns = upload.render({
+            elem: '#testList'
+            ,url: '/mailModule/upload'
+            ,accept: 'file'
+            ,exts: 'xls|xlsx|txt|doc|docs'
+            ,multiple: true
+            ,auto: false
+            ,bindAction: '#testListAction'
+            ,choose: function(obj){
+                files= obj.pushFile(); //将每次选择的文件追加到文件队列
+                //读取本地文件
+                obj.preview(function(index, file, result){
+                    var tr = $(['<tr id="upload-'+ index +'">'
+                        ,'<td>'+ file.name +'</td>'
+                        ,'<td>'+ (file.size/1014).toFixed(1) +'kb</td>'
+                        ,'<td>等待上传</td>'
+                        ,'<td>'
+                        ,'<button class="layui-btn layui-btn-mini demo-reload layui-hide">重传</button>'
+                        ,'<button class="layui-btn layui-btn-mini layui-btn-danger demo-delete">删除</button>'
+                        ,'</td>'
+                        ,'</tr>'].join(''));
+
+                    //单个重传
+                    tr.find('.demo-reload').on('click', function(){
+                        obj.upload(index, file);
+                    });
+
+                    //删除
+                    tr.find('.demo-delete').on('click', function(){
+                        delete files[index]; //删除对应的文件
+                        tr.remove();
+                    });
+
+                    demoListView.append(tr);
+                });
+            }
+            ,done: function(res, index, upload){
+                if(res.code == 0){ //上传成功
+                    var tr = demoListView.find('tr#upload-'+ index)
+                        ,tds = tr.children();
+                    tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+                    tds.eq(3).html('<button class="layui-btn layui-btn-mini layui-btn-danger demo-delete">删除</button><input type="hidden" name="file" id="'+index+'" value="'+res.data.src+'"/>'); //清空操作
+                    //删除
+                    tr.find('.demo-delete').on('click', function(){
+                        $.post(
+                            "<%=path%>/mailModule/delete",
+                            {
+                                "path":$("#"+index).val()
+                            },function (data) {
+                                alert(data.message);
+                            },"json"
+                        );
+                        delete files[index]; //删除对应的文件
+                        tr.remove();
+                    });
+                    return;
+                }
+                this.error(index, upload);
+            }
+            ,error: function(index, upload){
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
+                tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+                tds.eq(3).html('<button class="layui-btn layui-btn-mini demo-reload">重传</button><button class="layui-btn layui-btn-mini layui-btn-danger demo-delete">删除</button>'); //显示重传
+                //单个重传
+                tr.find('.demo-reload').on('click', function(){
+                    upload(index, file);
+                });
+                //删除
+                tr.find('.demo-delete').on('click', function(){
+                    delete files[index]; //删除对应的文件
+                    tr.remove();
+                });
+            }
+        });
+    });
 </script>
 </html>

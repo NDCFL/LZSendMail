@@ -18,7 +18,7 @@
         select count(*) from t_mailmodule
     </select>
     <insert id="add" parameterType="mailModuleVo">
-        insert into t_mailmodule (title, content, accessoryPath, userId) values ( #{title},  #{content},  #{accessoryPath},  #{userId})
+        insert into t_mailmodule (title, content, accessoryPath, userId,createTime) values ( #{title},  #{content},  #{accessoryPath},  #{userId},#{createTime})
     </insert>
     <update id="update">
         update t_mailmodule set title=#{title},content=#{content},accessoryPath=#{accessoryPath} where id = #{id}

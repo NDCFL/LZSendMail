@@ -24,6 +24,23 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h5>修改密码 <small>丽珠试剂版权所有</small></h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="form_basic.html#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="form_basic.html#">选项1</a>
+                            </li>
+                            <li><a href="form_basic.html#">选项2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="ibox-content">
                     <form method="post" id="form" role="form" class="form-horizontal">
@@ -52,47 +69,6 @@
                             <label class="col-sm-2 control-label">确认登录密码</label>
                             <div class="col-sm-10">
                                 <input type="password" class="form-control" placeholder="请输入确认登录密码" required name="qnew" >
-                            </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-primary"  type="submit">修改</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>修改服务器邮箱登录密码 <small>丽珠试剂版权所有</small></h5>
-                </div>
-                <div class="ibox-content">
-                    <form method="post" id="form1" role="form" class="form-horizontal">
-                        <input type="hidden" class="form-control" value="${id}" name="id">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">服务器登录账号</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" readonly="readonly" id="email"  required value="${userVo.email}">
-                            </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">服务器邮箱登录新密码</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" placeholder="请输入服务器邮箱登录新密码" id="newEmailPwd" required name="newEmailPwd" >
-                            </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">服务器邮箱登录确认密码</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" placeholder="请输入服务器邮箱登录确认密码" required name="emailPwd" >
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>

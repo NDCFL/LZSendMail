@@ -1,3 +1,5 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -16,180 +18,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>丽珠邮件系统查看邮件</title>
     <jsp:include page="comment/modulecss.jsp"></jsp:include>
+    <link rel="stylesheet" href="<%=path%>/layui/css/layui.css">
 </head>
 <body class="gray-bg">
 <div class="wrapper wrapper-content">
-    <div class="row">
-        <div class="col-sm-3">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content mailbox-content">
-                    <div class="file-manager">
-                        <a class="btn btn-block btn-primary compose-mail" href="mail_compose.html">写信</a>
-                        <div class="space-25"></div>
-                        <h5>文件夹</h5>
-                        <ul class="folder-list m-b-md" style="padding: 0">
-                            <li>
-                                <a href="mailbox.html"> <i class="fa fa-inbox "></i> 收件箱 <span class="label label-warning pull-right">16</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailbox.html"> <i class="fa fa-envelope-o"></i> 发信</a>
-                            </li>
-                            <li>
-                                <a href="mailbox.html"> <i class="fa fa-certificate"></i> 重要</a>
-                            </li>
-                            <li>
-                                <a href="mailbox.html"> <i class="fa fa-file-text-o"></i> 草稿 <span class="label label-danger pull-right">2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailbox.html"> <i class="fa fa-trash-o"></i> 垃圾箱</a>
-                            </li>
-                        </ul>
-                        <h5>分类</h5>
-                        <ul class="category-list" style="padding: 0">
-                            <li>
-                                <a href="mail_compose.html#"> <i class="fa fa-circle text-navy"></i> 工作</a>
-                            </li>
-                            <li>
-                                <a href="mail_compose.html#"> <i class="fa fa-circle text-danger"></i> 文档</a>
-                            </li>
-                            <li>
-                                <a href="mail_compose.html#"> <i class="fa fa-circle text-primary"></i> 社交</a>
-                            </li>
-                            <li>
-                                <a href="mail_compose.html#"> <i class="fa fa-circle text-info"></i> 广告</a>
-                            </li>
-                            <li>
-                                <a href="mail_compose.html#"> <i class="fa fa-circle text-warning"></i> 客户端</a>
-                            </li>
-                        </ul>
-
-                        <h5 class="tag-title">标签</h5>
-                        <ul class="tag-list" style="padding: 0">
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 朋友</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 工作</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 家庭</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 孩子</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 假期</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 音乐</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 照片</a>
-                            </li>
-                            <li><a href="mail_compose.html"><i class="fa fa-tag"></i> 电影</a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
+    <form id="form">
+        <div class="row">
+            <div class="col-sm-12 animated fadeInRight">
+                <div class="mail-box-header">
+                    <div class="pull-right tooltip-demo">
+                        <c:if test="${email.status==0}">
+                            <a href="<%=path%>/mail/sendPage/${email.id}" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="回复"><i class="fa fa-reply"></i> 回复</a>
+                            <a class="btn btn-sm btn-white" onclick="update(${email.id});"><i class="glyphicon glyphicon-ok" style="color:green"></i> 审核</a>
+                        </c:if>
                     </div>
+                    <h2>
+                        ${email.title}
+                        <input type="hidden" name="title" value="${email.title}">
+                    </h2>
+                    <div class="mail-tools tooltip-demo m-t-md">
+                        <h5>
+                            <span class="pull-right font-noraml"><fmt:formatDate value="${email.createTime}" pattern="yyyy-MM-dd hh:mm:ss"></fmt:formatDate></span>
+                            <span class="font-noraml">发件人： </span>${email.srcsend}<br/>
+                            <span class="font-noraml">收件人： </span>${email.endsend}
+                            <input type="hidden" name="touser" value="${email.endsend}">
+                            <input type="hidden" name="type" value="-1">
+                        </h5>
+                    </div>
+                </div>
+                <div class="mail-box">
+                    <div class="mail-body">
+                        ${email.content}
+                        <textarea style="display: none" name="content">${email.content}</textarea>
+                    </div>
+                    <c:if test="${not empty email.fileName}">
+                    <div class="mail-attachment">
+                        <p>
+                            <span><i class="fa fa-paperclip"></i> ${email.size} 个附件 - </span>
+                        </p>
+                            <c:forEach items="${email.fileName}" var="f">
+                                <div class="attachment">
+                                    <div class="file-box">
+                                        <div class="file">
+                                            <input type="hidden" value="/${f}">
+                                            <a href="<%=path%>/${f}">
+                                                <span class="corner"></span>
+                                                <div class="icon">
+                                                    <i class="fa fa-file"></i>
+                                                </div>
+                                                <div class="file-name">
+                                                    ${f}
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                            </c:forEach>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div></c:if>
+                    <div class="mail-body text-right tooltip-demo">
+                        <c:if test="${email.status==0}">
+                            <a class="btn btn-sm btn-white" href="<%=path%>/mail/sendPage/${email.id}"><i class="fa fa-reply"></i> 回复</a>
+                            <a class="btn btn-sm btn-white" onclick="update(${email.id});"><i class="glyphicon glyphicon-ok" style="color:green"></i> 审核</a>
+                        </c:if>
+                     </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-9 animated fadeInRight">
-            <div class="mail-box-header">
-                <div class="pull-right tooltip-demo">
-                    <a href="mail_compose.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="回复"><i class="fa fa-reply"></i> 回复</a>
-                    <a href="mail_detail.html#" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="打印邮件"><i class="fa fa-print"></i> </a>
-                    <a href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="标为垃圾邮件"><i class="fa fa-trash-o"></i> </a>
-                </div>
-                <h2>
-                    查看邮件
-                </h2>
-                <div class="mail-tools tooltip-demo m-t-md">
-
-
-                    <h3>
-                        <span class="font-noraml">主题： </span>幼儿园亲子班（园中园）项目方案
-                    </h3>
-                    <h5>
-                        <span class="pull-right font-noraml">2014年10月28日(星期二) 晚上8:20</span>
-                        <span class="font-noraml">发件人： </span>i@zi-han.net
-                    </h5>
-                </div>
-            </div>
-            <div class="mail-box">
-
-
-                <div class="mail-body">
-                    <h4>尊敬的幼儿园园长朋友：</h4>
-                    <p>
-                        贝贝聪教育，因您而精彩！由于婴幼教育一体化更符合婴幼儿成长需求，是全球早教专家、心理学家普遍推崇的一种办园模式。在美国、日本、英国、意大利、新加坡等国家及我国香港、台湾等地区，幼儿园普遍开设了亲子班，美国幼儿园开亲子班的比率为87%，意大利比率为83%。香港、台湾地区分别为74%、76%。2003年3月4日，国务院办公厅转发了教育部等10部门（单位）《关于幼儿教育改革与发展的指导意见》，强调发展0－6岁婴幼儿教育。在《幼儿园教育指导纲要（试行）》中已明确指出幼儿园教育要与0-3岁教育做好衔接。北京、上海等地要求在2013年，65%的公立一级幼儿园开设亲子班或园中园。
-                    </p>
-
-                    <p class="text-right">
-                        贝贝聪教育科技发展有限公司
-                    </p>
-                </div>
-                <div class="mail-attachment">
-                    <p>
-                        <span><i class="fa fa-paperclip"></i> 2 个附件 - </span>
-                        <a href="mail_detail.html#">下载全部</a> |
-                        <a href="mail_detail.html#">预览全部图片</a>
-                    </p>
-
-                    <div class="attachment">
-                        <div class="file-box">
-                            <div class="file">
-                                <a href="mail_detail.html#">
-                                    <span class="corner"></span>
-
-                                    <div class="icon">
-                                        <i class="fa fa-file"></i>
-                                    </div>
-                                    <div class="file-name">
-                                        Document_2014.doc
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                        <div class="file-box">
-                            <div class="file">
-                                <a href="mail_detail.html#">
-                                    <span class="corner"></span>
-
-                                    <div class="image">
-                                        <img alt="image" class="img-responsive" src="img/p1.jpg">
-                                    </div>
-                                    <div class="file-name">
-                                        Italy street.jpg
-                                    </div>
-                                </a>
-
-                            </div>
-                        </div>
-                        <div class="file-box">
-                            <div class="file">
-                                <a href="mail_detail.html#">
-                                    <span class="corner"></span>
-
-                                    <div class="image">
-                                        <img alt="image" class="img-responsive" src="img/p2.jpg">
-                                    </div>
-                                    <div class="file-name">
-                                        My feel.png
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="mail-body text-right tooltip-demo">
-                    <a class="btn btn-sm btn-white" href="mail_compose.html"><i class="fa fa-reply"></i> 回复</a>
-                    <a class="btn btn-sm btn-white" href="mail_compose.html"><i class="fa fa-arrow-right"></i> 下一封</a>
-                    <button title="" data-placement="top" data-toggle="tooltip" type="button" data-original-title="打印这封邮件" class="btn btn-sm btn-white"><i class="fa fa-print"></i> 打印</button>
-                    <button title="" data-placement="top" data-toggle="tooltip" data-original-title="删除邮件" class="btn btn-sm btn-white"><i class="fa fa-trash-o"></i> 删除</button>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
+        <textarea id="updateFile"  style="display: none" name="accessoryPath"></textarea>
+    </form>
 </div>
-<script type="text/javascript" src="comment/modulejs.jsp"></script>
+<jsp:include page="comment/modulejs.jsp"></jsp:include>
+<script type="text/javascript" src="<%=path%>/layui/layui.all.js"></script>
+<script>
+    function update(id) {
+        layer.alert('',{
+            icon:1,title:'审核确认',content:'您确定要审核这封邮件吗？',closeBtn:1},function(index){
+            $.post(
+                "<%=path%>/mail/update/"+id,
+                function(data){
+                    if(data.message=="审核通过!"){
+                        layer.msg(data.message, {icon:1,time:1000});
+                        var path = "";
+                        $(".attachment input ").each(function(){
+                            if($(this).val()!=""){
+                                path +=$(this).val()+";";
+                            }
+                        });
+                        $("#updateFile").html(path);
+                        $.post(
+                            "<%=path%>/mail/send",
+                            $("#form").serialize(),
+                            function(data) {
+                                if(data.message.indexOf("成功")>0) {
+                                    layer.confirm('邮件发送提醒', {icon: 1, title:data.message}, function(index){
+                                        location.href = "/email/lookCollection/" + id;
+                                        layer.close(index);
+                                    });
+                                }
+                                else
+                                    layer.msg(data.message, {icon:2,time:1000});
+                            },
+                            "json"
+                        );
+                    }
+                },"json"
+            );
+            layer.close(index);
+        });
+
+    }
+</script>
 </body>
 </html>

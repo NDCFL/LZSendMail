@@ -35,10 +35,11 @@ public class TypeController  {
     public PagingBean typeList(int pageSize, int pageIndex, HttpSession session) throws  Exception{
         UserVo userVo = (UserVo) session.getAttribute("userVo");
         PagingBean pagingBean = new PagingBean();
-        pagingBean.setTotal(typeService.count());
         pagingBean.setPageSize(pageSize);
         pagingBean.setCurrentPage(pageIndex);
-        pagingBean.setrows(typeService.pageLists(new PageQuery(pagingBean.getStartIndex(),pagingBean.getPageSize()),userVo.getId()));
+        PageQuery p=new PageQuery(pagingBean.getStartIndex(),pagingBean.getPageSize());
+        pagingBean.setTotal(typeService.count(p));
+        pagingBean.setrows(typeService.pageLists(p,userVo.getId()));
         return pagingBean;
     }
     @RequestMapping("/typeAddSave")

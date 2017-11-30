@@ -44,8 +44,8 @@ public class AgencyServiceImpl implements AgencyService {
     }
 
     @Override
-    public int count() {
-        return agencyDAO.count();
+    public int count(PageQuery pageQuery) {
+        return agencyDAO.count(pageQuery);
     }
 
     @Override

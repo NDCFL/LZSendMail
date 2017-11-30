@@ -24,7 +24,7 @@ public interface BaseDAO<T> {
 
     public void updateStatus(StatusQuery statusQuery);
 
-    public int count();
+    public int count(PageQuery pageQuery);
 
     public List<T> listAll();
 

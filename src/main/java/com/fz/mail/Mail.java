@@ -36,7 +36,12 @@ public class Mail {
 
     public InternetAddress[] getToEmilName() {
         try {
-            return InternetAddress.parse(toEmilName);
+            String[] addr=toEmilName.split(";");
+            InternetAddress[] addresses = new InternetAddress[addr.length];
+            for (int i = 0; i < addr.length; i++) {
+                addresses[i] = new InternetAddress(addr[i]);
+            }
+            return addresses;
         } catch (AddressException e) {
             e.printStackTrace();
         }

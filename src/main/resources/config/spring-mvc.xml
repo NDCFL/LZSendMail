@@ -18,6 +18,7 @@
     <mvc:resources mapping="/plugins/**" location="/plugins/" cache-period="31556926"/>
     <mvc:resources mapping="/ueditor/**" location="/ueditor/" cache-period="31556926"/>
     <mvc:resources mapping="/upload/**" location="/upload/" cache-period="31556926"/>
+    <mvc:resources mapping="/layui/**" location="/layui/" cache-period="31556926"/>
     <mvc:annotation-driven>
         <!-- 返回json数据，使用@responseBody注解 -->
         <mvc:message-converters register-defaults="true">

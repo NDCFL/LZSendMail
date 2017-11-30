@@ -41,10 +41,20 @@ $('#mytab').bootstrapTable({
             sortable:true
         },
         {
-            title:'附件地址',
-            field:'accessoryPath',
+            title:'创建时间',
+            field:'createTime',
             align:'center',
-            sortable:true
+            sortable:true,
+            formatter : function(value){
+                var date = new Date(value);
+                var y = date.getFullYear();
+                var m = date.getMonth() + 1;
+                var d = date.getDate();
+                var h = date.getHours();
+                var mi = date.getMinutes();
+                var ss = date.getSeconds();
+                return y + '-' +m + '-' + d+' '+h+':'+mi+':'+ss ;
+            }
         }
         ,
         {
@@ -114,13 +124,7 @@ function del(mailModuleid,status){
     });
 }
 function edit(name){
-    $.post("/mailModule/findMailModule/"+name,
-        function(data){
-            $("#updateform").autofill(data);
-        },
-        "json"
-    );
-    location.href="\"/mailModule/findMailModule/"+name;
+    location.href="/mailModule/initUpdateModule/"+name;
 }
 function updatestatus(id,status){
     $.post("/mailModule/updateStatus/"+id+"/"+status,

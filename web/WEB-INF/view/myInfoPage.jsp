@@ -23,11 +23,18 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>个人资料 <small>丽珠试剂版权所有</small></h5>
+                    <h5>个人资料 </h5>
                 </div>
                 <div class="ibox-content">
                     <form method="post" id="form" role="form" class="form-horizontal">
                         <input type="hidden" class="form-control" id="id" name="id">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">发信昵称</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control"  required id="nickname" name="nickname">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">邮箱账号</label>
                             <div class="col-sm-10">
@@ -36,16 +43,37 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">邮箱服务器IP</label>
+                            <label class="col-sm-2 control-label">邮箱密码</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control"  required id="password" name="password">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">发件邮箱服务器</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" required name="serverHost" id="serverHost">
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">邮箱服务器端口</label>
+                            <label class="col-sm-2 control-label">发件邮箱服务器端口</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" required name="serverPort" id="serverPort">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">收件邮箱服务器</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" required name="inserverHost" id="inserverHost">
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">收件邮箱服务器端口</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" required name="inserverPort" id="inserverPort">
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>

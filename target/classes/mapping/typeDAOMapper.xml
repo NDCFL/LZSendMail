@@ -6,6 +6,7 @@
         <result column="typename" property="typename"></result>
         <result column="createTime" property="createTime"></result>
         <result column="leader" property="leader"></result>
+        <result column="email" property="email"></result>
         <association property="userVo" javaType="userVo">
             <id column="userId" property="id"></id>
             <result column="loginAcc" property="loginAcc"></result>
@@ -19,7 +20,7 @@
         delete from t_type where id = #{id}
     </delete>
     <select id="pageLists" resultMap="typeMap">
-        select t.*,group_concat(a.leader) as leader,u.id as userid,u.loginacc from t_type t left join t_agency a on find_in_set(a.id,t.agentyId) LEFT JOIN t_user u on t.userId=u.id where  t.userId=#{userId} group by t.id  limit #{pageQuery.pageNo},#{pageQuery.pageSize}
+        select t.*,group_concat(a.leader) as leader,group_concat(a.emailAcc SEPARATOR ';') as email,u.id as userid,u.loginacc from t_type t left join t_agency a on find_in_set(a.id,t.agentyId) LEFT JOIN t_user u on t.userId=u.id where  t.userId=#{userId} group by t.id  limit #{pageQuery.pageNo},#{pageQuery.pageSize}
     </select>
     <select id="listAll" resultMap="typeMap">
         select t.*,u.id as userId,u.loginAcc,(select group_concat(leader) from t_agency  where id in(#{agencyId})) as leader from t_type t,t_user u where  t.userId=u.id

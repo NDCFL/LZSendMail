@@ -1,6 +1,7 @@
 package com.fz.vo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class MailModuleVo implements Serializable{
     private long id;
@@ -9,7 +10,9 @@ public class MailModuleVo implements Serializable{
     private String accessoryPath;
     private long userId;
     private String touser;
-
+    private Date createTime;
+    private String updateFile;
+    private int type;
     public long getId() {
         return id;
     }
@@ -56,5 +59,29 @@ public class MailModuleVo implements Serializable{
 
     public void setTouser(String touser) {
         this.touser = touser;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getUpdateFile() {
+        return updateFile;
+    }
+
+    public void setUpdateFile(String updateFile) {
+        this.updateFile = updateFile;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

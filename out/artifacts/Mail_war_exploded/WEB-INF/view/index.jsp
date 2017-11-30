@@ -2,6 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
+    if(session.getAttribute("userVo")==null){
+        response.sendRedirect("/user/login");
+        return;
+    }
 %>
 <html>
 <head>
@@ -58,7 +62,7 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="<%=path%>/user/myInfoPage" data-index="0">修改资料</a>
+                            <a class="J_menuItem" href="<%=path%>/user/myInfoPage" data-index="0">个人资料</a>
                         </li>
                         <li>
                             <a class="J_menuItem" href="<%=path%>/user/updatePassword" data-index="0">修改密码</a>
@@ -69,16 +73,16 @@
                     <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">信箱 </span><span class="label label-warning pull-right">16</span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="<%=path%>/mailModule/mailModulePage">我的邮件模板</a>
+                            <a class="J_menuItem" href="<%=path%>/mailModule/mailModulePage">邮件模板</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="<%=path%>/email/collection">收件箱</a>
+                            <a class="J_menuItem" href="<%=path%>/email/emailPage">收件箱</a>
                         </li>
-                        <li><a class="J_menuItem" href="<%=path%>/email/lookCollection">查看邮件</a>
+                        <li><a class="J_menuItem" href="<%=path%>/email/sendMain">发件箱</a>
                         </li>
-                        <li><a class="J_menuItem" href="<%=path%>/email/writeCollection">写信</a>
+                        <li><a class="J_menuItem" href="<%=path%>/mail/sendPage">写信</a>
                         </li>
-                        <li><a class="J_menuItem" href="<%=path%>/mail/sendPage">发邮件</a>
+                        <li><a class="J_menuItem" href="<%=path%>/file/filePage">附件管理</a>
                         </li>
                     </ul>
                 </li>
@@ -120,7 +124,7 @@
             </button>
             <nav class="page-tabs J_menuTabs">
                 <div class="page-tabs-content">
-                    <a href="javascript:;" class="active J_menuTab" data-id="index_v1.html">首页</a>
+                    <a href="javascript:;" class="active J_menuTab" data-id="<%=path%>/user/myInfoPage" title="双击Tab刷新">首页</a>
                 </div>
             </nav>
             <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
@@ -141,7 +145,7 @@
             <a href="login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
         </div>
         <div class="row J_mainContent" id="content-main">
-            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="<%=path%>/user/myInfoPage" frameborder="0" data-id="index_v2.html" seamless></iframe>
+            <iframe class="J_iframe" name="iframe" width="100%" height="100%" src="<%=path%>/user/myInfoPage" frameborder="0" data-id="<%=path%>/user/myInfoPage" seamless></iframe>
         </div>
         <div class="footer">
             <div class="pull-right">&copy; 2017 <a href="javascript:void(0);" target="_blank">丽珠试剂</a>

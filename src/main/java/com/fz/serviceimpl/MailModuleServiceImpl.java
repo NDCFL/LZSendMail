@@ -50,7 +50,7 @@ public class MailModuleServiceImpl implements MailModuleService {
     }
 
     @Override
-    public int count() {
-        return mailModuleDAO.count();
+    public int count(PageQuery pageQuery) {
+        return mailModuleDAO.count(pageQuery);
     }
 }

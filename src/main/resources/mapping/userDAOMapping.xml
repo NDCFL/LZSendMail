@@ -42,6 +42,6 @@
         insert into t_user (loginAcc, loginPassword, email, password, serverHost, serverPort, status) values (#{loginAcc}, #{loginPassword}, #{email}, #{password}, #{serverHost}, #{serverPort}, #{status})
   </insert>
   <update id="update" parameterType="userVo">
-        update t_user set email=#{email},serverHost=#{serverHost},serverPort=#{serverPort},nickname=#{nickname},password=#{password},inserverHost=#{serverHost},inserverPort=#{inserverPort} where id = #{id}
+        update t_user set email=#{email},serverHost=#{serverHost},serverPort=#{serverPort},nickname=#{nickname},password=#{password},inserverHost=#{inserverHost},inserverPort=#{inserverPort} where id = #{id}
   </update>
 </mapper>

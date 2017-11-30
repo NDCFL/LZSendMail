@@ -157,10 +157,11 @@ public class UserController {
     @ResponseBody
     public PagingBean userList(int pageSize, int pageIndex) throws  Exception{
         PagingBean pagingBean = new PagingBean();
-        pagingBean.setTotal(userService.count());
         pagingBean.setPageSize(pageSize);
         pagingBean.setCurrentPage(pageIndex);
-        pagingBean.setrows(userService.pagelist(new PageQuery(pagingBean.getStartIndex(),pagingBean.getPageSize())));
+        PageQuery p=new PageQuery(pagingBean.getStartIndex(),pagingBean.getPageSize());
+        pagingBean.setTotal(userService.count(p));
+        pagingBean.setrows(userService.pagelist(p));
         return pagingBean;
     }
     @RequestMapping("/userAddSave")

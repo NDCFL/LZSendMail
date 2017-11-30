@@ -24,8 +24,8 @@ drop table IF EXISTS t_mailmodule;
 create table t_mailmodule(
   id BIGINT PRIMARY KEY  AUTO_INCREMENT COMMENT '邮件模板的编号',
   title VARCHAR(20) NOT NULL COMMENT '邮件模板的标题',
-  content TEXT NOT NULL COMMENT '邮件模板内容',
-  accessoryPath VARCHAR(20) COMMENT '附件的地址',
+  content text NOT NULL COMMENT '邮件模板内容',
+  accessoryPath TEXT COMMENT '附件的地址',
   userId long NOT NULL COMMENT '用户的id'
 )engine=innodb default charset=utf8;
 drop table IF EXISTS t_type;
@@ -42,8 +42,32 @@ create table t_mailhistory(
   srcsend VARCHAR(20) NOT NULL COMMENT '邮箱的发送者',
   endsend VARCHAR(20) NOT NULL COMMENT '邮箱的接受者',
   title VARCHAR(20) NOT NULL COMMENT '邮件的标题',
-  COMMENT TEXT not NULL COMMENT '邮箱的内容',
+  content TEXT not NULL COMMENT '邮箱的内容',
   accessoryPath VARCHAR(255) NOT NULL COMMENT '邮箱附件的地址',
   createTime DATETIME COMMENT '创建时间',
-  status int NOT NULL COMMENT '状态'
+  emailCode VARCHAR(255) not null,
+  status int NOT NULL COMMENT '状态',
+  userId long not null
 )engine=innodb default charset=utf8;
+
+drop TABLE IF EXISTS t_file;
+create table t_file(
+    id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '文件上传记录id',
+    name VARCHAR(255) not null COMMENT '文件名称',
+    path VARCHAR(255) not null,
+    userId long not null,
+    createTime DATETIME DEFAULT now()
+)engine=innodb default charset=utf8;
+truncate table t_file
+
+update t_file set path="/upload/1511507099521034100.xlsx"
+select * from t_mailhistory where userId=1 and (title LIKE '%'+'0'+'%' or srcsend LIKE '%'+'0'+'%' or endsend  LIKE '%'+'0'+'%' or content  LIKE '%'+'0'+'%' )
+select * from t_mailhistory WHERE ( title like '%软件开发部工作模板%') or content like '%软件开发部工作模板%' or srcsend like '%软件开发部工作模板%' or endsend like '%软件开发部工作模板%'  and status in (2)
+select concat('%'+'软件开发部工作模板'+'%');
+select count(*) from t_mailhistory WHERE  title like '%'+软件开发部+'%' or content like '%'+软件开发部+'%' or srcsend like '%'+软件开发部+'%' or endsend like '%'+软件开发部+'%'  and status in (2)
+
+
+
+
+
+

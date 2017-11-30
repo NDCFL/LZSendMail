@@ -35,7 +35,7 @@
                 <input type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="请输入登录密码" required="">
             </div>
             <button type="submit" id="" class="btn btn-primary block full-width m-b">登 录</button>
-            <p class="text-muted text-center"> <a href="login.html#"><small>忘记密码了？</small></a>
+            <p class="text-muted text-center"> <small>&copy; 2017  丽珠试剂</small>
             </p>
         </form>
     </div>
