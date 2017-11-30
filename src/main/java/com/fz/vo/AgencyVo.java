@@ -7,6 +7,9 @@ public class AgencyVo implements Serializable {
     private  String companyName;
     private  String leader;
     private  String emailAcc;
+    private Integer type;
+    private String dir;
+    private String info;
 
     public Integer getId() {
         return id;
@@ -38,5 +41,29 @@ public class AgencyVo implements Serializable {
 
     public void setEmailAcc(String emailAcc) {
         this.emailAcc = emailAcc;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public String getDir() {
+        return dir;
+    }
+
+    public void setDir(String dir) {
+        this.dir = dir;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 }

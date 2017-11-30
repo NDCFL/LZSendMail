@@ -6,6 +6,7 @@ import com.fz.comment.StatusQuery;
 import com.fz.dao.EmailDAO;
 import com.fz.mail.Mail;
 import com.fz.mail.MailAuthenticator;
+import com.fz.mail.SendMain;
 import com.fz.service.AgencyService;
 import com.fz.service.EmailService;
 import com.fz.service.MailModuleService;
@@ -48,57 +49,7 @@ public class SendMailController {
     private EmailService emailService;
     @Resource
     private MailModuleService mailModuleService;
-    public void sendEmail(Mail mail, HttpSession session1) throws  Exception{
-        UserVo userVo = (UserVo) session1.getAttribute("userVo");
-        //读取配置文件
-        //String path = session1.getServletContext().getRealPath("/WEB-INF/classes/config/mail.properties");
-        Properties properties = new Properties();
-        properties.put("mail.transport.protocol", "smtp");
-        properties.put("mail.smtp.host", userVo.getServerHost());
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.ssl.enable", "true");
-        properties.put("mail.smtp.port",userVo.getServerPort());
-        //设置邮箱的发送者
-        mail.setEmailName(userVo.getEmail());
-        //验证身份，和密码
-        Session session = Session.getInstance(properties,new MailAuthenticator(userVo.getEmail(),userVo.getPassword()));
-        //实例化一个消息类
-        Message message = new MimeMessage(session);
-        //设置消息的主题
-        message.setSubject(mail.getSubject());
-        //设置消息的放松这
-        message.setFrom(mail.getEmailName());
-        //发送邮箱的内容，并发送附件
-        Multipart multipart = new MimeMultipart();
-        BodyPart bodyPart = new MimeBodyPart();
-        bodyPart.setContent(mail.getContent(), "text/html;charset=utf-8");
-        multipart.addBodyPart(bodyPart);
-        if(mail.getFilePath()!=null)
-        for (String str: mail.getFilePath()) {
-            File usFile = new File(str);
-            MimeBodyPart fileBody = new MimeBodyPart();
-            DataSource source = new FileDataSource(str);
-            fileBody.setDataHandler(new DataHandler(source));
-            sun.misc.BASE64Encoder enc = new sun.misc.BASE64Encoder();
-            fileBody.setFileName("=?GBK?B?"
-                    + enc.encode(usFile.getName().getBytes()) + "?=");
-            multipart.addBodyPart(fileBody);
-        }
-        //设置邮箱的内容
-        message.setContent(multipart);
-        //调用邮箱发送的函数
-        message.setRecipients(Message.RecipientType.TO, mail.getToEmilName());
-        //设置抄送人
-        if(mail.getCc()!=null){
-            message.setRecipients(Message.RecipientType.CC, mail.getCc());
-        }
-        //设置密送人
-        if(mail.getBcc()!=null){
-            message.setRecipients(Message.RecipientType.BCC, mail.getBcc());
-        }
-        //邮件输送连接
-        Transport.send(message);
-    }
+
 
 
     @RequestMapping("send")
@@ -115,6 +66,9 @@ public class SendMailController {
             mail.setContent(mailModuleVo.getContent());
             //收件人
             mail.setToEmilName(mailModuleVo.getTouser());
+            if(mailModuleVo.getCsend()!=null){
+                mail.setCc(mailModuleVo.getCsend());
+            }
             //邮箱的附件
             String root = session.getServletContext().getRealPath("/");
             if(mailModuleVo.getAccessoryPath()!=null && mailModuleVo.getAccessoryPath()!=""){
@@ -128,7 +82,7 @@ public class SendMailController {
             //邮箱的内容
             mail.setContentType("text/html;charset=utf-8");
             try {
-                sendEmail(mail,session);
+                SendMain.sendEmail(mail,user);
                 if(mailModuleVo.getType()==-1){
                 }else{
                     EmailVo emailVo = new EmailVo();
@@ -139,6 +93,7 @@ public class SendMailController {
                     emailVo.setAccessoryPath(mailModuleVo.getAccessoryPath());
                     emailVo.setUserid(user.getId());
                     emailVo.setStatus(1);
+                    emailVo.setCsend(mailModuleVo.getCsend());
                     emailVo.setEndsend(mailModuleVo.getTouser());
                     emailService.add(emailVo);
                 }

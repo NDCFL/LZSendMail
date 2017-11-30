@@ -16,7 +16,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>丽珠邮件系统- 写信</title>
+    <title>丽珠邮件系统- 模板的修改</title>
     <jsp:include page="comment/modulecss.jsp"></jsp:include>
     <link rel="stylesheet" href="<%=path%>/layui/css/layui.css"  media="all">
 </head>
@@ -27,17 +27,24 @@
         <div class="col-sm-12 animated fadeInRight">
             <div class="mail-box-header">
                 <h2>
-                    写信
+                    模板的修改
                 </h2>
             </div>
             <div class="mail-box">
                 <div class="mail-body">
                     <form class="form-horizontal" method="post" id="form" >
                         <input type="hidden" name="id" id="id" value="${mailModule.id}">
+
                         <div class="form-group">
                             <label class="col-sm-2 control-label">主题：</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="title" value="${mailModule.title}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">抄送人：</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="csend" value="${mailModule.csend}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -49,7 +56,7 @@
                         <textarea id="updateFile" style="display: none" name="updateFile"></textarea>
                         <div class="mail-attachment">
                             <p>
-                                <span><i class="fa fa-paperclip"></i>附件列表(仅支持<b style="color:green;font-size: large">xls|xlsx|txt|doc|docs</b>)的格式文件</span>
+                                <span><i class="fa fa-paperclip"></i>附件列表(仅支持<b style="color:green;font-size: large">xls|xlsx|txt|doc|docx</b>)的格式文件</span>
                             </p>
                             <div class="attachment" >
                                 <c:if test="${listFile!=null}">
@@ -60,7 +67,15 @@
                                                 <a href="<%=path%>/upload/${l}">
                                                     <span class="corner"></span>
                                                     <div class="icon">
-                                                        <i class="fa fa-file"></i>
+                                                        <c:if test="${l.substring(l.indexOf('.')+1,l.length())=='doc' || l.substring(l.indexOf('.')+1,l.length())=='docx'}">
+                                                            <i class="fa fa-file-word-o" style="color:#0df1e9"></i>
+                                                        </c:if>
+                                                        <c:if test="${l.substring(l.indexOf('.')+1,l.length())=='xlsx' ||l.substring(l.indexOf('.')+1,l.length())=='xls'}">
+                                                            <i class="fa fa-file-excel-o" style="color:#0c804e"></i>
+                                                        </c:if>
+                                                        <c:if test="${l.substring(l.indexOf('.')+1,l.length())=='txt' ||l.substring(l.indexOf('.')+1,l.length())=='txt'}">
+                                                            <i class="fa fa-file-text-o" style="color:#1357ff"></i>
+                                                        </c:if>
                                                     </div>
                                                     <div class="file-name">
                                                             ${l}
@@ -168,7 +183,7 @@
             elem: '#testList'
             ,url: '/mailModule/upload'
             ,accept: 'file'
-            ,exts: 'xls|xlsx|txt|doc|docs'
+            ,exts: 'xls|xlsx|txt|doc|docx'
             ,multiple: true
             ,auto: false
             ,bindAction: '#testListAction'

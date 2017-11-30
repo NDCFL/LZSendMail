@@ -20,13 +20,16 @@
         delete from t_type where id = #{id}
     </delete>
     <select id="pageLists" resultMap="typeMap">
-        select t.*,group_concat(a.leader) as leader,group_concat(a.emailAcc SEPARATOR ';') as email,u.id as userid,u.loginacc from t_type t left join t_agency a on find_in_set(a.id,t.agentyId) LEFT JOIN t_user u on t.userId=u.id where  t.userId=#{userId} group by t.id  limit #{pageQuery.pageNo},#{pageQuery.pageSize}
+        <!--select top(#{pageQuery.pageSize}) t.*,CAST (a.leader) as leader,CAST(a.emailAcc SEPARATOR ';') as email,u.id as userid,u.loginacc from t_type t left join t_agency a on find_in_set(a.id,t.agentyId) LEFT JOIN t_user u on t.userId=u.id where  t.userId=#{userId} and t.id not in(select top(#{pageQuery.pageNo}) id from t_mailmodule)  group by t.id-->
+        select top(#{pageQuery.pageSize}) p.* ,
+        leader=stuff((select ','+t.leader from t_agency t where charindex(','+convert(varchar,t.id),','+p.agentyid)>0 for xml path('')),1,1,''),
+        stuff((select ';'+t.emailacc from t_agency t where charindex(','+convert(varchar,t.id),','+p.agentyid)>0 for xml path('')),1,1,'') as email,u.loginAcc from t_type p,t_user u where p.userId=u.id and  p.userid=#{userId} and p.id not in(select top(#{pageQuery.pageNo}) id from t_agency)
     </select>
     <select id="listAll" resultMap="typeMap">
         select t.*,u.id as userId,u.loginAcc,(select group_concat(leader) from t_agency  where id in(#{agencyId})) as leader from t_type t,t_user u where  t.userId=u.id
     </select>
     <select id="count" resultType="int">
-        select count(*) from t_type
+        select count(*) from t_type where userId=#{userId}
     </select>
     <insert id="add" parameterType="typeVo">
         insert into t_type (typename, userId, agentyId,createTime) values ( #{typename}, #{userId}, #{agentyId},#{createTime})

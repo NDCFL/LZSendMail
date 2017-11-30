@@ -157,21 +157,7 @@ $('#search_btn').click(function(){
 function refush(){
     $('#mytab').bootstrapTable('refresh', {url: '/agency/agencyList'});
 }
-$("#update").click(function(){
-    $.post(
-        "/agency/agencyUpdateSave",
-        $("#updateform").serialize(),
-        function(data){
-            if(data.message=="修改成功!"){
-                layer.msg(data.message, {icon:1,time:1000});
-                refush();
-            }else{
-                layer.msg(data.message, {icon:1,time:1000});
-                refush();
-            }
-        },"json"
-    );
-});
+
 $("#add").click(function(){
     $.post(
         "/agency/agencyAddSave",

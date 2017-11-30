@@ -93,10 +93,10 @@
                             <li>
                                 <a class="J_menuItem" href="<%=path%>/user/userPage">用户列表</a>
                             </li>
+                            <li>
+                                <a class="J_menuItem" href="<%=path%>/agency/agencyPage">经销商列表</a>
+                            </li>
                         </c:if>
-                        <li>
-                            <a class="J_menuItem" href="<%=path%>/agency/agencyPage">经销商列表</a>
-                        </li>
                         <li>
                             <a class="J_menuItem" href="<%=path%>/type/typePage">分类管理</a>
                         </li>
@@ -113,7 +113,6 @@
                 <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
                     <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
                         </div>
                     </form>
                 </div>

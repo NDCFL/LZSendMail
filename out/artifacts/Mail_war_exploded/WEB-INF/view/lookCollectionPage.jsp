@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>丽珠邮件系统查看邮件</title>
     <jsp:include page="comment/modulecss.jsp"></jsp:include>
-    <link rel="stylesheet" href="<%=path%>/layui/css/layui.css">
+    <link rel="stylesheet" href="<%=path%>/layui/css/layui.css"  media="all">
 </head>
 <body class="gray-bg">
 <div class="wrapper wrapper-content">
@@ -40,9 +40,13 @@
                         <h5>
                             <span class="pull-right font-noraml"><fmt:formatDate value="${email.createTime}" pattern="yyyy-MM-dd hh:mm:ss"></fmt:formatDate></span>
                             <span class="font-noraml">发件人： </span>${email.srcsend}<br/>
-                            <span class="font-noraml">收件人： </span>${email.endsend}
+                            <span class="font-noraml">收件人： </span>${email.endsend}<br/>
+                            <c:if test="${email.csend!='' and email.csend!=null}">
+                                <span class="font-noraml">抄送人： </span>${email.csend}
+                            </c:if>
                             <input type="hidden" name="touser" value="${email.endsend}">
                             <input type="hidden" name="type" value="-1">
+                            <input type="hidden" name="csend" value="${email.csend}">
                         </h5>
                     </div>
                 </div>
@@ -54,24 +58,34 @@
                     <c:if test="${not empty email.fileName}">
                     <div class="mail-attachment">
                         <p>
-                            <span><i class="fa fa-paperclip"></i> ${email.size} 个附件 - </span>
+                            <span><i class="fa fa-paperclip"></i>附件详情</span>
                         </p>
                             <c:forEach items="${email.fileName}" var="f">
-                                <div class="attachment">
-                                    <div class="file-box">
-                                        <div class="file">
-                                            <input type="hidden" value="/${f}">
-                                            <a href="<%=path%>/${f}">
-                                                <span class="corner"></span>
-                                                <div class="icon">
-                                                    <i class="fa fa-file"></i>
-                                                </div>
-                                                <div class="file-name">
-                                                    ${f}
-                                                </div>
-                                            </a>
+                                <c:if test="${f!=''}">
+                                    <div class="attachment">
+                                        <div class="file-box">
+                                            <div class="file">
+                                                <input type="hidden" value="/${f}">
+                                                <a href="<%=path%>/${f}">
+                                                    <span class="corner"></span>
+                                                    <div class="icon">
+                                                        <c:if test="${f.substring(f.indexOf('.')+1,f.length())=='doc' || f.substring(f.indexOf('.')+1,f.length())=='docx'}">
+                                                            <i class="fa fa-file-word-o" style="color:#0df1e9"></i>
+                                                        </c:if>
+                                                        <c:if test="${f.substring(f.indexOf('.')+1,f.length())=='xlsx' ||f.substring(f.indexOf('.')+1,f.length())=='xls'}">
+                                                            <i class="fa fa-file-excel-o" style="color:#0c804e"></i>
+                                                        </c:if>
+                                                        <c:if test="${f.substring(f.indexOf('.')+1,f.length())=='txt'}">
+                                                            <i class="fa fa-file-text-o" style="color:#1357ff"></i>
+                                                        </c:if>
+                                                    </div>
+                                                    <div class="file-name">
+                                                            ${f}
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
+                                </c:if>
                             </c:forEach>
                             <div class="clearfix"></div>
                         </div>

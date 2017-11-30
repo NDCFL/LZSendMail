@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fz.dao.InterfaceDAO">
+    <select id="filingPrice" statementType="CALLABLE" resultType="java.util.HashMap">
+        CALL Hsproc_CCArrearsBalance_CYFL01(#{year},#{month},#{cid},#{stype},#{gsh},#{cuserid})
+    </select>
+
+    <select id="h_CtDetail" statementType="CALLABLE" resultType="java.util.HashMap">
+        CALL Hsproc_CCArrearsBalance_CYFL01(#{year},#{month},#{cid},#{stype},#{gsh},#{cuserid})
+    </select>
+</mapper>

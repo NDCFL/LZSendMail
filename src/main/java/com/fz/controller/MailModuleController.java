@@ -43,6 +43,7 @@ public class MailModuleController {
         pagingBean.setPageSize(pageSize);
         pagingBean.setCurrentPage(pageIndex);
         PageQuery p=new PageQuery(pagingBean.getStartIndex(),pagingBean.getPageSize());
+        p.setUserId(userVo.getId());
         pagingBean.setTotal(mailModuleService.count(p));
         pagingBean.setrows(mailModuleService.pageLists(p,userVo.getId()));
         return pagingBean;

@@ -13,6 +13,16 @@ public class MailModuleVo implements Serializable{
     private Date createTime;
     private String updateFile;
     private int type;
+    private String csend;
+
+    public String getCsend() {
+        return csend;
+    }
+
+    public void setCsend(String csend) {
+        this.csend = csend;
+    }
+
     public long getId() {
         return id;
     }

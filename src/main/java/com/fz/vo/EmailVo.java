@@ -7,6 +7,7 @@ public class EmailVo {
     private  long id;
     private  String srcsend;//发送人
     private  String endsend;//接收人
+    private  String csend;//抄送人
     private  String title;//主题
     private  String content;//内容
     private  String accessoryPath;//附件地址
@@ -16,6 +17,14 @@ public class EmailVo {
     private  long userid;//所属用户编号
     private Integer size;
     private List<String> fileName;
+
+    public String getCsend() {
+        return csend;
+    }
+
+    public void setCsend(String csend) {
+        this.csend = csend;
+    }
 
     public long getId() {
         return id;

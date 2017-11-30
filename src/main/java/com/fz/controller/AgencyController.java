@@ -1,24 +1,29 @@
 package com.fz.controller;
 
-import com.fz.comment.Message;
-import com.fz.comment.PageQuery;
-import com.fz.comment.PagingBean;
-import com.fz.comment.StatusQuery;
+import com.fz.comment.*;
 import com.fz.service.AgencyService;
 import com.fz.vo.AgencyVo;
+import com.fz.vo.FileUpVo;
+import com.fz.vo.FileVo;
+import com.fz.vo.UserVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 
 /**
  * Created by chenfeilong on 2017/10/21.
@@ -95,6 +100,69 @@ public class AgencyController {
     @RequestMapping("/agencyPage")
     public String table() throws  Exception{
         return "agencyList";
+    }
+    @RequestMapping("upload")
+    @ResponseBody
+    public FileUpVo upload(MultipartFile file, HttpServletRequest request){
+        FileUpVo fileUp = new FileUpVo();
+        try {
+            String path = request.getSession().getServletContext().getRealPath("upload");
+            String fileName = file.getOriginalFilename();
+            File dir = new File(path, fileName);
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+            Map<String,String> data = new HashMap<String, String>();
+            data.put("src","/upload/"+fileName);
+            file.transferTo(dir);
+            fileUp.setData(data);
+            fileUp.setMsg("上传成功!");
+        }catch (Exception e){
+            e.printStackTrace();
+            fileUp.setCode(1);
+            fileUp.setMsg("上传失败!");
+        }
+        return fileUp;
+    }
+    @PostMapping("delete")
+    @ResponseBody
+    public Message delete(String path, HttpServletRequest request) throws IOException {
+        String dir = request.getSession().getServletContext().getRealPath("/");
+        try{
+            File file=new File(dir+path);
+            if(file.exists()&&file.isFile()){
+                file.delete();
+            }
+            return Message.success("删除成功!");
+        }catch (Exception e){
+            return Message.fail("删除失败!");
+        }
+    }
+    @PostMapping("daoru")
+    @ResponseBody
+    public Message daoru(String path,HttpServletRequest request) throws IOException {
+        String dir[] = path.split(";");
+        List<AgencyVo> agencyVoList = new ArrayList<AgencyVo>();
+        String root = request.getSession().getServletContext().getRealPath("/");
+        try{
+            for (String str:dir) {
+                File file=new File(root+str);
+                FileInputStream fileInputStream = new FileInputStream(file);
+                agencyVoList = ExcelUtil.importAgencyByPoi(fileInputStream);
+                if(agencyVoList.size()==1){
+                    if(agencyVoList.get(0).getInfo()!=null){
+                        return Message.fail("导入失败!"+agencyVoList.get(0).getInfo());
+                    }
+                }
+            }
+            for (AgencyVo agencyVo:agencyVoList) {
+                agencyService.add(agencyVo);
+            }
+            return Message.success("导入成功!");
+        }catch (Exception e){
+            e.printStackTrace();
+            return Message.fail("导入失败!");
+        }
     }
     @InitBinder
     public void initBinder(WebDataBinder binder) {

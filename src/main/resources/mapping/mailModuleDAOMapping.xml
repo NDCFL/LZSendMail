@@ -9,18 +9,18 @@
         delete from t_mailmodule where id = #{id}
     </delete>
     <select id="pageLists" resultMap="mailModuleMap">
-        select * from t_mailmodule where userId=#{userId} limit #{pageQuery.pageNo},#{pageQuery.pageSize}
+        select top(#{pageQuery.pageSize}) * from t_mailmodule where id not in(select top(#{pageQuery.pageNo}) id from t_mailmodule) and  userId=#{userId}
     </select>
     <select id="listAll" resultMap="mailModuleMap">
         select * from t_mailmodule
     </select>
-    <select id="count" resultType="int">
-        select count(*) from t_mailmodule
+    <select id="count" resultType="int" parameterType="com.fz.comment.PageQuery">
+        select count(*) from t_mailmodule where userId=#{userId}
     </select>
     <insert id="add" parameterType="mailModuleVo">
-        insert into t_mailmodule (title, content, accessoryPath, userId,createTime) values ( #{title},  #{content},  #{accessoryPath},  #{userId},#{createTime})
+        insert into t_mailmodule (title, content, accessoryPath, userId,createTime,csend) values ( #{title},  #{content},  #{accessoryPath},  #{userId},#{createTime},#{csend})
     </insert>
     <update id="update">
-        update t_mailmodule set title=#{title},content=#{content},accessoryPath=#{accessoryPath} where id = #{id}
+        update t_mailmodule set title=#{title},content=#{content},accessoryPath=#{accessoryPath},csend=#{csend} where id = #{id}
     </update>
 </mapper>

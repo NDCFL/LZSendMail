@@ -3,19 +3,17 @@
 <mapper namespace="com.fz.dao.EmailDAO">
     <resultMap id="emailMap" type="emailVo"></resultMap>
     <sql id="where_all">
-        <where>
-            <if test="title != null and title !='' " >
+            <if test="pageQuery.title != null and pageQuery.title !='' " >
                 and (
-                    LOWER(title) like LOWER(CONCAT('%${title}%')) or
-                    LOWER(content) like LOWER(CONCAT('%${title}%')) or
-                    LOWER(srcsend) like LOWER(CONCAT('%${title}%')) or
-                    LOWER(endsend) like LOWER(CONCAT('%${title}%'))
+                    title like '%${pageQuery.title}%' or
+                    content like '%${pageQuery.title}%' or
+                    srcsend like '%${pageQuery.title}%' or
+                    endsend like '%${pageQuery.title}%'
                 )
             </if>
-            <if test="status != null and status !='' " >
-                and status in (${status})
+            <if test="pageQuery.status != null and pageQuery.status !='' " >
+                and status in (${pageQuery.status})
             </if>
-        </where>
     </sql>
     <select id="queryById" resultMap="emailMap" parameterType="long">
         select * from t_mailhistory where id = #{id}
@@ -23,17 +21,17 @@
     <delete id="delete" parameterType="long">
         delete from t_mailhistory where id = #{id}
     </delete>
-    <select id="pagelist" resultMap="emailMap" statementType="STATEMENT">
-        select * from t_mailhistory  <include refid="where_all"/> limit ${pageNo},${pageSize}
+    <select id="pagelists" resultMap="emailMap" statementType="STATEMENT">
+       select top(${pageQuery.pageSize}) * from t_mailhistory where id not in(select top(${pageQuery.pageNo}) id from t_mailhistory) and userId=${userId}  <include refid="where_all"/> order by createTime DESC
     </select>
     <select id="listAll" resultMap="emailMap" statementType="STATEMENT">
-        select * from t_mailhistory  <include refid="where_all"/>
+        select * from t_mailhistory where 1=1  <include refid="where_all"/> order by createTime DESC
     </select>
-    <select id="count" resultType="int">
-        select count(*) from t_mailhistory  <include refid="where_all"/>
+    <select id="counts" resultType="int" statementType="STATEMENT">
+        select count(*) from t_mailhistory where 1=1 and userId=${userId}  <include refid="where_all"/>
     </select>
     <insert id="add" parameterType="emailVo">
-        insert into t_mailhistory (srcsend, endsend, title, content, accessoryPath, createTime, emailCode, status, userId) values ( #{srcsend}, #{endsend}, #{title}, #{content}, #{accessoryPath}, #{createTime}, #{emailcode}, #{status}, #{userid})
+        insert into t_mailhistory (srcsend, endsend, title, content, accessoryPath, createTime, emailCode, status, userId,csend) values ( #{srcsend}, #{endsend}, #{title}, CONVERT(VARCHAR ,#{content}), CONVERT(VARCHAR ,#{accessoryPath}), #{createTime}, #{emailcode}, #{status}, #{userid},#{csend})
     </insert>
     <update id="update">
         update t_mailhistory set companyName=#{companyName},leader=#{leader},emailAcc=#{emailAcc} where id = #{id}
@@ -41,4 +39,14 @@
     <update id="updateStatus">
         update t_mailhistory set status=#{status} where id = #{id}
     </update>
+    <insert id="batchAdd" parameterType="java.util.List">
+        insert into t_mailhistory (srcsend, endsend, title, content, accessoryPath, createTime, emailcode, status, userId,csend)
+        values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (#{item.srcsend}, #{item.endsend}, #{item.title}, #{item.content},
+            #{item.accessoryPath},#{item.createTime},#{item.emailcode},
+            #{item.status},#{item.userid},#{csend}
+            )
+        </foreach>
+    </insert>
 </mapper>

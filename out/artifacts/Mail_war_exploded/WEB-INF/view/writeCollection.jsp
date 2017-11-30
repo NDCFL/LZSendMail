@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>丽珠邮件系统 - 写信</title>
+    <title>丽珠邮件系统 -  模板新增</title>
     <jsp:include page="comment/modulecss.jsp"></jsp:include>
     <link rel="stylesheet" type="text/css" href="<%=path%>/css/html5uploader.css"/>
     <link rel="stylesheet" href="<%=path%>/layui/css/layui.css"  media="all">
@@ -30,7 +30,7 @@
                     <a href="mailbox.html" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="放弃"><i class="fa fa-times"></i> 放弃</a>
                 </div>--%>
                 <h2>
-                    写信
+                    模板新增
                 </h2>
             </div>
             <div class="mail-box">
@@ -43,6 +43,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-sm-2 control-label">抄送人：</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="csend" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-sm-2 control-label">内容：</label>
                             <div  class="col-sm-10">
                                 <textarea style="height:400px"  id="editor" name="content"></textarea>
@@ -51,7 +57,7 @@
                         <textarea id="updateFile" style="display: none" name="updateFile"></textarea>
                         <div class="mail-attachment">
                             <p>
-                                <span><i class="fa fa-paperclip"></i> 附件(仅支持<b style="color:green;size">xls|xlsx|txt|doc|docs</b>)的格式文件</span>
+                                <span><i class="fa fa-paperclip"></i> 附件(仅支持<b style="color:green;size:10px">xls|xlsx|txt|doc|docx</b>)的格式文件</span>
                                 <div class="layui-upload-list">
                                     <table class="layui-table">
                                         <thead>
@@ -68,7 +74,7 @@
                             </p>
                         </div>
                         <div class="mail-body text-right tooltip-demo">
-                            <button type="button" onclick="add();" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-save"></i> 提交保存</button>
+                            <button type="button" onclick="add();" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-save"></i> 确认保存</button>
                         </div>
                     </form>
                 </div>
@@ -122,7 +128,7 @@
             elem: '#testList'
             ,url: '/mailModule/upload'
             ,accept: 'file'
-            ,exts: 'xls|xlsx|txt|doc|docs'
+            ,exts: 'xls|xlsx|txt|doc|docx'
             ,multiple: true
             ,auto: false
             ,bindAction: '#testListAction'

@@ -74,9 +74,9 @@
                             message: '密码不能为空'
                         },
                         stringLength: {
-                            min: 6,
+                            min: 2,
                             max: 18,
-                            message: '密码长度必须在6到18位之间'
+                            message: '密码长度必须在2到18位之间'
                         },
                         regexp: {
                             regexp: /^[a-zA-Z0-9_]+$/,

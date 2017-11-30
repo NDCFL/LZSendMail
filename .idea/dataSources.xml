@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="lzsendmail@localhost" uuid="0ac511cc-680d-4615-8dd8-74c38228ba56">
-      <driver-ref>mysql</driver-ref>
+    <data-source source="LOCAL" name="lzsendmail@localhost" uuid="16054cd0-e1c2-40fa-b42d-263df2c05831">
+      <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/lzsendmail</jdbc-url>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost:1433;database=lzsendmail</jdbc-url>
       <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="zeroDateTimeBehavior" value="convertToNull" />
-        <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
-        <property name="yearIsDateType" value="false" />
+        <property name="applicationName" value="DataGrip" />
       </driver-properties>
     </data-source>
   </component>

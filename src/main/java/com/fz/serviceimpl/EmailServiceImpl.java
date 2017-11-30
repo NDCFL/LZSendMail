@@ -3,6 +3,8 @@ package com.fz.serviceimpl;
 import com.fz.comment.PageQuery;
 import com.fz.comment.StatusQuery;
 import com.fz.dao.EmailDAO;
+import com.fz.dao.InterfaceDAO;
+import com.fz.mail.ReceiveMain;
 import com.fz.service.EmailService;
 import com.fz.vo.EmailVo;
 import com.fz.vo.UserVo;
@@ -15,6 +17,8 @@ import java.util.List;
 public class EmailServiceImpl implements EmailService {
     @Resource
     private EmailDAO emailDAO;
+    @Resource
+    private InterfaceDAO interfaceDAO;
     @Override
     public EmailVo queryById(long id) {
         return emailDAO.queryById(id);
@@ -51,7 +55,23 @@ public class EmailServiceImpl implements EmailService {
     }
 
     @Override
-    public List<EmailVo> seachEmail(String title,String userId) {
-        return emailDAO.seachEmail(title,userId);
+    public List<EmailVo> pagelists(PageQuery pageQuery, long userId) {
+        return emailDAO.pagelists(pageQuery, userId);
+    }
+
+    public int receiveMail(UserVo userVo){
+        List list = ReceiveMain.readMail(userVo);
+        try {
+            if(list.size()>0)
+                emailDAO.batchAdd(list);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list.size();
+    }
+
+    @Override
+    public int counts(PageQuery pageQuery, long userId) {
+        return emailDAO.counts(pageQuery, userId);
     }
 }

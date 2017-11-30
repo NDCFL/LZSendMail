@@ -100,7 +100,6 @@ public class UserController {
     @ResponseBody
     public Map<String, Boolean> checkPassword(String loginAcc, String loginPassword, HttpSession session) throws Exception{
         Map<String, Boolean> result = new HashMap<String, Boolean>();
-        System.out.println("加密后的密码=="+EncoderByMd5(loginPassword));
         String pwd = userService.checkPwd(loginAcc);
         if(!pwd.equals(EncoderByMd5(loginPassword))){
             result.put("valid", false);
@@ -188,9 +187,10 @@ public class UserController {
     }
     @RequestMapping("/userUpdateSave")
     @ResponseBody
-    public Message updateUser(UserVo user) throws  Exception{
+    public Message updateUser(UserVo user,HttpSession session) throws  Exception{
         try{
             userService.update(user);
+            session.setAttribute("userVo",userService.getInfo(user.getLoginAcc()));
             return  Message.success("修改成功!");
         }catch (Exception e){
             return Message.fail("修改失败!");
@@ -224,6 +224,11 @@ public class UserController {
     @RequestMapping("/userPage")
     public String userPage() throws  Exception{
         return "userList";
+    }
+    @RequestMapping("/exit")
+    public String exit(HttpSession session) throws  Exception{
+        session.invalidate();
+        return "loginPage";
     }
     @RequestMapping("/updateInfo")
     public Message updateInfo(UserVo userVo){

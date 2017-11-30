@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>经销商列表</title>
     <jsp:include page="comment/modulecss.jsp"></jsp:include>
+    <link rel="stylesheet" href="<%=path%>/layui/css/layui.css"  media="all">
 </head>
 <body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -35,6 +36,10 @@
                     <button id="btn_add" type="button" class="btn btn-default" data-toggle="modal" data-target="#webAdd">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span>新增
                     </button>
+                    <button id="btn_daoru" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span>导入数据
+                    </button>
+                    <a id="load"  href="<%=path%>/upload/agency.xlsx" class="btn btn-success">下载模板</a>
                 </div>
             </div>
         </div>
@@ -96,36 +101,29 @@
                     &times;
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                    经销商的修改
+                    导入数据
                 </h4>
             </div>
             <form class="form-horizontal" id="updateform" >
-                <div class="modal-body">
-                    <input type="hidden" name="id" id="id" value="">
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">所属公司：</label>
-                        <div class="col-sm-8">
-                            <input  name="companyName" id="companyName" minlength="2" maxlength="20" type="text" class="form-control" required="required" aria-required="true">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">负责人：</label>
-                        <div class="col-sm-8">
-                            <input  name="leader" id="leader" minlength="2" maxlength="20" type="text" class="form-control"  required="required" aria-required="true">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">经销商邮箱：</label>
-                        <div class="col-sm-8">
-                            <input  name="emailAcc" id="emailAcc" minlength="2" maxlength="20" type="email" class="form-control" required="required" aria-required="true">
-                        </div>
-                    </div>
+                <input type="hidden" id="path" name="path" value=""/>
+                <div class="layui-upload-list">
+                    <table class="layui-table">
+                        <thead>
+                        <tr><th>文件名</th>
+                            <th>大小</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr></thead>
+                        <tbody id="demoList"></tbody>
+                    </table>
                 </div>
+                <button type="button" class="layui-btn layui-btn-radius" id="testList">选择附件</button>
+                <button type="button"  class="layui-btn layui-btn-normal layui-btn-radius" id="testListAction">开始上传</button>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>
                     <button type="button" id="update" class="btn btn-primary" data-dismiss="modal">
-                        确认修改
+                        确认导入
                     </button>
                 </div>
             </form>
@@ -135,6 +133,7 @@
 <%--经销商的修改--%>
 <jsp:include page="comment/modulejs.jsp"></jsp:include>
 <script src="<%=path%>/js/pageJs/agencyList.js"></script>
+<script type="text/javascript" src="<%=path%>/layui/layui.all.js" charset="utf-8"></script>
 </body>
 <%--<script>--%>
     <%--$(function () {--%>
@@ -150,4 +149,116 @@
     <%--});--%>
 
 <%--</script>--%>
+<script>
+    layui.use('upload', function(){
+        var files="";
+        var $ = layui.jquery
+            ,upload = layui.upload;
+        //多文件列表示例
+        var demoListView = $('#demoList')
+            ,uploadListIns = upload.render({
+            elem: '#testList'
+            ,url: '/agency/upload'
+            ,accept: 'file'
+            ,exts: 'xls|xlsx'
+            ,multiple: true
+            ,auto: false
+            ,bindAction: '#testListAction'
+            ,choose: function(obj){
+                files= obj.pushFile(); //将每次选择的文件追加到文件队列
+                //读取本地文件
+                obj.preview(function(index, file, result){
+                    var tr = $(['<tr id="upload-'+ index +'">'
+                        ,'<td>'+ file.name +'</td>'
+                        ,'<td>'+ (file.size/1014).toFixed(1) +'kb</td>'
+                        ,'<td>等待上传</td>'
+                        ,'<td>'
+                        ,'<button class="layui-btn layui-btn-mini demo-reload layui-hide">重传</button>'
+                        ,'<button class="layui-btn layui-btn-mini layui-btn-danger demo-delete">删除</button>'
+                        ,'</td>'
+                        ,'</tr>'].join(''));
+
+                    //单个重传
+                    tr.find('.demo-reload').on('click', function(){
+                        obj.upload(index, file);
+                    });
+
+                    //删除
+                    tr.find('.demo-delete').on('click', function(){
+                        delete files[index]; //删除对应的文件
+                        tr.remove();
+                    });
+
+                    demoListView.append(tr);
+                });
+            }
+            ,done: function(res, index, upload){
+                if(res.code == 0){ //上传成功
+                    var tr = demoListView.find('tr#upload-'+ index)
+                        ,tds = tr.children();
+                    tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+                    tds.eq(3).html('<button class="layui-btn layui-btn-mini layui-btn-danger demo-delete">删除</button><input type="hidden" name="file" id="'+index+'" value="'+res.data.src+'"/>'); //清空操作
+                    //删除
+                    tr.find('.demo-delete').on('click', function(){
+                        $.post(
+                            "<%=path%>/agency/delete",
+                            {
+                                "path":$("#"+index).val()
+                            },function (data) {
+                                if(data.message.indexOf("成功")){
+                                    layer.msg(data.message, {icon:1,time:1000});
+                                }else{
+                                    layer.msg(data.message, {icon:2,time:1000});
+                                }
+                            },"json"
+                        );
+                        delete files[index]; //删除对应的文件
+                        tr.remove();
+                    });
+                    return;
+                }
+                this.error(index, upload);
+            }
+            ,error: function(index, upload){
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
+                tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+                tds.eq(3).html('<button class="layui-btn layui-btn-mini layui-btn-danger demo-delete">删除</button>'); //显示重传
+                //单个重传
+                tr.find('.demo-reload').on('click', function(){
+                    upload(index, file);
+                });
+                //删除
+                tr.find('.demo-delete').on('click', function(){
+                    delete files[index]; //删除对应的文件
+                    tr.remove();
+                });
+            }
+        });
+    });
+</script>
+<script>
+    $("#update").click(function(){
+        var path = "";
+        $("input[name='file']").each(function(){
+            if($(this).val()!=""){
+                path +=$(this).val()+";";
+            }
+        });
+        $("#path").val(path);
+        $.post(
+            "/agency/daoru",
+            $("#updateform").serialize(),
+            function(data){
+                if(data.message=="导入成功!"){
+                    layer.msg(data.message, {icon:1,time:1000});
+                    refush();
+                }else{
+                    layer.msg(data.message, {icon:2,time:1000});
+                    refush();
+                }
+            },"json"
+        );
+    });
+</script>
 </html>

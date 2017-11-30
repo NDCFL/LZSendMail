@@ -38,6 +38,7 @@ public class TypeController  {
         pagingBean.setPageSize(pageSize);
         pagingBean.setCurrentPage(pageIndex);
         PageQuery p=new PageQuery(pagingBean.getStartIndex(),pagingBean.getPageSize());
+        p.setUserId(userVo.getId());
         pagingBean.setTotal(typeService.count(p));
         pagingBean.setrows(typeService.pageLists(p,userVo.getId()));
         return pagingBean;

@@ -12,7 +12,7 @@
         select * from t_file limit #{pageNo},#{pageSize}
     </select>
     <select id="pagelists" resultMap="fileMap">
-        select * from t_file where  userId=#{userId}  limit #{pageQuery.pageNo},#{pageQuery.pageSize}
+        select top(#{pageQuery.pageSize}) * from t_file where id not in (select top(#{pageQuery.pageNo}) id from t_file ) and  userId=#{userId}
     </select>
     <select id="listAll" resultMap="fileMap">
         select * from t_file

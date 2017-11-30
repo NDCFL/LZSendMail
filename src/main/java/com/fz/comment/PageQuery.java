@@ -13,7 +13,7 @@ public class PageQuery {
     private Integer pageSize;
     private String title;
     private String status;
-
+    private long userId;
     public PageQuery(){}
 
     public PageQuery(Integer pageNo, Integer pageSize) {
@@ -57,4 +57,11 @@ public class PageQuery {
         return (pageNo - 1) * pageSize;
     }
 
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
 }

@@ -36,7 +36,7 @@
         delete from t_user where id = #{id}
   </delete>
   <select id="pagelist" resultMap="userVoMap" >
-        select * from t_user limit #{pageNo},#{pageSize}
+        select top(#{pageSize}) * from t_user where id not in(select top(#{pageNo}) id from t_user)
   </select>
   <insert id="add" parameterType="userVo">
         insert into t_user (loginAcc, loginPassword, email, password, serverHost, serverPort, status) values (#{loginAcc}, #{loginPassword}, #{email}, #{password}, #{serverHost}, #{serverPort}, #{status})

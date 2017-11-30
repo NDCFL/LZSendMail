@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">用户登录：</label>
+                        <label class="col-sm-3 control-label">用户密码：</label>
                         <div class="col-sm-8">
                             <input  name="loginPassword" minlength="2" maxlength="20" type="password" class="form-control" required="" aria-required="true">
                         </div>
@@ -81,46 +81,6 @@
 </div>
 <input type="hidden" value=""  id="deleteId"/>
 <%--网站新增结束--%>
-<%--用户的修改--%>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    &times;
-                </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    用户的修改
-                </h4>
-            </div>
-            <form class="form-horizontal" id="updateform" >
-                <div class="modal-body">
-                        <input type="hidden" name="id" id="id" value="">
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">支付方式：</label>
-                            <div class="col-sm-8">
-                                <input  name="title" minlength="2" id="title" maxlength="20" type="text" value="" class="form-control" required="" aria-required="true">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">说明：</label>
-                            <div class="col-sm-8">
-                                <textarea  name="description" class="form-control" id="description" required="" value="" aria-required="true"></textarea>
-                            </div>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                    </button>
-                    <button type="button" id="update" class="btn btn-primary" data-dismiss="modal">
-                        确认修改
-                    </button>
-                </div>
-            </form>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-</div>
-<%--用户的修改--%>
 <jsp:include page="comment/modulejs.jsp"></jsp:include>
 <script src="<%=path%>/js/pageJs/userList.js"></script>
 </body>

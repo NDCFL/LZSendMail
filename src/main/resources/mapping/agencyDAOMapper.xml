@@ -9,7 +9,8 @@
         delete from t_agency where id = #{id}
     </delete>
     <select id="pagelist" resultMap="agencyMap">
-        select * from t_agency limit #{pageNo},#{pageSize}
+        <!--select  * from t_agency limit #{pageNo},#{pageSize}-->
+        select top(#{pageSize}) * from t_agency where id NOT  in(select top(#{pageNo}) id from t_agency)
     </select>
     <select id="listAll" resultMap="agencyMap">
         select * from t_agency

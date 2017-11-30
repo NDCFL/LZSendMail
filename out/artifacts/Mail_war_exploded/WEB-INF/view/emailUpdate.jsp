@@ -78,7 +78,7 @@
                         <textarea id="updateFile" style="display: none" name="accessoryPath"></textarea>
                         <div class="mail-attachment">
                             <p>
-                                <span><i class="fa fa-paperclip"></i> 附件 - (仅支持<b style="color:green;font-size: large">xls|xlsx|txt|doc|docs</b>)的格式文件</span>
+                                <span><i class="fa fa-paperclip"></i> 附件 - (仅支持<b style="color:green;font-size: large">xls|xlsx|txt|doc|docx</b>)的格式文件</span>
                             </p>
                             <div class="attachment" id="info">
 
@@ -141,7 +141,13 @@
         var infoHtml ='';
         for(var j=0;j<endPathInfo.length;j++){
             if(endPathInfo[j]!=""){
-                infoHtml+='<div class="file-box" id="'+endPathInfo[j]+'"><input type="hidden" value="/upload/'+endPathInfo[j]+'"/><div class="file"><a href="<%=path%>/upload/'+endPathInfo[j]+'"><span class="corner"></span><div class="icon"><i class="fa fa-file"></i></div><div class="file-name">'+endPathInfo[j]+'</div></a></div><a onclick="javascript:if(confirm(\'删除确认\')){$(this).parent(\'div\').remove();}else{return false;}" style="color:red;">删除附件</a></div>';
+                if(endPathInfo[j].substring(endPathInfo[j].indexOf(".")+1,endPathInfo[j].length)=="xls" || endPathInfo[j].substring(endPathInfo[j].indexOf(".")+1,endPathInfo[j].length)=="xlsx"){
+                    infoHtml+='<div class="file-box" id="'+endPathInfo[j]+'"><input type="hidden" value="/upload/'+endPathInfo[j]+'"/><div class="file"><a href="<%=path%>/upload/'+endPathInfo[j]+'"><span class="corner"></span><div class="icon"><i class="fa fa-file-excel-o" style="color:#0c804e"></i></div><div class="file-name">'+endPathInfo[j]+'</div></a></div><a onclick="javascript:if(confirm(\'删除确认\')){$(this).parent(\'div\').remove();}else{return false;}" style="color:red;">删除附件</a></div>';
+                }else if(endPathInfo[j].substring(endPathInfo[j].indexOf(".")+1,endPathInfo[j].length)=="doc" || endPathInfo[j].substring(endPathInfo[j].indexOf(".")+1,endPathInfo[j].length)=="docs"){
+                    infoHtml+='<div class="file-box" id="'+endPathInfo[j]+'"><input type="hidden" value="/upload/'+endPathInfo[j]+'"/><div class="file"><a href="<%=path%>/upload/'+endPathInfo[j]+'"><span class="corner"></span><div class="icon"><i class="fa fa-file-word-o" style="color:#0df1e9"></i></div><div class="file-name">'+endPathInfo[j]+'</div></a></div><a onclick="javascript:if(confirm(\'删除确认\')){$(this).parent(\'div\').remove();}else{return false;}" style="color:red;">删除附件</a></div>';
+                }else{
+                    infoHtml+='<div class="file-box" id="'+endPathInfo[j]+'"><input type="hidden" value="/upload/'+endPathInfo[j]+'"/><div class="file"><a href="<%=path%>/upload/'+endPathInfo[j]+'"><span class="corner"></span><div class="icon"><i class="fa fa-file-text-o" style="color:#1357ff"></i></div><div class="file-name">'+endPathInfo[j]+'</div></a></div><a onclick="javascript:if(confirm(\'删除确认\')){$(this).parent(\'div\').remove();}else{return false;}" style="color:red;">删除附件</a></div>';
+                }
             }
         }
         infoHtml+="<div class=\"clearfix\"></div>";
@@ -185,7 +191,7 @@
             elem: '#testList'
             ,url: '/mailModule/upload'
             ,accept: 'file'
-            ,exts: 'xls|xlsx|txt|doc|docs'
+            ,exts: 'xls|xlsx|txt|doc|docx'
             ,multiple: true
             ,auto: false
             ,bindAction: '#testListAction'
