@@ -84,6 +84,7 @@ $('#mytab').bootstrapTable({
             formatter: function (value, row, index) {
                 var e = '<a title="编辑" href="javascript:void(0);" id="user"  data-toggle="modal" data-id="\'' + row.id + '\'" data-target="#myModal" onclick="return edit(\'' + row.id + '\')"><i class="glyphicon glyphicon-pencil" alt="修改" style="color:green"></i></a> ';
                 var d = '<a title="删除" href="javascript:void(0);" onclick="del('+row.id+','+row.status+')"><i class="glyphicon glyphicon-trash" alt="删除" style="color:red"></i></a> ';
+                var g = '<a title="重置密码" href="javascript:void(0);" onclick="resetPwd('+row.id+','+row.status+')" ><i class="glyphicon glyphicon-pencil" alt="重置密码" style="color:green"></i></a> ';
                 var f='';
                 if(row.status==1){
                     f = '<a title="激活" href="javascript:void(0);" onclick="updatestatus('+row.id+','+0+')"><i class="glyphicon glyphicon-ok-sign" style="color:green"></i></a> ';
@@ -91,7 +92,7 @@ $('#mytab').bootstrapTable({
                     f = '<a title="冻结" href="javascript:void(0);" onclick="updatestatus('+row.id+','+1+')"><i class="glyphicon glyphicon-remove-sign"  style="color:red"></i></a> ';
                 }
 
-                return d+f;
+                return g+d+f;
             }
         }
     ],
@@ -152,6 +153,21 @@ function edit(name){
         "json"
     );
 }
+function resetPwd(id,status){
+    layer.confirm('确认要重置该用户的密码吗？',function(index){
+        $.post("/user/resetPwd/"+id,
+            function(data){
+                if(data.message.indexOf("成功")){
+                    layer.msg(data.message,{icon:1,time:2000});
+                }else{
+                    layer.msg(data.message,{icon:2,time:1000});
+                }
+                refush();
+            },
+            "json"
+        );
+    });
+}
 function updatestatus(id,status){
     $.post("/user/updateStatus/"+id+"/"+status,
         function(data){
@@ -186,21 +202,6 @@ $("#update").click(function(){
         $("#updateform").serialize(),
         function(data){
             if(data.message=="修改成功!"){
-                layer.msg(data.message, {icon:1,time:1000});
-                refush();
-            }else{
-                layer.msg(data.message, {icon:1,time:1000});
-                refush();
-            }
-        },"json"
-    );
-});
-$("#add").click(function(){
-    $.post(
-        "/user/userAddSave",
-        $("#formadd").serialize(),
-        function(data){
-            if(data.message=="新增成功!"){
                 layer.msg(data.message, {icon:1,time:1000});
                 refush();
             }else{

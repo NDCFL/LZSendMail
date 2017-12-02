@@ -24,10 +24,11 @@
 <body class="gray-bg">
 <div class="wrapper wrapper-content">
     <div class="row">
-        <div class="col-sm-12 animated fadeInRight">
+        <jsp:include page="comment/variable.jsp"></jsp:include>
+        <div class="col-sm-9 animated fadeInRight">
             <div class="mail-box-header">
                 <h2>
-                    模板的修改
+                    模板修改
                 </h2>
             </div>
             <div class="mail-box">
@@ -38,13 +39,13 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">主题：</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="title" value="${mailModule.title}">
+                                <input type="text" class="form-control" id="title" name="title" value="${mailModule.title}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">抄送人：</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="csend" value="${mailModule.csend}">
+                                <input type="text" class="form-control" id="csend" name="csend" value="${mailModule.csend}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -56,7 +57,7 @@
                         <textarea id="updateFile" style="display: none" name="updateFile"></textarea>
                         <div class="mail-attachment">
                             <p>
-                                <span><i class="fa fa-paperclip"></i>附件列表(仅支持<b style="color:green;font-size: large">xls|xlsx|txt|doc|docx</b>)的格式文件</span>
+                                <span><i class="fa fa-paperclip"></i>附件列表(仅支持<b style="color:green;font-size: large">xls|xlsx|txt|doc|docx|xml</b>)的格式文件，xml为模版文件，系统会自动转成Excel文件</span>
                             </p>
                             <div class="attachment" >
                                 <c:if test="${listFile!=null}">
@@ -64,7 +65,7 @@
                                         <div class="file-box" id="${lf.index}">
                                             <input type="hidden" value="${l}">
                                             <div class="file">
-                                                <a href="<%=path%>/upload/${l}">
+                                                <a href='<%=path%>/upload/<c:if test="${l.substring(l.indexOf('.')+1,l.length())=='xml'}">template/</c:if>${l}'>
                                                     <span class="corner"></span>
                                                     <div class="icon">
                                                         <c:if test="${l.substring(l.indexOf('.')+1,l.length())=='doc' || l.substring(l.indexOf('.')+1,l.length())=='docx'}">
@@ -73,7 +74,7 @@
                                                         <c:if test="${l.substring(l.indexOf('.')+1,l.length())=='xlsx' ||l.substring(l.indexOf('.')+1,l.length())=='xls'}">
                                                             <i class="fa fa-file-excel-o" style="color:#0c804e"></i>
                                                         </c:if>
-                                                        <c:if test="${l.substring(l.indexOf('.')+1,l.length())=='txt' ||l.substring(l.indexOf('.')+1,l.length())=='txt'}">
+                                                        <c:if test="${l.substring(l.indexOf('.')+1,l.length())=='txt' ||l.substring(l.indexOf('.')+1,l.length())=='xml'}">
                                                             <i class="fa fa-file-text-o" style="color:#1357ff"></i>
                                                         </c:if>
                                                     </div>
@@ -82,7 +83,7 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                            <a onclick="$(this).parent('div').remove()" style="color:red;">删除附件</a>
+                                            <a onclick="javascript:if(confirm('删除确认')){$(this).parent('div').remove();}else{return false;}" style="color:red;">删除附件</a>
                                         </div>
                                     </c:forEach>
                                 </c:if>
@@ -123,25 +124,16 @@
 </script>
 <script type="text/javascript" src="<%=path%>/layui/layui.all.js" charset="utf-8"></script>
 </body>
-<script type="text/javascript">
-    var _editor = UE.getEditor("uploadFile",{
-        initialFrameWidth:800,
-        initialFrameHeight:300,
-    });
-
-    //弹出文件上传的对话框
-    function upFiles() {
-        var myFiles = _editor.getDialog("attachment");
-        myFiles.open();
-    }
-    function getFileInfo() {
-        $("#fileinfo").html(_editor.getContent());
-        $("#file").html( _editor.getContent());
-    }
-    setInterval("getFileInfo()","500");
-</script>
 <script>
     function update(){
+        if($("#title").val()==""){
+            layer.msg('模板主题不能为空！', {icon:2,time:1000});
+            return;
+        }
+        if(ue.getContentTxt()==""){
+            layer.msg('内容不能为空！', {icon:2,time:1000});
+            return;
+        }
         var path = "";
         $(".attachment input ").each(function(){
             if($(this).val()!=""){
@@ -183,7 +175,7 @@
             elem: '#testList'
             ,url: '/mailModule/upload'
             ,accept: 'file'
-            ,exts: 'xls|xlsx|txt|doc|docx'
+            ,exts: 'xls|xlsx|txt|doc|docx|xml'
             ,multiple: true
             ,auto: false
             ,bindAction: '#testListAction'

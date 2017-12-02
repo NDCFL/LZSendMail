@@ -84,6 +84,7 @@ public class SendMailController {
             try {
                 SendMain.sendEmail(mail,user);
                 if(mailModuleVo.getType()==-1){
+                    emailService.updateStatus(new StatusQuery(mailModuleVo.getId(),1));
                 }else{
                     EmailVo emailVo = new EmailVo();
                     emailVo.setSrcsend(user.getEmail());

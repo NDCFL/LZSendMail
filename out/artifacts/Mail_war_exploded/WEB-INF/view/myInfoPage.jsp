@@ -89,12 +89,43 @@
     </div>
 </div>
 <jsp:include page="comment/modulejs.jsp"></jsp:include>
-
 <script>
     $(function() {
         refush();
     });
     $("#bt").click(function(){
+        if($("#nickname").val()==""){
+            layer.msg("发信昵称不能为空", {icon:2,time:1000});
+            return;
+        }
+        if($("#email").val()==""){
+            layer.msg("邮箱账号不能为空", {icon:2,time:1000});
+            return;
+        }
+        if($("#email").val().indexOf("@",".")==-1){
+            layer.msg("邮箱账号格式不正确", {icon:2,time:1500});
+            return;
+        }
+        if($("#password").val()==""){
+            layer.msg("邮箱密码不能为空", {icon:2,time:1500});
+            return;
+        }
+        if($("#serverHost").val()==""){
+            layer.msg("发件邮箱服务器不能为空", {icon:2,time:1500});
+            return;
+        }
+        if($("#serverPort").val()==""){
+            layer.msg("发件邮箱服务器端口不能为空", {icon:2,time:1500});
+            return;
+        }
+        if($("#inserverHost").val()==""){
+            layer.msg("收件邮箱服务器不能为空", {icon:2,time:1500});
+            return;
+        }
+        if($("#inserverPort").val()==""){
+            layer.msg("收件邮箱服务器端口不能为空", {icon:2,time:1500});
+            return;
+        }
         $.post(
             "<%=path%>/user/userUpdateSave",
             $("#form").serialize(),

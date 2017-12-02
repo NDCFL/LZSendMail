@@ -28,13 +28,18 @@ public class FileController {
     private FileService fileService;
     @RequestMapping("fileList")
     @ResponseBody
-    public PagingBean fileList(int pageSize, int pageIndex, HttpSession session) throws  Exception{
+    public PagingBean fileList(int pageSize, int pageIndex, HttpSession session,String title) throws  Exception{
         UserVo userVo = (UserVo) session.getAttribute("userVo");
         PagingBean pagingBean = new PagingBean();
         pagingBean.setPageSize(pageSize);
         pagingBean.setCurrentPage(pageIndex);
-        pagingBean.setTotal(fileService.counts(userVo.getId()));
-        pagingBean.setrows(fileService.pagelists(new PageQuery(pagingBean.getStartIndex(),pagingBean.getPageSize()),userVo.getId()));
+        PageQuery pageQuery = new PageQuery();
+        pageQuery.setUserId(userVo.getId());
+        pageQuery.setTitle(title);
+        pageQuery.setPageNo(pagingBean.getStartIndex());
+        pageQuery.setPageSize(pagingBean.getPageSize());
+        pagingBean.setTotal(fileService.count(pageQuery));
+        pagingBean.setrows(fileService.pagelist(pageQuery));
         return pagingBean;
     }
     @RequestMapping("/deleteManyFile")

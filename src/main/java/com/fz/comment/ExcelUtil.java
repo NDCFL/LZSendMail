@@ -47,11 +47,11 @@ public class ExcelUtil {
                     if(j==0){
                         row = sheet.getRow(j);
                         String head = "";
-                        for(int h=0;h<3;h++){
+                        for(int h=0;h<4;h++){
                             head+=row.getCell(h);
                         }
                         AgencyVo agencyVo1 = new AgencyVo();
-                        if(!head.equals("公司名称法人邮件账号")){
+                        if(!head.equals("公司名称法人邮件账号客户分类id")){
                             agencyVo1.setInfo("请使用正确的模板导入数据!");
                             infos.add(agencyVo1);
                             return infos;

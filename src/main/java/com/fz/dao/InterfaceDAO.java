@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface InterfaceDAO {
-    List<HashMap> filingPrice(HashMap map);
+    HashMap filingPrice(HashMap map);
 
     List<HashMap> h_CtDetail(HashMap map);
 }

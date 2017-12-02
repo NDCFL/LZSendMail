@@ -88,4 +88,9 @@ public class UserServiceImpl implements UserService{
     public UserVo getInfo(String loginAcc) {
         return userDAO.getInfo(loginAcc);
     }
+
+    @Override
+    public void resetUpdate(UserVo userVo) {
+        userDAO.resetUpdate(userVo);
+    }
 }

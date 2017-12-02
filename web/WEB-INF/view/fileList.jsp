@@ -32,14 +32,12 @@
                     <button id="btn_delete" onclick="deleteMany();" type="button" class="btn btn-default" style="display: block;">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true" ></span>批量删除
                     </button>
-                    <button id="btn_add" type="button" class="btn btn-default" data-toggle="modal" data-target="#webAdd">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span>新增
-                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<input type="hidden" id="deleteId" value="" />
 <jsp:include page="comment/modulejs.jsp"></jsp:include>
 <script src="<%=path%>/js/pageJs/file.js"></script>
 </body>

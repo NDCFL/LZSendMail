@@ -108,4 +108,21 @@ public class UserVo implements Serializable {
     public void setInserverPort(Integer inserverPort) {
         this.inserverPort = inserverPort;
     }
+
+    @Override
+    public String toString() {
+        return "UserVo{" +
+                "id=" + id +
+                ", loginAcc='" + loginAcc + '\'' +
+                ", loginPassword='" + loginPassword + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", serverHost='" + serverHost + '\'' +
+                ", serverPort=" + serverPort +
+                ", nickname='" + nickname + '\'' +
+                ", inserverHost='" + inserverHost + '\'' +
+                ", inserverPort=" + inserverPort +
+                ", status=" + status +
+                '}';
+    }
 }

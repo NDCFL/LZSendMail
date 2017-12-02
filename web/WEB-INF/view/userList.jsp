@@ -71,7 +71,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>
-                    <button type="submit" id="add" class="btn btn-primary" data-dismiss="modal">
+                    <button type="submit" id="add" class="btn btn-primary" >
                         确认新增
                     </button>
                 </div>
@@ -139,7 +139,22 @@
                 }
             }
         }
+    }).on('success.form.bv', function(e) {//点击提交之后
+        var $form = $(e.target);
+        var bv = $form.data('bootstrapValidator');
+        $.post(
+            "/user/userAddSave",
+            $("#formadd").serialize(),
+            function(data){
+                if(data.message=="新增成功!"){
+                    layer.msg(data.message, {icon:1,time:1000});
+                }else{
+                    layer.msg(data.message, {icon:1,time:1000});
+                }
+                refush();
+                $("#webAdd").modal('hide');
+            },"json"
+        );
     });
-
 </script>
 </html>

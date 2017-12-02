@@ -2,6 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.fz.dao.FileDAO">
     <resultMap id="fileMap" type="fileVo"></resultMap>
+    <sql id="search">
+        <if test="title != null and title !='' " >
+            and (
+                name like '%${title}%' or
+                path like '%${title}%'
+            )
+        </if>
+    </sql>
     <select id="queryById" resultMap="fileMap" parameterType="long">
         SELECT * from t_file where id=#{id}
     </select>
@@ -9,16 +17,16 @@
         delete from t_file where id = #{id}
     </delete>
     <select id="pagelist" resultMap="fileMap">
-        select * from t_file limit #{pageNo},#{pageSize}
+        select top(#{pageSize}) t.* from t_file t where t.id not in (select top(#{pageNo}) id from t_file ) and  t.userId=#{userId} and (select RIGHT (path,3) from t_file f where t.id=f.id ) != 'xml' <include refid="search"/>
     </select>
     <select id="pagelists" resultMap="fileMap">
-        select top(#{pageQuery.pageSize}) * from t_file where id not in (select top(#{pageQuery.pageNo}) id from t_file ) and  userId=#{userId}
+        select top(#{pageQuery.pageSize}) t.* from t_file t where t.id not in (select top(#{pageQuery.pageNo}) id from t_file ) and  t.userId=#{userId} and (select RIGHT (path,3) from t_file f where t.id=f.id ) != 'xml' order by id DESC
     </select>
     <select id="listAll" resultMap="fileMap">
         select * from t_file
     </select>
     <select id="count" resultType="int">
-        select count(*) from t_file
+        select count(*) from t_file where userId=#{userId} <include refid="search"/>
     </select>
     <select id="counts" resultType="int" parameterType="long">
         select count(*) from t_file where userId=#{userId}

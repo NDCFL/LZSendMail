@@ -12,6 +12,6 @@ import java.util.List;
 public interface EmailDAO extends BaseDAO<EmailVo> {
     List<EmailVo> pagelists(@Param("pageQuery") PageQuery pageQuery, @Param("userId") long userId);
     int counts(@Param("pageQuery") PageQuery pageQuery, @Param("userId") long userId);
-
+    long emailAdd(EmailVo emailVo);
     void batchAdd(List list);
 }

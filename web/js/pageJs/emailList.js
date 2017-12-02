@@ -223,9 +223,9 @@ function deleteMany(){
 
     }
     $("#deleteId").val(row);
-    layer.confirm('确认要执行批量删除用户信息数据吗？',function(index){
+    layer.confirm('确认要执行批量删除数据吗？',function(index){
         $.post(
-            "/email/deleteManyAgency",
+            "/email/deleteManyEmail",
             {
                 "manyId":$("#deleteId").val()
             },

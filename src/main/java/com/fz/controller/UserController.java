@@ -240,6 +240,20 @@ public class UserController {
             return Message.success("修改失败!");
         }
     }
+    @RequestMapping("/resetPwd/{id}")
+    @ResponseBody
+    public Message resetPwd(@PathVariable("id") Long id){
+        try{
+            UserVo userVo = new UserVo();
+            userVo.setId(id);
+            userVo.setPassword(EncoderByMd5("111111"));
+            userService.resetUpdate(userVo);
+            return Message.success("重置成功!新密码为6个1");
+        }catch (Exception e){
+            e.printStackTrace();
+            return Message.success("重置失败!");
+        }
+    }
     @RequestMapping("updateStatus/{id}/{status}")
     @ResponseBody
     public Message updateStatus(@PathVariable("id") long id,@PathVariable("status") int status) throws  Exception{

@@ -16,6 +16,7 @@ public class EmailVo {
     private  Integer status;//0未审核 1 已发送 2 收件箱
     private  long userid;//所属用户编号
     private Integer size;
+    private String touser;
     private List<String> fileName;
 
     public String getCsend() {
@@ -120,5 +121,31 @@ public class EmailVo {
 
     public void setFileName(List<String> fileName) {
         this.fileName = fileName;
+    }
+
+    public String getTouser() {
+        return touser;
+    }
+
+    public void setTouser(String touser) {
+        this.touser = touser;
+    }
+
+    @Override
+    public String toString() {
+        return "EmailVo{" +
+                "id=" + id +
+                ", csend='" + csend + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", accessoryPath='" + accessoryPath + '\'' +
+                ", createTime=" + createTime +
+                ", emailcode='" + emailcode + '\'' +
+                ", status=" + status +
+                ", userid=" + userid +
+                ", size=" + size +
+                ", touser='" + touser + '\'' +
+                ", fileName=" + fileName +
+                '}';
     }
 }

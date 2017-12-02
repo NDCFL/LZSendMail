@@ -65,8 +65,8 @@
                                     <div class="attachment">
                                         <div class="file-box">
                                             <div class="file">
-                                                <input type="hidden" value="/${f}">
-                                                <a href="<%=path%>/${f}">
+                                                <input type="hidden" value="${f}">
+                                                <a href="<%=path%>${f}">
                                                     <span class="corner"></span>
                                                     <div class="icon">
                                                         <c:if test="${f.substring(f.indexOf('.')+1,f.length())=='doc' || f.substring(f.indexOf('.')+1,f.length())=='docx'}">
@@ -78,9 +78,12 @@
                                                         <c:if test="${f.substring(f.indexOf('.')+1,f.length())=='txt'}">
                                                             <i class="fa fa-file-text-o" style="color:#1357ff"></i>
                                                         </c:if>
+                                                        <c:if test="${f.substring(f.indexOf('.')+1,f.length())=='xml'}">
+                                                            <i class="fa fa-file-text-o" style="color:#1357ff"></i>
+                                                        </c:if>
                                                     </div>
                                                     <div class="file-name">
-                                                            ${f}
+                                                            ${f.substring(f.lastIndexOf('/')+1)}
                                                     </div>
                                                 </a>
                                             </div>
@@ -93,7 +96,7 @@
                     <div class="mail-body text-right tooltip-demo">
                         <c:if test="${email.status==0}">
                             <a class="btn btn-sm btn-white" href="<%=path%>/mail/sendPage/${email.id}"><i class="fa fa-reply"></i> 回复</a>
-                            <a class="btn btn-sm btn-white" onclick="update(${email.id});"><i class="glyphicon glyphicon-ok" style="color:green"></i> 审核</a>
+                            <a class="btn btn-sm btn-white" onclick="update();"><i class="glyphicon glyphicon-ok" style="color:green"></i> 审核</a>
                         </c:if>
                      </div>
                     <div class="clearfix"></div>
@@ -101,43 +104,28 @@
             </div>
         </div>
         <textarea id="updateFile"  style="display: none" name="accessoryPath"></textarea>
+        <input type="hidden" id="id" name="id" value="${email.id}" />
     </form>
 </div>
 <jsp:include page="comment/modulejs.jsp"></jsp:include>
 <script type="text/javascript" src="<%=path%>/layui/layui.all.js"></script>
 <script>
-    function update(id) {
+    function update() {
         layer.alert('',{
-            icon:1,title:'审核确认',content:'您确定要审核这封邮件吗？',closeBtn:1},function(index){
+            icon:1,title:'审核确认|并发送',content:'您确定要审核这封邮件吗，审核通过即刻发送邮箱？',closeBtn:1},function(index){
             $.post(
-                "<%=path%>/mail/update/"+id,
-                function(data){
-                    if(data.message=="审核通过!"){
-                        layer.msg(data.message, {icon:1,time:1000});
-                        var path = "";
-                        $(".attachment input ").each(function(){
-                            if($(this).val()!=""){
-                                path +=$(this).val()+";";
-                            }
+                "<%=path%>/mail/send",
+                $("#form").serialize(),
+                function(data) {
+                    if(data.message.indexOf("成功")>0) {
+                        layer.alert(data.message, function(){
+                            location.href = "/email/lookCollection/" + $("#id").val();
                         });
-                        $("#updateFile").html(path);
-                        $.post(
-                            "<%=path%>/mail/send",
-                            $("#form").serialize(),
-                            function(data) {
-                                if(data.message.indexOf("成功")>0) {
-                                    layer.confirm('邮件发送提醒', {icon: 1, title:data.message}, function(index){
-                                        location.href = "/email/lookCollection/" + id;
-                                        layer.close(index);
-                                    });
-                                }
-                                else
-                                    layer.msg(data.message, {icon:2,time:1000});
-                            },
-                            "json"
-                        );
                     }
-                },"json"
+                    else
+                        layer.msg(data.message, {icon:2,time:1000});
+                },
+                "json"
             );
             layer.close(index);
         });

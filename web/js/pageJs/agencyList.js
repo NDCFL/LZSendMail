@@ -56,11 +56,18 @@ $('#mytab').bootstrapTable({
         }
         ,
         {
+            title:'客户分类ID',
+            field:'type',
+            align:'center',
+            sortable:true
+        }
+        ,
+        {
             title:'操作',
             align:'center',
             field:'',
             formatter: function (value, row, index) {
-                var e = '<a title="编辑" href="javascript:void(0);" id="agency"  data-toggle="modal" data-id="\'' + row.id + '\'" data-target="#myModal" onclick="return edit(\'' + row.id + '\')"><i class="glyphicon glyphicon-pencil" alt="修改" style="color:green"></i></a> ';
+                var e = '<a title="编辑" href="javascript:void(0);" id="agency"  data-toggle="modal" data-id="\'' + row.id + '\'" data-target="#webupdate" onclick="return edit(\'' + row.id + '\')"><i class="glyphicon glyphicon-pencil" alt="修改" style="color:green"></i></a> ';
                 var d = '<a title="删除" href="javascript:void(0);" onclick="del('+row.id+','+row.status+')"><i class="glyphicon glyphicon-trash" alt="删除" style="color:red"></i></a> ';
                 var f='';
                 if(row.status==1){
@@ -124,7 +131,7 @@ function del(agencyid,status){
 function edit(name){
     $.post("/agency/findAgency/"+name,
         function(data){
-            $("#updateform").autofill(data);
+            $("#webupdate").autofill(data);
         },
         "json"
     );
@@ -151,6 +158,38 @@ function updatestatus(id,status){
     );
 }
 //查询按钮事件
+$('#updateAgency').click(function(){
+    if($("#companyName").val()==""){
+        layer.msg('所属公司不能为空！', {icon:2,time:1000});
+        return;
+    }
+    if($("#leader").val()==""){
+        layer.msg('负责人不能为空！', {icon:2,time:1000});
+        return;
+    }
+    if($("#emailAc1").val()==""){
+        layer.msg('经销商账号不能为空！', {icon:2,time:1000});
+        return;
+    }
+    if($("#emailAcc").val().indexOf("@",".")==-1){
+        layer.msg("经销商账号格式不正确", {icon:2,time:1500});
+        return;
+    }
+    $.post("/agency/agencyUpdateSave",
+        $("#formupdate").serialize(),
+        function(data){
+            if(data.message.indexOf("成功")){
+                layer.msg(data.message,{icon:1,time:1000});
+            }else{
+                layer.msg(data.message,{icon:2,time:1000});
+            }
+            $("#webupdate").modal('hide');
+            refush();
+        },
+        "json"
+    );
+})
+//查询按钮事件
 $('#search_btn').click(function(){
     $('#mytab').bootstrapTable('refresh', {url: '/agency/agencyList'});
 })
@@ -159,17 +198,37 @@ function refush(){
 }
 
 $("#add").click(function(){
+    if($("#companyName1").val()==""){
+        layer.msg('所属公司不能为空！', {icon:2,time:1000});
+        return;
+    }
+    if($("#leader1").val()==""){
+        layer.msg('负责人不能为空！', {icon:2,time:1000});
+        return;
+    }
+    if($("#emailAcc1").val()==""){
+        layer.msg('经销商账号不能为空！', {icon:2,time:1000});
+        return;
+    }
+    if($("#emailAcc1").val().indexOf("@",".")==-1){
+        layer.msg("经销商账号格式不正确", {icon:2,time:1500});
+        return;
+    }
     $.post(
         "/agency/agencyAddSave",
         $("#formadd").serialize(),
         function(data){
             if(data.message=="新增成功!"){
                 layer.msg(data.message, {icon:1,time:1000});
-                refush();
             }else{
                 layer.msg(data.message, {icon:1,time:1000});
-                refush();
             }
+            refush();
+            $("#webAdd").modal('hide');
+            $("#companyName1").val("");
+            $("#leader1").val("");
+            $("#emailAcc1").val("");
+            $("#type1").val("");
         },"json"
     );
 });
@@ -197,7 +256,7 @@ function deleteMany(){
 
     }
     $("#deleteId").val(row);
-    layer.confirm('确认要执行批量删除用户信息数据吗？',function(index){
+    layer.confirm('确认要执行批量删除经销商数据吗？',function(index){
         $.post(
             "/agency/deleteManyAgency",
             {

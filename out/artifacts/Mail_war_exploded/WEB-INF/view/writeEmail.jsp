@@ -57,7 +57,8 @@
         <div class="col-sm-9 animated fadeInRight">
             <div class="mail-box">
                 <div class="mail-body">
-                    <form class="form-horizontal" method="post" id="form" onsubmit="return add();">
+                    <form class="form-horizontal" method="post" id="form">
+                        <input id="id" value="" type="hidden" name="size" />
                         <div class="form-group">
                             <label class="col-sm-2 control-label">收信人：</label>
                             <div class="col-sm-10">
@@ -105,8 +106,9 @@
                             <button type="button"  class="layui-btn layui-btn-normal layui-btn-radius" id="testListAction">开始上传</button>
                         </div>
                         <div class="mail-body text-right tooltip-demo">
-                            <button type="button"  class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="根据模版自动获取数据生成邮件"><i class="fa fa-save"></i> 自动生成</button>
-                            <button type="button" onclick="add();" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="send email"><i class="fa fa-send"></i> 立即发送</button>
+                            <button type="button" onclick="autoSave();" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="根据模版自动获取数据生成邮件"><i class="fa fa-save"></i> 自动生成</button>
+                            <button type="button" onclick="add();" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="保存并发送"><i class="fa fa-send"></i> 保存并发送</button>
+                            <button type="button" onclick="addModule();"  class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="保存"><i class="glyphicon glyphicon-star-empty"></i> 保存</button>
                         </div>
                 </form>
             </div>
@@ -176,6 +178,24 @@
         $("#info").html(infoHtml);
     }
     function add(){
+        if($("#touser").val()==""){
+            layer.msg("收信人不能为空", {icon:2,time:1000});
+            return;
+        }
+        if($("#touser").val().indexOf("@",".")==-1){
+            layer.msg("收信人邮箱账号格式不正确", {icon:2,time:1500});
+            return;
+        }
+        if($("#csend").val()!=null){
+            if($("#csend").val().indexOf("@",".")==-1){
+                layer.msg("抄送人邮箱账号格式不正确", {icon:2,time:1500});
+                return;
+            }
+        }
+        if($("#title").val()==""){
+            layer.msg("主题不能为空", {icon:2,time:1000});
+            return;
+        }
         var path = "";
         $(".attachment input ").each(function(){
             if($(this).val()!=""){
@@ -285,5 +305,74 @@
             }
         });
     });
+</script>
+<script>
+    function addModule(){
+        var path = "";
+        $(".attachment input ").each(function(){
+            if($(this).val()!=""){
+                path +=$(this).val()+";";
+            }
+        });
+        var path1 = "";
+        $("input[name='file']").each(function(){
+            if($(this).val()!=""){
+                path1 +=$(this).val()+";";
+            }
+        });
+        $("#updateFile").html(path+path1);
+        $.post(
+            "<%=path%>/email/emailModuleAddSave",
+            $("#form").serialize(),
+            function(data) {
+                if(data.message.indexOf("保存成功")>0){
+                    layer.msg("邮件保存成功！", {icon:1,time:1000});
+                    $("#id").val(data.message.substring(7,data.message.length));
+                }else if(data.message=="修改成功!"){
+                    layer.msg(data.message, {icon:1,time:1000});
+                }else{
+                    layer.msg(data.message, {icon:2,time:1000});
+                }
+            },
+            "json"
+        );
+    }
+    function autoSave(){
+        layer.confirm('您确认自动生成邮件吗？', {
+            btn: ['确认','取消'] //按钮
+        }, function(){
+            var load=layer.load(0, {shade: false});
+            var path = "";
+            $(".attachment input ").each(function(){
+                if($(this).val()!=""){
+                    path +=$(this).val()+";";
+                }
+            });
+            var path1 = "";
+            $("input[name='file']").each(function(){
+                if($(this).val()!=""){
+                    path1 +=$(this).val()+";";
+                }
+            });
+            $("#updateFile").html(path+path1);
+            $.post(
+                "<%=path%>/email/emailAutoSave",
+                $("#form").serialize(),
+                function(data) {
+                    layer.close(load);
+                    if (data.message.indexOf("失败") > 0){
+                        layer.msg(data.message, {icon:2,time:1000});
+                    }else{
+                        layer.alert(data.message, function(){
+                            location.href = "/email/sendMain";
+                        });
+                    }
+                },
+                "json"
+            );
+        }, function(){
+            layer.msg('已取消', {icon: 0});
+        });
+    }
 </script>
 </html>

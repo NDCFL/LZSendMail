@@ -26,7 +26,7 @@
     </database>
     <schema id="8" parent="2" name="dbo">
       <ObjectId>1</ObjectId>
-      <IntrospectionTimestamp>2017-11-30.15:36:39.500</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-12-02.15:48:32.040</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -69,7 +69,7 @@
     <table id="21" parent="8" name="t_agency">
       <ObjectId>2073058421</ObjectId>
       <CreatedTimestamp>2017-11-30.08:46:41.983</CreatedTimestamp>
-      <ModifiedTimestamp>2017-11-30.08:46:41.987</ModifiedTimestamp>
+      <ModifiedTimestamp>2017-12-02.15:48:31.550</ModifiedTimestamp>
     </table>
     <table id="22" parent="8" name="t_file">
       <ObjectId>2121058592</ObjectId>
@@ -79,7 +79,7 @@
     <table id="23" parent="8" name="t_mailhistory">
       <ObjectId>485576768</ObjectId>
       <CreatedTimestamp>2017-11-30.11:09:29.187</CreatedTimestamp>
-      <ModifiedTimestamp>2017-11-30.15:36:39.187</ModifiedTimestamp>
+      <ModifiedTimestamp>2017-12-02.10:47:04.987</ModifiedTimestamp>
     </table>
     <table id="24" parent="8" name="t_mailmodule">
       <ObjectId>437576597</ObjectId>
@@ -117,14 +117,18 @@
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="31" parent="21" name="PK__t_agency__7C8480AE">
+    <column id="31" parent="21" name="type">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <index id="32" parent="21" name="PK__t_agency__7C8480AE">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="32" parent="21" name="PK__t_agency__7C8480AE">
+    <key id="33" parent="21" name="PK__t_agency__7C8480AE">
       <ObjectId>2089058478</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-11-30.08:46:41.983</CreatedTimestamp>
@@ -133,40 +137,40 @@
       <UnderlyingIndexName>PK__t_agency__7C8480AE</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="33" parent="22" name="id">
+    <column id="34" parent="22" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="34" parent="22" name="name">
+    <column id="35" parent="22" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="22" name="path">
+    <column id="36" parent="22" name="path">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="36" parent="22" name="userId">
+    <column id="37" parent="22" name="userId">
       <Position>4</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="22" name="createTime">
+    <column id="38" parent="22" name="createTime">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <DefaultExpression>getdate()</DefaultExpression>
     </column>
-    <index id="38" parent="22" name="PK__t_file__7F60ED59">
+    <index id="39" parent="22" name="PK__t_file__7F60ED59">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="39" parent="22" name="PK__t_file__7F60ED59">
+    <key id="40" parent="22" name="PK__t_file__7F60ED59">
       <ObjectId>2137058649</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-11-30.08:54:58.030</CreatedTimestamp>
@@ -175,68 +179,68 @@
       <UnderlyingIndexName>PK__t_file__7F60ED59</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="40" parent="23" name="id">
+    <column id="41" parent="23" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="41" parent="23" name="srcsend">
+    <column id="42" parent="23" name="srcsend">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="23" name="endsend">
+    <column id="43" parent="23" name="endsend">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="23" name="title">
+    <column id="44" parent="23" name="title">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="44" parent="23" name="content">
+    <column id="45" parent="23" name="content">
       <Position>5</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="45" parent="23" name="accessoryPath">
+    <column id="46" parent="23" name="accessoryPath">
       <Position>6</Position>
-      <DataType>text|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
     </column>
-    <column id="46" parent="23" name="createTime">
+    <column id="47" parent="23" name="createTime">
       <Position>7</Position>
       <DataType>datetime|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <column id="47" parent="23" name="emailCode">
+    <column id="48" parent="23" name="emailCode">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <column id="48" parent="23" name="status">
+    <column id="49" parent="23" name="status">
       <Position>9</Position>
       <DataType>int|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="49" parent="23" name="userId">
+    <column id="50" parent="23" name="userId">
       <Position>10</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="50" parent="23" name="csend">
+    <column id="51" parent="23" name="csend">
       <Position>11</Position>
-      <DataType>text|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
-    <index id="51" parent="23" name="PK__t_mailhistory__1DE57479">
+    <index id="52" parent="23" name="PK__t_mailhistory__1DE57479">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="52" parent="23" name="PK__t_mailhistory__1DE57479">
+    <key id="53" parent="23" name="PK__t_mailhistory__1DE57479">
       <ObjectId>501576825</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-11-30.11:09:29.187</CreatedTimestamp>
@@ -245,48 +249,48 @@
       <UnderlyingIndexName>PK__t_mailhistory__1DE57479</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="53" parent="24" name="id">
+    <column id="54" parent="24" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="54" parent="24" name="title">
+    <column id="55" parent="24" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="55" parent="24" name="content">
+    <column id="56" parent="24" name="content">
       <Position>3</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="56" parent="24" name="accessoryPath">
+    <column id="57" parent="24" name="accessoryPath">
       <Position>4</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="57" parent="24" name="userId">
+    <column id="58" parent="24" name="userId">
       <Position>5</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="58" parent="24" name="createTime">
+    <column id="59" parent="24" name="createTime">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <column id="59" parent="24" name="csend">
+    <column id="60" parent="24" name="csend">
       <Position>7</Position>
       <DataType>text|0</DataType>
     </column>
-    <index id="60" parent="24" name="PK__t_mailmodule__1B0907CE">
+    <index id="61" parent="24" name="PK__t_mailmodule__1B0907CE">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="61" parent="24" name="PK__t_mailmodule__1B0907CE">
+    <key id="62" parent="24" name="PK__t_mailmodule__1B0907CE">
       <ObjectId>453576654</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-11-30.11:03:52.723</CreatedTimestamp>
@@ -295,41 +299,41 @@
       <UnderlyingIndexName>PK__t_mailmodule__1B0907CE</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="62" parent="25" name="id">
+    <column id="63" parent="25" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="63" parent="25" name="typename">
+    <column id="64" parent="25" name="typename">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="64" parent="25" name="userId">
+    <column id="65" parent="25" name="userId">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="65" parent="25" name="agentyId">
+    <column id="66" parent="25" name="agentyId">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="66" parent="25" name="createTime">
+    <column id="67" parent="25" name="createTime">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>getdate()</DefaultExpression>
     </column>
-    <index id="67" parent="25" name="PK__t_type__08EA5793">
+    <index id="68" parent="25" name="PK__t_type__08EA5793">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="68" parent="25" name="PK__t_type__08EA5793">
+    <key id="69" parent="25" name="PK__t_type__08EA5793">
       <ObjectId>149575571</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-11-30.08:58:00.120</CreatedTimestamp>
@@ -338,70 +342,70 @@
       <UnderlyingIndexName>PK__t_type__08EA5793</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="69" parent="26" name="id">
+    <column id="70" parent="26" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="70" parent="26" name="loginAcc">
+    <column id="71" parent="26" name="loginAcc">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="71" parent="26" name="loginPassword">
+    <column id="72" parent="26" name="loginPassword">
       <Position>3</Position>
       <DataType>varchar(36)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="72" parent="26" name="email">
+    <column id="73" parent="26" name="email">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <column id="73" parent="26" name="password">
+    <column id="74" parent="26" name="password">
       <Position>5</Position>
       <DataType>varchar(36)|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <column id="74" parent="26" name="nickname">
+    <column id="75" parent="26" name="nickname">
       <Position>6</Position>
       <DataType>varchar(20)|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <column id="75" parent="26" name="serverPort">
+    <column id="76" parent="26" name="serverPort">
       <Position>7</Position>
       <DataType>int|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <column id="76" parent="26" name="serverHost">
+    <column id="77" parent="26" name="serverHost">
       <Position>8</Position>
       <DataType>varchar(20)|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <column id="77" parent="26" name="inserverPort">
+    <column id="78" parent="26" name="inserverPort">
       <Position>9</Position>
       <DataType>int|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <column id="78" parent="26" name="inserverHost">
+    <column id="79" parent="26" name="inserverHost">
       <Position>10</Position>
       <DataType>varchar(20)|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <column id="79" parent="26" name="status">
+    <column id="80" parent="26" name="status">
       <Position>11</Position>
       <DataType>int|0</DataType>
       <DefaultExpression>NULL</DefaultExpression>
     </column>
-    <index id="80" parent="26" name="PK__t_user__0BC6C43E">
+    <index id="81" parent="26" name="PK__t_user__0BC6C43E">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="81" parent="26" name="PK__t_user__0BC6C43E">
+    <key id="82" parent="26" name="PK__t_user__0BC6C43E">
       <ObjectId>197575742</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-11-30.08:58:47.640</CreatedTimestamp>

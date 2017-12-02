@@ -14,4 +14,5 @@ public interface UserService extends BaseService<UserVo> {
     void updateEmailPwd(long id, String password);
     String getPassword(long id);
     UserVo getInfo(String loginAcc);
+    void resetUpdate(UserVo userVo);
 }

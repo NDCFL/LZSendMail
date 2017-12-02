@@ -63,27 +63,84 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">所属公司：</label>
                         <div class="col-sm-8">
-                            <input  name="companyName" minlength="2" maxlength="20" type="text" class="form-control" required="" aria-required="true">
+                            <input  name="companyName" id="companyName1" minlength="2" maxlength="20" type="text" class="form-control" required="" aria-required="true">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">负责人：</label>
                         <div class="col-sm-8">
-                            <input  name="leader" minlength="2" maxlength="20" type="text" class="form-control" required="" aria-required="true">
+                            <input  name="leader" id="leader1" minlength="2" maxlength="20" type="text" class="form-control" required="" aria-required="true">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">经销商邮箱：</label>
                         <div class="col-sm-8">
-                            <input  name="emailAcc" minlength="2" maxlength="20" type="email" class="form-control" required="" aria-required="true">
+                            <input  name="emailAcc" id="emailAcc1" minlength="2" maxlength="20" type="email" class="form-control" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">客户分类ID：</label>
+                        <div class="col-sm-8">
+                            <input  name="type" id="type1" minlength="2" maxlength="20" type="email" class="form-control"  required="" aria-required="true">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>
-                    <button type="submit" id="add" class="btn btn-primary" data-dismiss="modal">
+                    <button type="button" id="add" class="btn btn-primary" >
                         确认新增
+                    </button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="webupdate" tabindex="-1" role="dialog" aria-labelledby="webAddLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="webAddTitle1">
+                    修改经销商
+                </h4>
+            </div>
+            <form class="form-horizontal" method="post" id="formupdate">
+                <input type="hidden" name="id" id="id" />
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">所属公司：</label>
+                        <div class="col-sm-8">
+                            <input  name="companyName" id="companyName" minlength="2" maxlength="20" type="text" class="form-control" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">负责人：</label>
+                        <div class="col-sm-8">
+                            <input  name="leader" id="leader" minlength="2" maxlength="20" type="text"   class="form-control" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">经销商邮箱：</label>
+                        <div class="col-sm-8">
+                            <input  name="emailAcc" id="emailAcc" minlength="2" maxlength="20" type="email" class="form-control"  required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">客户分类ID：</label>
+                        <div class="col-sm-8">
+                            <input  name="type" id="type" minlength="2" maxlength="20" type="email" class="form-control"  required="" aria-required="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" id="updateAgency" class="btn btn-primary">
+                        确认修改
                     </button>
                 </div>
             </form>
@@ -130,6 +187,7 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+<input type="hidden" id="deleteId" value=""  />
 <%--经销商的修改--%>
 <jsp:include page="comment/modulejs.jsp"></jsp:include>
 <script src="<%=path%>/js/pageJs/agencyList.js"></script>

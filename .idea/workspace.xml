@@ -17,6 +17,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_17.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_17.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_20.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sqljdbc4.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/documents/sqlserver.sql" />
@@ -27,32 +28,45 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/comment/PageQuery.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/comment/PageQuery.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/AgencyController.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/AgencyController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/EmailController.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/EmailController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/FileController.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/FileController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/MailModuleController.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/MailModuleController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/SendMailController.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/SendMailController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/TypeController.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/TypeController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/UserController.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/dao/AgencyDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/dao/AgencyDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/dao/EmailDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/dao/EmailDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/dao/UserDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/dao/UserDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/service/EmailService.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/service/EmailService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/service/UserService.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/service/UserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/serviceimpl/EmailServiceImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/serviceimpl/EmailServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/serviceimpl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/serviceimpl/UserServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/vo/AgencyVo.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/vo/AgencyVo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/vo/EmailVo.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/vo/EmailVo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/vo/MailModuleVo.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/vo/MailModuleVo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/vo/UserVo.class" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/com/fz/vo/UserVo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/comment/PageQuery.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/comment/PageQuery.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/controller/AgencyController.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/controller/AgencyController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/controller/EmailController.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/controller/EmailController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/controller/FileController.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/controller/FileController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/controller/MailModuleController.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/controller/MailModuleController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/controller/SendMailController.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/controller/SendMailController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/controller/TypeController.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/controller/TypeController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/dao/AgencyDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/dao/AgencyDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/dao/EmailDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/dao/EmailDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/dao/UserDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/dao/UserDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/service/EmailService.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/service/EmailService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/service/UserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/serviceimpl/EmailServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/serviceimpl/EmailServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/serviceimpl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/serviceimpl/UserServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/vo/AgencyVo.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/vo/AgencyVo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/vo/EmailVo.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/vo/EmailVo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/vo/MailModuleVo.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/vo/MailModuleVo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/fz/vo/UserVo.class" afterPath="$PROJECT_DIR$/target/classes/com/fz/vo/UserVo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Mail_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Mail_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/0ac511cc-680d-4615-8dd8-74c38228ba56.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/0ac511cc-680d-4615-8dd8-74c38228ba56.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mail.iml" afterPath="$PROJECT_DIR$/Mail.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/config/jdbc.properties" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/config/jdbc.properties" />
@@ -62,30 +76,48 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/mapping/mailModuleDAOMapping.xml" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/mapping/mailModuleDAOMapping.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/mapping/typeDAOMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/mapping/typeDAOMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/mapping/userDAOMapping.xml" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/classes/mapping/userDAOMapping.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/addType.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/addType.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/agencyList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/agencyList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/emailUpdate.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/emailUpdate.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/fileList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/fileList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/loginPage.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/loginPage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/lookCollectionPage.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/lookCollectionPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/mailModuleList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/mailModuleList.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/myInfoPage.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/myInfoPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/typeList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/typeList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/updateCollection.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/updateCollection.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/updateType.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/updateType.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/userList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/userList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/writeCollection.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/writeCollection.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/writeEmail.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/WEB-INF/view/writeEmail.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/comment/modulejs.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/comment/modulejs.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/js/pageJs/agencyList.js" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/js/pageJs/agencyList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/js/pageJs/emailList.js" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/js/pageJs/emailList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/js/pageJs/file.js" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/js/pageJs/file.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/js/pageJs/typeList.js" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/js/pageJs/typeList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/js/pageJs/userList.js" afterPath="$PROJECT_DIR$/out/artifacts/Mail_war_exploded/js/pageJs/userList.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/comment/PageQuery.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/comment/PageQuery.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/controller/AgencyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/controller/AgencyController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/controller/EmailController.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/controller/EmailController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/controller/FileController.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/controller/FileController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/controller/MailModuleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/controller/MailModuleController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/controller/SendMailController.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/controller/SendMailController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/controller/TypeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/controller/TypeController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/dao/AgencyDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/dao/AgencyDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/dao/EmailDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/dao/EmailDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/dao/UserDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/service/EmailService.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/service/EmailService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/service/UserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/EmailServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/EmailServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/UserServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/vo/AgencyVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/vo/AgencyVo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/vo/EmailVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/vo/EmailVo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/vo/MailModuleVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/vo/MailModuleVo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fz/vo/UserVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/fz/vo/UserVo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/config/jdbc.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/agencyDAOMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/agencyDAOMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/emailDAOMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/emailDAOMapper.xml" />
@@ -100,16 +132,28 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapping/mailModuleDAOMapping.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/mailModuleDAOMapping.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapping/typeDAOMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/typeDAOMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapping/userDAOMapping.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/userDAOMapping.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/addType.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/addType.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/agencyList.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/agencyList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/emailUpdate.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/emailUpdate.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/fileList.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/fileList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/loginPage.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/loginPage.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/lookCollectionPage.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/lookCollectionPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/mailModuleList.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/mailModuleList.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/myInfoPage.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/myInfoPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/typeList.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/typeList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/updateCollection.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/updateCollection.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/updateType.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/updateType.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/userList.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/userList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/writeCollection.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/writeCollection.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/view/writeEmail.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/view/writeEmail.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/comment/modulejs.jsp" afterPath="$PROJECT_DIR$/web/comment/modulejs.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/pageJs/agencyList.js" afterPath="$PROJECT_DIR$/web/js/pageJs/agencyList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/pageJs/emailList.js" afterPath="$PROJECT_DIR$/web/js/pageJs/emailList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/pageJs/file.js" afterPath="$PROJECT_DIR$/web/js/pageJs/file.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/pageJs/typeList.js" afterPath="$PROJECT_DIR$/web/js/pageJs/typeList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/pageJs/userList.js" afterPath="$PROJECT_DIR$/web/js/pageJs/userList.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -149,7 +193,7 @@
         <item name="lzsendmail@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="lzsendmail" type="e3449647:DbNodeDescriptor" />
         <item name="dbo" type="e3449647:DbNodeDescriptor" />
-        <item name="t_mailhistory" type="e3449647:DbNodeDescriptor" />
+        <item name="t_agency" type="e3449647:DbNodeDescriptor" />
       </path>
       <path>
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
@@ -158,127 +202,72 @@
         <item name="dbo" type="e3449647:DbNodeDescriptor" />
         <item name="t_mailmodule" type="e3449647:DbNodeDescriptor" />
       </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="lzsendmail@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="lzsendmail" type="e3449647:DbNodeDescriptor" />
+        <item name="dbo" type="e3449647:DbNodeDescriptor" />
+        <item name="t_user" type="e3449647:DbNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lookCollectionPage.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/lookCollectionPage.jsp">
+      <file leaf-file-name="agencyDAOMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/agencyDAOMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="74" column="29" lean-forward="false" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+            <state relative-caret-position="257">
+              <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
               <folding>
-                <element signature="n#style#0;n#i#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#1;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#2;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1512201412137" expanded="true" signature="329:368" ph="select * fro... t_agency" />
+                <marker date="1512201412137" expanded="true" signature="465:519" ph="select top(1... t_agency" />
+                <marker date="1512201412137" expanded="true" signature="588:625" ph="delete from " />
+                <marker date="1512201412137" expanded="true" signature="764:877" ph="select top(##... t_agency" />
+                <marker date="1512201412137" expanded="true" signature="821:859" ph="select top(##... t_agency" />
+                <marker date="1512201412137" expanded="true" signature="948:987" ph="select * fro... t_agency" />
+                <marker date="1512201412137" expanded="true" signature="1051:1080" ph="select count... t_agency" />
+                <marker date="1512201412137" expanded="true" signature="1150:1265" ph="insert into t_agency... " />
+                <marker date="1512201412137" expanded="true" signature="1313:1427" ph="update t_age... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/index.jsp">
+      <file leaf-file-name="agencyList.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/agencyList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="116" column="27" lean-forward="true" selection-start-line="116" selection-start-column="27" selection-end-line="116" selection-end-column="27" />
+            <state relative-caret-position="256">
+              <caret line="125" column="44" lean-forward="true" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="44" />
+              <folding>
+                <marker date="1512203650260" expanded="true" signature="11824:11839" ph="..." />
+                <marker date="1512203650260" expanded="true" signature="13152:13167" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExcelUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/comment/ExcelUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="55" column="49" lean-forward="true" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmailController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/EmailController.java">
+      <file leaf-file-name="agencyList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/pageJs/agencyList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="76" column="48" lean-forward="false" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
+            <state relative-caret-position="615">
+              <caret line="233" column="3" lean-forward="true" selection-start-line="233" selection-start-column="3" selection-end-line="233" selection-end-column="3" />
               <folding>
-                <element signature="e#5091#5099#0" expanded="true" />
+                <marker date="1512203305833" expanded="true" signature="2025:2036" ph="..." />
+                <marker date="1512203305833" expanded="true" signature="2210:2219" ph="..." />
+                <marker date="1512203305833" expanded="true" signature="2447:2458" ph="..." />
+                <marker date="1512203305833" expanded="true" signature="2671:2680" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="t_mailhistory" pinned="false" current-in-tab="false">
-        <entry file="das://table:/ee8b6bdf/16054cd0-e1c2-40fa-b42d-263df2c05831/lzsendmail.dbo.t_mailhistory">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updateCollection.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/updateCollection.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="76" column="115" lean-forward="true" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="115" />
-              <folding>
-                <element signature="n#style#0;n#i#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#1;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#2;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1512031903326" expanded="true" signature="10378:10393" ph="..." />
-                <marker date="1512031903326" expanded="true" signature="11464:11479" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="t_mailmodule" pinned="false" current-in-tab="false">
-        <entry file="das://table:/ee8b6bdf/16054cd0-e1c2-40fa-b42d-263df2c05831/lzsendmail.dbo.t_mailmodule">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="writeEmail.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/writeEmail.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="172" column="13" lean-forward="true" selection-start-line="164" selection-start-column="12" selection-end-line="172" selection-end-column="13" />
-              <folding>
-                <marker date="1512032005448" expanded="true" signature="12898:12913" ph="..." />
-                <marker date="1512032005448" expanded="true" signature="13984:13999" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="writeCollection.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/writeCollection.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="42" column="34" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#b#0;n#span#0;n#p#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1512031053909" expanded="true" signature="7183:7198" ph="..." />
-                <marker date="1512031053909" expanded="true" signature="8270:8285" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="emailUpdate.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/emailUpdate.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="138" column="13" lean-forward="true" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
-              <folding>
-                <marker date="1512032119422" expanded="true" signature="12016:12031" ph="..." />
-                <marker date="1512032119422" expanded="true" signature="13102:13117" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="collectionPage.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/collectionPage.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="61" column="10" lean-forward="true" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -296,7 +285,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user</find>
       <find>t_mailModule</find>
       <find>MailModuleController</find>
       <find>add</find>
@@ -326,6 +314,7 @@
       <find>delete</find>
       <find>docs</find>
       <find>${l.</find>
+      <find>emailModuleAddSave</find>
     </findStrings>
     <replaceStrings>
       <replace>UserVo</replace>
@@ -362,6 +351,7 @@
       <dir>C:\Users\Administrator\Desktop\Mail\web</dir>
       <dir>C:\Users\Administrator\Desktop\Mail\src\main\java\com\fz</dir>
       <dir>C:\Users\Administrator\Desktop\Mail\web\WEB-INF\view</dir>
+      <dir>C:\Users\Administrator\Desktop\Mail\src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -375,57 +365,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/FileUp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/dao/FileDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/service/FileService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/FileServiceImpl.java" />
-        <option value="$PROJECT_DIR$/web/js/pageJs/mailModuleList.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/vo/File.java" />
-        <option value="$PROJECT_DIR$/web/fileup.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/comment/Info.java" />
-        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.10.RELEASE/spring-web-4.3.10.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class" />
-        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.10.RELEASE/spring-webmvc-4.3.10.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class" />
-        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.10.RELEASE/spring-webmvc-4.3.10.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/FileController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/fileList.jsp" />
-        <option value="$PROJECT_DIR$/web/js/pageJs/file.js" />
-        <option value="$PROJECT_DIR$/documents/lzsedmail.sql" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/emailList.jsp" />
-        <option value="$PROJECT_DIR$/web/js/pageJs/emailList.js" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/16054cd0-e1c2-40fa-b42d-263df2c05831/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/agencyDAOMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/userDAOMapping.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/fileDAOMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/jdbc.properties" />
-        <option value="$PROJECT_DIR$/documents/sqlserver.sql" />
-        <option value="$PROJECT_DIR$/web/js/pageJs/agencyList.js" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/comment/ImportExcelUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/vo/AgencyVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/comment/ExcelUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/AgencyController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/dao/EmailDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/service/EmailService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/EmailServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/EmailController.java" />
-        <option value="$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.5/mybatis-3.4.5.jar!/org/apache/ibatis/binding/MapperMethod.class" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/agencyList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fz/comment/PageQuery.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/MailModuleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/TypeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/typeDAOMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/fz/vo/MailModuleVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/vo/EmailVo.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/emailDAOMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/mailModuleDAOMapping.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/SendMailController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/writeCollection.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/emailUpdate.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/fileList.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/typeList.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/mailModuleList.jsp" />
+        <option value="$PROJECT_DIR$/web/js/pageJs/emailList.js" />
+        <option value="$PROJECT_DIR$/documents/sqlserver.sql" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/userDAOMapping.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/vo/UserVo.java" />
+        <option value="$PROJECT_DIR$/web/js/pageJs/file.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/FileController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/fileDAOMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/dao/FileDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/MailModuleController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/mailModuleDAOMapping.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/dao/MailModuleDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/service/MailModuleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/MailModuleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/dao/EmailDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/service/EmailService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/EmailServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/vo/EmailVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/EmailController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/emailDAOMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/SendMailController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/lookCollectionPage.jsp" />
+        <option value="$PROJECT_DIR$/web/js/pageJs/typeList.js" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/updateType.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/addType.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/myInfoPage.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/updateCollection.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/view/writeEmail.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/emailUpdate.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/lookCollectionPage.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" />
+        <option value="$PROJECT_DIR$/web/comment/modulejs.jsp" />
+        <option value="$PROJECT_DIR$/web/comment/modulecss.jsp" />
+        <option value="$PROJECT_DIR$/web/js/pageJs/userList.js" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/userList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/controller/AgencyController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/agencyDAOMapper.xml" />
+        <option value="$PROJECT_DIR$/web/js/pageJs/agencyList.js" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/view/agencyList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fz/comment/ExcelUtil.java" />
       </list>
     </option>
   </component>
@@ -461,8 +451,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="69" />
-    <option name="y" value="61" />
+    <option name="x" value="74" />
+    <option name="y" value="30" />
     <option name="width" value="1782" />
     <option name="height" value="975" />
   </component>
@@ -484,9 +474,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -497,64 +488,17 @@
             <path>
               <item name="Mail" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mail" type="462c0819:PsiDirectoryNode" />
-              <item name="documents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mail" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mail" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mail" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mail" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fz" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mail" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Mail" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mail" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mail" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mail" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -566,14 +510,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.47985348" />
     <property name="last_opened_file_path" value="D:/idea/Mail" />
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Desktop\Mail\out\artifacts\Mail_war_exploded\upload" />
-      <recent name="C:\Users\Administrator\Desktop\Mail\web\comment" />
-      <recent name="C:\Users\Administrator\Desktop\Mail\web\WEB-INF\lib" />
-      <recent name="C:\Users\Administrator\Desktop\Mail\src\main\resources\mapping" />
-      <recent name="C:\Users\Administrator\Desktop\Mail\web" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\Mail\web\WEB-INF\view" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.fz.comment" />
@@ -581,8 +522,12 @@
       <recent name="com.fz.service" />
       <recent name="com.fz.dao" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Desktop\Mail\web\WEB-INF\view" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\Mail\out\artifacts\Mail_war_exploded\upload" />
+      <recent name="C:\Users\Administrator\Desktop\Mail\web\comment" />
+      <recent name="C:\Users\Administrator\Desktop\Mail\web\WEB-INF\lib" />
+      <recent name="C:\Users\Administrator\Desktop\Mail\src\main\resources\mapping" />
+      <recent name="C:\Users\Administrator\Desktop\Mail\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -886,15 +831,17 @@
       <workItem from="1511742625259" duration="27099000" />
       <workItem from="1511828944602" duration="28701000" />
       <workItem from="1511915691464" duration="28065000" />
-      <workItem from="1512002201289" duration="27345000" />
+      <workItem from="1512002201289" duration="29030000" />
+      <workItem from="1512088092897" duration="16245000" />
+      <workItem from="1512174772846" duration="22497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187933000" />
+    <option name="totallyTimeSpent" value="228360000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="69" y="61" width="1782" height="975" extended-state="1" />
+    <frame x="74" y="30" width="1782" height="975" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -903,23 +850,22 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14808363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.085946575" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5839822" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31173593" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17603911" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07457212" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48655257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19802555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20441347" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17481662" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -929,6 +875,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48655257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -939,433 +886,333 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/agencyDAOMapper.xml">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="1925">
+          <caret line="77" column="28" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5200">
+          <caret line="242" column="37" lean-forward="false" selection-start-line="242" selection-start-column="37" selection-end-line="242" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/vo/UserVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="112" column="30" lean-forward="false" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/fileList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="35" column="18" lean-forward="true" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/pageJs/mailModuleList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1575">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
-            <marker date="1512003914318" expanded="true" signature="329:368" ph="select * fro... t_agency" />
-            <marker date="1512003914318" expanded="true" signature="437:474" ph="delete from " />
-            <marker date="1512003914318" expanded="true" signature="550:590" ph="select top* t_agency" />
-            <marker date="1512003914318" expanded="true" signature="550:601" ph="select top()... t_agency" />
-            <marker date="1512003914318" expanded="true" signature="613:709" ph="select top(##... t_agency" />
-            <marker date="1512003914318" expanded="true" signature="670:708" ph="select top(##... t_agency" />
-            <marker date="1512003914318" expanded="true" signature="780:802" ph="select * fro... t_agency" />
-            <marker date="1512003914318" expanded="true" signature="866:895" ph="select count... t_agency" />
-            <marker date="1512003914318" expanded="true" signature="965:1067" ph="insert into t_agency... " />
-            <marker date="1512003914318" expanded="true" signature="1115:1216" ph="update t_age... " />
+            <marker date="1511861380468" expanded="true" signature="2120:2131" ph="..." />
+            <marker date="1511861380468" expanded="true" signature="2305:2314" ph="..." />
+            <marker date="1511861380468" expanded="true" signature="2542:2553" ph="..." />
+            <marker date="1511861380468" expanded="true" signature="2766:2775" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/comment/PagingBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="e#939#940#0" expanded="false" />
-            <element signature="e#976#977#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/fileDAOMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-          <folding>
-            <marker date="1512007946704" expanded="true" signature="321:356" ph="SELECT * fro... t_file" />
-            <marker date="1512007946704" expanded="true" signature="425:460" ph="delete from " />
-            <marker date="1512007946704" expanded="true" signature="530:578" ph="select * fro... t_file" />
-            <marker date="1512007946704" expanded="true" signature="649:783" ph="select top(##... t_file" />
-            <marker date="1512007946704" expanded="true" signature="649:784" ph="select top(##... t_file" />
-            <marker date="1512007946704" expanded="true" signature="714:760" ph="select top(##... t_mailhistory" />
-            <marker date="1512007946704" expanded="true" signature="853:873" ph="select * fro... t_file" />
-            <marker date="1512007946704" expanded="true" signature="937:964" ph="select count... t_file" />
-            <marker date="1512007946704" expanded="true" signature="1050:1100" ph="select count... t_file" />
-            <marker date="1512007946704" expanded="true" signature="1152:1227" ph="delete from " />
-            <marker date="1512007946704" expanded="true" signature="1295:1398" ph="insert into t_file... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/ee8b6bdf/16054cd0-e1c2-40fa-b42d-263df2c05831/lzsendmail.dbo.t_agency">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/documents/sqlserver.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/pageJs/agencyList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3896">
-          <caret line="162" column="20" lean-forward="false" selection-start-line="162" selection-start-column="20" selection-end-line="162" selection-end-column="20" />
-          <folding>
-            <marker date="1512017935289" expanded="true" signature="1885:1896" ph="..." />
-            <marker date="1512017935289" expanded="true" signature="2070:2079" ph="..." />
-            <marker date="1512017935289" expanded="true" signature="2307:2318" ph="..." />
-            <marker date="1512017935289" expanded="true" signature="2531:2540" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="129" column="21" lean-forward="false" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/comment/ImportExcelUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="17" column="49" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/vo/AgencyVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="61" column="29" lean-forward="true" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-          <folding>
-            <element signature="e#1189#1190#0" expanded="true" />
-            <element signature="e#1229#1230#0" expanded="true" />
-            <element signature="e#1261#1262#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/comment/ExcelUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="54" column="60" lean-forward="true" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#885#895#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/ee8b6bdf/16054cd0-e1c2-40fa-b42d-263df2c05831/lzsendmail.dbo.t_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/service/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/dao/EmailDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/service/EmailService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="9" column="59" lean-forward="true" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/EmailServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="74" column="49" lean-forward="true" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
-          <folding>
-            <element signature="e#1770#1771#0" expanded="true" />
-            <element signature="e#1827#1828#0" expanded="true" />
-            <marker date="1512025232731" expanded="true" signature="1692:1698" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/dao/InterfaceDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/InterfaceDAOMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.5/mybatis-3.4.5.jar!/org/apache/ibatis/binding/MapperMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="298" column="0" lean-forward="false" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/agencyList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-          <folding>
-            <marker date="1512025798738" expanded="true" signature="8677:8692" ph="..." />
-            <marker date="1512025798738" expanded="true" signature="10005:10020" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/dao/BaseDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/comment/PageQuery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1125#1126#0" expanded="true" />
-            <element signature="e#1167#1168#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/dao/FileDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="275">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/AgencyController.java">
+    <entry file="file://$PROJECT_DIR$/web/js/pageJs/emailList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="158" column="44" lean-forward="true" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="44" />
+        <state relative-caret-position="375">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="17" />
           <folding>
-            <element signature="e#4885#4895#0" expanded="true" />
+            <marker date="1512089799155" expanded="true" signature="2780:2791" ph="..." />
+            <marker date="1512089799155" expanded="true" signature="2802:2808" ph="&amp;nbsp;" />
+            <marker date="1512089799155" expanded="true" signature="2808:2814" ph="&amp;nbsp;" />
+            <marker date="1512089799155" expanded="true" signature="3050:3061" ph="..." />
+            <marker date="1512089799155" expanded="true" signature="3072:3078" ph="&amp;nbsp;" />
+            <marker date="1512089799155" expanded="true" signature="3078:3084" ph="&amp;nbsp;" />
+            <marker date="1512089799155" expanded="true" signature="3247:3256" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/pageJs/file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2810">
+          <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <marker date="1512175182529" expanded="true" signature="2378:2387" ph="..." />
+            <marker date="1512175182529" expanded="true" signature="2516:2527" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/service/FileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/dao/BaseDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/FileServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding>
+            <element signature="e#446#447#0" expanded="false" />
+            <element signature="e#490#491#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/FileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        <state relative-caret-position="55">
+          <caret line="40" column="45" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/service/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/fileDAOMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding>
+            <marker date="1512187198468" expanded="true" signature="532:567" ph="SELECT * fro... t_file" />
+            <marker date="1512187198468" expanded="true" signature="636:671" ph="delete from " />
+            <marker date="1512187198468" expanded="true" signature="741:932" ph="select * fro... t_file" />
+            <marker date="1512187198468" expanded="true" signature="802:838" ph="select top(##... t_file" />
+            <marker date="1512187198468" expanded="true" signature="1029:1171" ph="select top(##... t_file" />
+            <marker date="1512187198468" expanded="true" signature="1029:1172" ph="select top(##... t_file" />
+            <marker date="1512187198468" expanded="true" signature="1029:1257" ph="select top(##... t_file" />
+            <marker date="1512187198468" expanded="true" signature="1100:1146" ph="select top(##... t_mailhistory" />
+            <marker date="1512187198468" expanded="true" signature="1326:1346" ph="select * fro... t_file" />
+            <marker date="1512187198468" expanded="true" signature="1410:1437" ph="select count... t_file" />
+            <marker date="1512187198468" expanded="true" signature="1410:1460" ph="select count... t_file" />
+            <marker date="1512187198468" expanded="true" signature="1572:1622" ph="select count... t_file" />
+            <marker date="1512187198468" expanded="true" signature="1674:1749" ph="delete from " />
+            <marker date="1512187198468" expanded="true" signature="1817:1920" ph="insert into t_file... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/dao/FileDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/mailModuleList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/mailModuleDAOMapping.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <marker date="1512178397280" expanded="true" signature="345:388" ph="select * fro... t_mailmodule" />
+            <marker date="1512178397280" expanded="true" signature="457:498" ph="delete from " />
+            <marker date="1512178397280" expanded="true" signature="575:720" ph="select top(##... t_mailmodule" />
+            <marker date="1512178397280" expanded="true" signature="645:697" ph="select top(##... t_mailmodule" />
+            <marker date="1512178397280" expanded="true" signature="795:821" ph="select * fro... t_mailmodule" />
+            <marker date="1512178397280" expanded="true" signature="926:959" ph="select count... t_mailmodule" />
+            <marker date="1512178397280" expanded="true" signature="926:982" ph="select count... t_mailmodule" />
+            <marker date="1512178397280" expanded="true" signature="1048:1223" ph="SELECT LAST_... " />
+            <marker date="1512178397280" expanded="true" signature="1056:1223" ph="insert into t_mailmodule... " />
+            <marker date="1512178397280" expanded="true" signature="1271:1391" ph="update t_mai... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/dao/MailModuleDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/MailModuleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/service/MailModuleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/dao/EmailDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/service/EmailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/MailModuleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/ReceiveMailHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-625">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/TypeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="40" column="36" lean-forward="false" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/ee8b6bdf/16054cd0-e1c2-40fa-b42d-263df2c05831/lzsendmail.dbo.t_type">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="230" column="27" lean-forward="false" selection-start-line="230" selection-start-column="27" selection-end-line="230" selection-end-column="27" />
+        <state relative-caret-position="275">
+          <caret line="50" column="39" lean-forward="false" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/vo/EmailVo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        <state relative-caret-position="175">
+          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/EmailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="84" column="38" lean-forward="false" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="38" />
           <folding>
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#2270#2271#0" expanded="true" />
+            <element signature="e#2303#2304#0" expanded="true" />
+            <element signature="e#6657#6665#0" expanded="true" />
+            <marker date="1512187198753" expanded="false" signature="6099:6109" ph=" { " />
+            <marker date="1512187198753" expanded="false" signature="6133:6139" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/typeDAOMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/comment/StatusQuery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="31" column="58" lean-forward="true" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
-          <folding>
-            <marker date="1512026931534" expanded="true" signature="880:919" ph="select * fro... t_type" />
-            <marker date="1512026931534" expanded="true" signature="988:1023" ph="delete from " />
-            <marker date="1512026931534" expanded="true" signature="1098:1441" ph="select top(##... t_type" />
-            <marker date="1512026931534" expanded="true" signature="1373:1425" ph="select top(##... t_mailmodule" />
-            <marker date="1512026931534" expanded="true" signature="1453:1929" ph="select top(##... t_type" />
-            <marker date="1512026931534" expanded="true" signature="1880:1928" ph="select top(##... t_agency" />
-            <marker date="1512026931534" expanded="true" signature="1998:2158" ph="select t.*,u... t_type" />
-            <marker date="1512026931534" expanded="true" signature="2036:2103" ph="select group... t_agency" />
-            <marker date="1512026931534" expanded="true" signature="2222:2249" ph="select count... t_type" />
-            <marker date="1512026931534" expanded="true" signature="2222:2272" ph="select count... t_type" />
-            <marker date="1512026931534" expanded="true" signature="2340:2458" ph="insert into t_type... " />
-            <marker date="1512026931534" expanded="true" signature="2506:2582" ph="update t_typ... " />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/vo/MailModuleVo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/serviceimpl/EmailServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state relative-caret-position="248">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
           <folding>
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1169#1170#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+            <element signature="e#891#892#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1042#1043#0" expanded="true" />
+            <element signature="e#1079#1080#0" expanded="true" />
+            <element signature="e#1128#1129#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1235#1236#0" expanded="true" />
+            <element signature="e#1286#1287#0" expanded="true" />
+            <element signature="e#1357#1358#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+            <element signature="e#1466#1467#0" expanded="true" />
+            <element signature="e#1514#1515#0" expanded="true" />
+            <element signature="e#1600#1601#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#2019#2020#0" expanded="true" />
+            <element signature="e#2076#2077#0" expanded="true" />
+            <element signature="e#2135#2136#0" expanded="true" />
+            <element signature="e#2184#2185#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/emailDAOMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="244">
+          <caret line="30" column="103" lean-forward="false" selection-start-line="30" selection-start-column="103" selection-end-line="30" selection-end-column="103" />
           <folding>
-            <marker date="1512027800024" expanded="true" signature="872:916" ph="select * fro... t_mailhistory" />
-            <marker date="1512027800024" expanded="true" signature="985:1027" ph="delete from " />
-            <marker date="1512027800024" expanded="true" signature="1124:1325" ph="select top($... t_mailhistory" />
-            <marker date="1512027800024" expanded="true" signature="1195:1248" ph="select top($... t_mailhistory" />
-            <marker date="1512027800024" expanded="true" signature="1421:1513" ph="select * fro... t_mailhistory" />
-            <marker date="1512027800024" expanded="true" signature="1604:1669" ph="select count... t_mailhistory" />
-            <marker date="1512027800024" expanded="true" signature="1661:1669" ph="select count... t_mailhistory" />
-            <marker date="1512027800024" expanded="true" signature="1768:2057" ph="insert into t_mailhistory... " />
-            <marker date="1512027800024" expanded="true" signature="2105:2211" ph="update t_mai... " />
-            <marker date="1512027800024" expanded="true" signature="2265:2323" ph="update t_mai... " />
+            <marker date="1512187198462" expanded="true" signature="872:916" ph="select * fro... t_mailhistory" />
+            <marker date="1512187198462" expanded="true" signature="985:1027" ph="delete from " />
+            <marker date="1512187198462" expanded="true" signature="1124:1379" ph="select top($... t_mailhistory" />
+            <marker date="1512187198462" expanded="true" signature="1124:1403" ph="select top($... t_mailhistory" />
+            <marker date="1512187198462" expanded="true" signature="1195:1248" ph="select top($... t_mailhistory" />
+            <marker date="1512187198462" expanded="true" signature="1499:1591" ph="select * fro... t_mailhistory" />
+            <marker date="1512187198462" expanded="true" signature="1682:1747" ph="select count... t_mailhistory" />
+            <marker date="1512187198462" expanded="true" signature="1739:1747" ph="select count... t_mailhistory" />
+            <marker date="1512187198462" expanded="true" signature="1846:2099" ph="insert into t_mailhistory... " />
+            <marker date="1512187198462" expanded="true" signature="2147:2306" ph="update t_mai... " />
+            <marker date="1512187198462" expanded="true" signature="2360:2418" ph="update t_mai... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/mailModuleDAOMapping.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <marker date="1512027812652" expanded="true" signature="345:388" ph="select * fro... t_mailmodule" />
-            <marker date="1512027812652" expanded="true" signature="457:498" ph="delete from " />
-            <marker date="1512027812652" expanded="true" signature="575:720" ph="select top(##... t_mailmodule" />
-            <marker date="1512027812652" expanded="true" signature="645:697" ph="select top(##... t_mailmodule" />
-            <marker date="1512027812652" expanded="true" signature="795:821" ph="select * fro... t_mailmodule" />
-            <marker date="1512027812652" expanded="true" signature="926:959" ph="select count... t_mailmodule" />
-            <marker date="1512027812652" expanded="true" signature="926:982" ph="select count... t_mailmodule" />
-            <marker date="1512027812652" expanded="true" signature="1056:1223" ph="insert into t_mailmodule... " />
-            <marker date="1512027812652" expanded="true" signature="1271:1391" ph="update t_mai... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/mail/Mail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/mail/MailAuthenticator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/mail/SendMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-555">
-          <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/mail/ReceiveMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1136">
-          <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/SendMailController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="73" column="61" lean-forward="false" selection-start-line="73" selection-start-column="61" selection-end-line="73" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="576">
+          <caret line="98" column="46" lean-forward="false" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/vo/MailModuleVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1376,50 +1223,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/ee8b6bdf/16054cd0-e1c2-40fa-b42d-263df2c05831/lzsendmail.dbo.t_mailmodule">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/mail/Mail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="48" column="5" lean-forward="false" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/EmailController.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/lookCollectionPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="76" column="48" lean-forward="false" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
+        <state relative-caret-position="248">
+          <caret line="28" column="10" lean-forward="false" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
           <folding>
-            <element signature="e#5091#5099#0" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/writeCollection.jsp">
+    <entry file="file://$PROJECT_DIR$/web/js/pageJs/typeList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="42" column="34" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        <state relative-caret-position="175">
+          <caret line="139" column="1" lean-forward="false" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
           <folding>
-            <element signature="n#style#0;n#b#0;n#span#0;n#p#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1512031053909" expanded="true" signature="7183:7198" ph="..." />
-            <marker date="1512031053909" expanded="true" signature="8270:8285" ph="..." />
+            <marker date="1512196440111" expanded="true" signature="2379:2390" ph="..." />
+            <marker date="1512196440111" expanded="true" signature="2564:2573" ph="..." />
+            <marker date="1512196440111" expanded="true" signature="2801:2812" ph="..." />
+            <marker date="1512196440111" expanded="true" signature="3025:3034" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/writeEmail.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/updateType.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="172" column="13" lean-forward="true" selection-start-line="164" selection-start-column="12" selection-end-line="172" selection-end-column="13" />
-          <folding>
-            <marker date="1512032005448" expanded="true" signature="12898:12913" ph="..." />
-            <marker date="1512032005448" expanded="true" signature="13984:13999" ph="..." />
-          </folding>
+        <state relative-caret-position="131">
+          <caret line="72" column="27" lean-forward="false" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/emailUpdate.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="138" column="13" lean-forward="true" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
+        <state relative-caret-position="50">
+          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding>
             <marker date="1512032119422" expanded="true" signature="12016:12031" ph="..." />
             <marker date="1512032119422" expanded="true" signature="13102:13117" ph="..." />
@@ -1427,44 +1273,155 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/collectionPage.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/updateCollection.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="61" column="10" lean-forward="true" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+        <state relative-caret-position="573">
+          <caret line="141" column="11" lean-forward="true" selection-start-line="141" selection-start-column="11" selection-end-line="141" selection-end-column="11" />
+          <folding>
+            <marker date="1512197868003" expanded="true" signature="10406:10421" ph="..." />
+            <marker date="1512197868003" expanded="true" signature="11492:11507" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/writeCollection.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="79" column="30" lean-forward="true" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
+          <folding>
+            <marker date="1512187199021" expanded="true" signature="7286:7301" ph="..." />
+            <marker date="1512187199021" expanded="true" signature="8373:8388" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/writeEmail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="184" column="52" lean-forward="true" selection-start-line="184" selection-start-column="52" selection-end-line="184" selection-end-column="52" />
+          <folding>
+            <marker date="1512198130347" expanded="true" signature="13769:13784" ph="..." />
+            <marker date="1512198130347" expanded="true" signature="14855:14870" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/addType.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="74" column="9" lean-forward="true" selection-start-line="71" selection-start-column="8" selection-end-line="74" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/updateCollection.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="76" column="115" lean-forward="true" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="115" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#2;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1512031903326" expanded="true" signature="10378:10393" ph="..." />
-            <marker date="1512031903326" expanded="true" signature="11464:11479" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/lookCollectionPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="74" column="29" lean-forward="false" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#2;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/index.jsp">
+    <entry file="file://$PROJECT_DIR$/web/comment/modulejs.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="116" column="27" lean-forward="true" selection-start-line="116" selection-start-column="27" selection-end-line="116" selection-end-column="27" />
+          <caret line="17" column="7" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/comment/modulecss.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/myInfoPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="70" column="30" lean-forward="false" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/controller/AgencyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="50" column="12" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/ee8b6bdf/16054cd0-e1c2-40fa-b42d-263df2c05831/lzsendmail.dbo.t_agency">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/userList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="152" column="17" lean-forward="false" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/pageJs/userList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4141">
+          <caret line="206" column="18" lean-forward="true" selection-start-line="206" selection-start-column="18" selection-end-line="206" selection-end-column="18" />
+          <folding>
+            <marker date="1512199675166" expanded="true" signature="2458:2469" ph="..." />
+            <marker date="1512199675166" expanded="true" signature="2643:2652" ph="..." />
+            <marker date="1512199675166" expanded="true" signature="2837:2843" ph="..." />
+            <marker date="1512199675166" expanded="true" signature="2837:2848" ph="..." />
+            <marker date="1512199675166" expanded="true" signature="3076:3087" ph="..." />
+            <marker date="1512199675166" expanded="true" signature="3300:3309" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/agencyDAOMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <marker date="1512201412137" expanded="true" signature="329:368" ph="select * fro... t_agency" />
+            <marker date="1512201412137" expanded="true" signature="465:519" ph="select top(1... t_agency" />
+            <marker date="1512201412137" expanded="true" signature="588:625" ph="delete from " />
+            <marker date="1512201412137" expanded="true" signature="764:877" ph="select top(##... t_agency" />
+            <marker date="1512201412137" expanded="true" signature="821:859" ph="select top(##... t_agency" />
+            <marker date="1512201412137" expanded="true" signature="948:987" ph="select * fro... t_agency" />
+            <marker date="1512201412137" expanded="true" signature="1051:1080" ph="select count... t_agency" />
+            <marker date="1512201412137" expanded="true" signature="1150:1265" ph="insert into t_agency... " />
+            <marker date="1512201412137" expanded="true" signature="1313:1427" ph="update t_age... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/pageJs/agencyList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="233" column="3" lean-forward="true" selection-start-line="233" selection-start-column="3" selection-end-line="233" selection-end-column="3" />
+          <folding>
+            <marker date="1512203305833" expanded="true" signature="2025:2036" ph="..." />
+            <marker date="1512203305833" expanded="true" signature="2210:2219" ph="..." />
+            <marker date="1512203305833" expanded="true" signature="2447:2458" ph="..." />
+            <marker date="1512203305833" expanded="true" signature="2671:2680" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/agencyList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="125" column="44" lean-forward="true" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="44" />
+          <folding>
+            <marker date="1512203650260" expanded="true" signature="11824:11839" ph="..." />
+            <marker date="1512203650260" expanded="true" signature="13152:13167" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fz/comment/ExcelUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="55" column="49" lean-forward="true" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
           <folding />
         </state>
       </provider>

@@ -10,6 +10,8 @@ import java.util.List;
 public interface EmailService extends BaseService<EmailVo>{
     List<EmailVo> pagelists(PageQuery pageQuery,long userId);
     int counts(PageQuery pageQuery, long userId);
-
+    long emailAdd(EmailVo emailVo);
     int receiveMail(UserVo userVo);
+
+    String emailAutoSave(EmailVo emailVo);
 }

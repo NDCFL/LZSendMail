@@ -70,6 +70,46 @@ public class EmailController {
             return Message.fail("接收邮件失败!");
         }
     }
+    @RequestMapping("/emailModuleAddSave")
+    @ResponseBody
+    public Message emailModuleAddSave(HttpSession session,EmailVo emailVo){
+        try{
+            UserVo userVo = (UserVo) session.getAttribute("userVo");
+            emailVo.setEndsend(userVo.getEmail());
+            emailVo.setCreateTime(new Date());
+            emailVo.setStatus(0);
+            emailVo.setUserid(userVo.getId());
+            emailVo.setSrcsend(emailVo.getTouser());
+            if(emailVo.getSize()==null){
+                long id = emailService.emailAdd(emailVo);
+                return  Message.success("邮件保存成功!"+id);
+            }else{
+                emailVo.setId(emailVo.getSize());
+                emailService.update(emailVo);
+                return Message.success("修改成功!");
+            }
+        }catch (Exception E){
+            E.printStackTrace();
+            return Message.fail("邮件保存失败!");
+        }
+    }
+
+    @RequestMapping("/emailAutoSave")
+    @ResponseBody
+    public Message emailAutoSave(HttpSession session,EmailVo emailVo) throws  Exception {
+        try{
+            UserVo userVo = (UserVo) session.getAttribute("userVo");
+            emailVo.setEndsend(userVo.getEmail());
+            emailVo.setCreateTime(new Date());
+            emailVo.setStatus(0);
+            emailVo.setUserid(userVo.getId());
+            emailVo.setSrcsend(emailVo.getTouser());
+            return  Message.success(emailService.emailAutoSave(emailVo));
+        }catch (Exception E){
+            E.printStackTrace();
+            return Message.fail("自动生成邮件失败!");
+        }
+    }
 
     @RequestMapping("/findEmail/{id}")
     public ModelAndView findemail(@PathVariable("id") long id){

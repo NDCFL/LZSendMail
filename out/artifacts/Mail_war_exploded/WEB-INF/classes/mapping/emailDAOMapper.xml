@@ -22,7 +22,7 @@
         delete from t_mailhistory where id = #{id}
     </delete>
     <select id="pagelists" resultMap="emailMap" statementType="STATEMENT">
-       select top(${pageQuery.pageSize}) * from t_mailhistory where id not in(select top(${pageQuery.pageNo}) id from t_mailhistory) and userId=${userId}  <include refid="where_all"/> order by createTime DESC
+       select top(${pageQuery.pageSize}) * from t_mailhistory where id not in(select top(${pageQuery.pageNo}) id from t_mailhistory where  userId=${userId} <include refid="where_all"/> order by createTime DESC) and userId=${userId}  <include refid="where_all"/> order by createTime DESC
     </select>
     <select id="listAll" resultMap="emailMap" statementType="STATEMENT">
         select * from t_mailhistory where 1=1  <include refid="where_all"/> order by createTime DESC
@@ -31,21 +31,27 @@
         select count(*) from t_mailhistory where 1=1 and userId=${userId}  <include refid="where_all"/>
     </select>
     <insert id="add" parameterType="emailVo">
-        insert into t_mailhistory (srcsend, endsend, title, content, accessoryPath, createTime, emailCode, status, userId,csend) values ( #{srcsend}, #{endsend}, #{title}, CONVERT(VARCHAR ,#{content}), CONVERT(VARCHAR ,#{accessoryPath}), #{createTime}, #{emailcode}, #{status}, #{userid},#{csend})
+        insert into t_mailhistory (srcsend, endsend, title, content, accessoryPath, createTime, emailCode, status, userId,csend) values ( #{srcsend}, #{endsend}, #{title}, #{content}, #{accessoryPath}, #{createTime}, #{emailcode}, #{status}, #{userid},#{csend})
     </insert>
     <update id="update">
-        update t_mailhistory set companyName=#{companyName},leader=#{leader},emailAcc=#{emailAcc} where id = #{id}
+        update t_mailhistory set srcsend=#{srcsend},endsend=#{endsend},title=#{title},content=#{content},accessoryPath=#{accessoryPath},csend=#{csend} where id = #{id}
     </update>
     <update id="updateStatus">
         update t_mailhistory set status=#{status} where id = #{id}
     </update>
+    <insert id="emailAdd" parameterType="emailVo">
+        <selectKey keyProperty="id" order="AFTER" resultType="long">
+            SELECT ident_current('t_mailhistory')
+        </selectKey>
+        insert into t_mailhistory (srcsend, endsend, title, content, accessoryPath, createTime, emailCode, status, userId,csend) values ( #{srcsend}, #{endsend}, #{title}, #{content}, #{accessoryPath}, #{createTime}, #{emailcode}, #{status}, #{userid},#{csend})
+    </insert>
     <insert id="batchAdd" parameterType="java.util.List">
         insert into t_mailhistory (srcsend, endsend, title, content, accessoryPath, createTime, emailcode, status, userId,csend)
         values
         <foreach collection="list" item="item" index="index" separator="," >
             (#{item.srcsend}, #{item.endsend}, #{item.title}, #{item.content},
             #{item.accessoryPath},#{item.createTime},#{item.emailcode},
-            #{item.status},#{item.userid},#{csend}
+            #{item.status},#{item.userid},#{item.csend}
             )
         </foreach>
     </insert>

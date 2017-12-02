@@ -45,7 +45,7 @@ public class TypeController  {
     }
     @RequestMapping("/typeAddSave")
     @ResponseBody
-    public Message addSavetype(TypeVo type,HttpSession session) throws  Exception {
+    public Message addSavetype(TypeVo type,HttpSession session) throws Exception {
         try{
             UserVo userVo = (UserVo) session.getAttribute("userVo");
             type.setCreateTime(new Date());

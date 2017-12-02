@@ -24,7 +24,9 @@
 <body class="gray-bg">
 <div class="wrapper wrapper-content">
     <div class="row">
-        <div class="col-sm-12 animated fadeInRight">
+
+        <jsp:include page="comment/variable.jsp"></jsp:include>
+        <div class="col-sm-9 animated fadeInRight">
             <div class="mail-box-header">
 <%--                <div class="pull-right tooltip-demo">
                     <a href="mailbox.html" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="放弃"><i class="fa fa-times"></i> 放弃</a>
@@ -57,7 +59,7 @@
                         <textarea id="updateFile" style="display: none" name="updateFile"></textarea>
                         <div class="mail-attachment">
                             <p>
-                                <span><i class="fa fa-paperclip"></i> 附件(仅支持<b style="color:green;size:10px">xls|xlsx|txt|doc|docx</b>)的格式文件</span>
+                                <span><i class="fa fa-paperclip"></i> 附件(仅支持<b style="color:green;font-size: large">xls|xlsx|txt|doc|docx|xml</b>)的格式文件，xml为模版文件，系统会自动转成Excel文件</span>
                                 <div class="layui-upload-list">
                                     <table class="layui-table">
                                         <thead>
@@ -128,7 +130,7 @@
             elem: '#testList'
             ,url: '/mailModule/upload'
             ,accept: 'file'
-            ,exts: 'xls|xlsx|txt|doc|docx'
+            ,exts: 'xls|xlsx|txt|doc|docx|xml'
             ,multiple: true
             ,auto: false
             ,bindAction: '#testListAction'

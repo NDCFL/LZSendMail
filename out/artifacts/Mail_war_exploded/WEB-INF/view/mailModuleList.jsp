@@ -40,6 +40,7 @@
         </div>
     </div>
 </div>
+<input type="hidden" value=""  id="deleteId"/>
 <%--邮件模板的修改--%>
 <jsp:include page="comment/modulejs.jsp"></jsp:include>
 <script src="<%=path%>/js/pageJs/mailModuleList.js"></script>

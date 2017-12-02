@@ -82,6 +82,10 @@
         );
     });
     $("#bt").click(function(){
+        if($("#typename").val()==""){
+            layer.msg('经销商类别不能为空！', {icon:2,time:1000});
+            return;
+        }
         var chk_value =[];
         var agencyId="";
         $('input[name="agency"]:checked').each(function(){
@@ -89,6 +93,7 @@
         });
         if(chk_value.length==0){
             layer.msg('你还没有勾选经销商！', {icon:2,time:1000});
+            return;
         }
         for(var i=0;i<chk_value.length;i++){
             if(i==(chk_value.length-1)){

@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AgencyDAO extends  BaseDAO<AgencyVo> {
 
+    AgencyVo findByMail(String mail);
 }

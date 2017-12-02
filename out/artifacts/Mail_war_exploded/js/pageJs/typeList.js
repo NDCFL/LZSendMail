@@ -170,6 +170,19 @@ function refush(){
     $('#mytab').bootstrapTable('refresh', {url: '/type/typeList'});
 }
 $("#update").click(function(){
+    if($("typename").val()==""){
+        layer.msg('经销商类别不能为空！', {icon:2,time:1000});
+        return;
+    }
+    var chk_value =[];
+    var agencyId="";
+    $('input[name="agency"]:checked').each(function(){
+        chk_value.push($(this).val());
+    });
+    if(chk_value.length==0){
+        layer.msg('你还没有勾选经销商！', {icon:2,time:1000});
+        return;
+    }
     $.post(
         "/type/typeUpdateSave",
         $("#updateform").serialize(),
@@ -223,7 +236,7 @@ function deleteMany(){
 
     }
     $("#deleteId").val(row);
-    layer.confirm('确认要执行批量删除用户信息数据吗？',function(index){
+    layer.confirm('确认要执行批量删除分类数据吗？',function(index){
         $.post(
             "/type/deleteManyType",
             {

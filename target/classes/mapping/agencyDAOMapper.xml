@@ -5,23 +5,26 @@
     <select id="queryById" resultMap="agencyMap" parameterType="long">
         select * from t_agency where id = #{id}
     </select>
+    <select id="findByMail" resultMap="agencyMap" parameterType="string">
+        select top(1) * from t_agency where emailAcc = #{mail}
+    </select>
     <delete id="delete" parameterType="long">
         delete from t_agency where id = #{id}
     </delete>
     <select id="pagelist" resultMap="agencyMap">
         <!--select  * from t_agency limit #{pageNo},#{pageSize}-->
-        select top(#{pageSize}) * from t_agency where id NOT  in(select top(#{pageNo}) id from t_agency)
+        select top(#{pageSize}) * from t_agency where id NOT  in(select top(#{pageNo}) id from t_agency) ORDER by id DESC
     </select>
     <select id="listAll" resultMap="agencyMap">
-        select * from t_agency
+        select * from t_agency ORDER by id DESC
     </select>
     <select id="count" resultType="int">
         select count(*) from t_agency
     </select>
     <insert id="add" parameterType="agencyVo">
-        insert into t_agency (companyName, leader, emailAcc ) values ( #{companyName}, #{leader}, #{emailAcc})
+        insert into t_agency (companyName, leader, emailAcc ,type) values ( #{companyName}, #{leader}, #{emailAcc},#{type})
     </insert>
     <update id="update">
-        update t_agency set companyName=#{companyName},leader=#{leader},emailAcc=#{emailAcc} where id = #{id}
+        update t_agency set companyName=#{companyName},leader=#{leader},emailAcc=#{emailAcc},type=#{type} where id = #{id}
     </update>
 </mapper>

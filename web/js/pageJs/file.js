@@ -18,6 +18,7 @@ $('#mytab').bootstrapTable({
     pageList:[10,20,30,40,50,60,70,80,90,100],//分页步进值
     showRefresh:true,//刷新按钮
     showColumns:true,
+    search: true,
     clickToSelect: true,//是否启用点击选中行
     toolbarAlign:'right',//工具栏对齐方式
     buttonsAlign:'right',//按钮对齐方式
@@ -98,11 +99,18 @@ $('#mytab').bootstrapTable({
 
 //请求服务数据时所传参数
 function queryParams(params){
+    var str = "";
+    $(".search input ").each(function(){
+        if($(this).val()!=""){
+            str=$(this).val();
+        }
+    });
     return{
         //每页多少条数据
         pageSize: this.pageSize,
         //请求第几页
-        pageIndex:this.pageNumber
+        pageIndex:this.pageNumber,
+        title:str
     }
 }
 function del(fileid,status){
@@ -210,16 +218,8 @@ function deleteMany(){
         });
         return ;
     }
-    if(isactivity!=""){
-        layer.msg('删除失败，已经激活的不允许删除!', {
-            icon : 2,
-            time : 2000
-        });
-        return;
-
-    }
     $("#deleteId").val(row);
-    layer.confirm('确认要执行批量删除用户信息数据吗？',function(index){
+    layer.confirm('确认要执行批量删除附件吗？',function(index){
         $.post(
             "/file/deleteManyFile",
             {

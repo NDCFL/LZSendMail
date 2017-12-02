@@ -44,4 +44,7 @@
   <update id="update" parameterType="userVo">
         update t_user set email=#{email},serverHost=#{serverHost},serverPort=#{serverPort},nickname=#{nickname},password=#{password},inserverHost=#{inserverHost},inserverPort=#{inserverPort} where id = #{id}
   </update>
+    <update id="resetUpdate" parameterType="userVo">
+        update t_user set password=#{password} where id = #{id}
+    </update>
 </mapper>

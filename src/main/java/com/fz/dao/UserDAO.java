@@ -16,5 +16,5 @@ public interface UserDAO extends  BaseDAO<UserVo> {
     void updateEmailPwd(@Param("id") long id, @Param("password") String password);
     String getPassword(long id);
     UserVo getInfo(String loginAcc);
-
+    void resetUpdate(UserVo userVo);
 }

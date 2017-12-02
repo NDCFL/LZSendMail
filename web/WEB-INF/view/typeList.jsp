@@ -132,6 +132,7 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+<input type="hidden" id="deleteId" value=""  />
 <%--类别的修改--%>
 <jsp:include page="comment/modulejs.jsp"></jsp:include>
 <script src="<%=path%>/js/pageJs/typeList.js"></script>

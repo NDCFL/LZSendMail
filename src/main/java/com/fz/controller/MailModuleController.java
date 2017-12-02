@@ -168,19 +168,27 @@ public class MailModuleController {
         UserVo userVo = (UserVo) session.getAttribute("userVo");
         FileUpVo fileUp = new FileUpVo();
         try{
-            String path = request.getSession().getServletContext().getRealPath("upload");
             String fileName = file.getOriginalFilename();
+            int dot = fileName.lastIndexOf('.');
+            String ext="";
+            if ((dot >-1) && (dot < (fileName.length() - 1))) {
+                if("xml".equalsIgnoreCase(fileName.substring(dot + 1))){
+                    ext="/template/";
+                }
+            }
+            String path = request.getSession().getServletContext().getRealPath("upload"+ext);
+
             File dir = new File(path,fileName);
             if(!dir.exists()){
                 dir.mkdirs();
             }
             Map<String,String> data = new HashMap<String, String>();
-            data.put("src","/upload/"+fileName);
+            data.put("src","/upload/"+ext+fileName);
             file.transferTo(dir);
             fileUp.setData(data);
             FileVo fileVo = new FileVo();
             fileVo.setName(fileName);
-            fileVo.setPath("/upload/"+fileName);
+            fileVo.setPath("/upload/"+ext+fileName);
             fileVo.setUserId(userVo.getId());
             fileVo.setCreateTime(new Date());
             fileService.add(fileVo);

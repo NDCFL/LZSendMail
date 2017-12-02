@@ -70,7 +70,7 @@
                     </ul>
                 </li>
                 <li class="active">
-                    <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">信箱 </span><span class="label label-warning pull-right">16</span></a>
+                    <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">邮件管理 </span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a class="J_menuItem" href="<%=path%>/mailModule/mailModulePage">邮件模板</a>
@@ -84,24 +84,24 @@
                         </li>
                         <li><a class="J_menuItem" href="<%=path%>/file/filePage">附件管理</a>
                         </li>
+                        <li>
+                            <a class="J_menuItem" href="<%=path%>/type/typePage">经销商分类</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="active">
-                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">用户管理</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <c:if test="${userVo.loginAcc=='admin'}">
+                <c:if test="${userVo.loginAcc=='admin'}">
+                    <li class="active">
+                        <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">用户管理</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
                             <li>
                                 <a class="J_menuItem" href="<%=path%>/user/userPage">用户列表</a>
                             </li>
                             <li>
                                 <a class="J_menuItem" href="<%=path%>/agency/agencyPage">经销商列表</a>
                             </li>
-                        </c:if>
-                        <li>
-                            <a class="J_menuItem" href="<%=path%>/type/typePage">分类管理</a>
-                        </li>
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
+                </c:if>
             </ul>
         </div>
     </nav>
@@ -132,12 +132,11 @@
                 <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"></span>
                 </button>
                 <ul role="menu" class="dropdown-menu dropdown-menu-right">
-                    <li class="J_tabShowActive"><a>定位当前选项卡</a>
+                    <li class="J_tabCloseAll">
+                        <a>关闭全部选项卡</a>
                     </li>
-                    <li class="divider"></li>
-                    <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
-                    </li>
-                    <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
+                    <li class="J_tabCloseOther">
+                        <a>关闭其他选项卡</a>
                     </li>
                 </ul>
             </div>

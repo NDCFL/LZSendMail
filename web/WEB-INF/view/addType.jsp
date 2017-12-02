@@ -10,7 +10,6 @@
 <%
     String path = request.getContextPath();
 %>
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -35,7 +34,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">分类名称</label>
                             <div class="col-sm-10">
-                                <input type="text" placeholder="请填写分类名称" name="typename" id="typename" class="form-control">
+                                <input type="text" placeholder="请填写分类名称" name="typename" id="typename" class="form-control" required>
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -53,7 +52,7 @@
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
                                 <button class="btn btn-primary" type="button" id="bt">确认新增</button>
-                                <button class="btn btn-white" type="button">取消</button>
+                                <button class="btn btn-white" type="reset">重置</button>
                             </div>
                         </div>
                     </form>
@@ -70,6 +69,10 @@
 </body>
 <script>
     $("#bt").click(function(){
+        if($("#typename").val()==""){
+            layer.msg('经销商类别不能为空！', {icon:2,time:1000});
+            return;
+        }
         var chk_value =[];
         var agencyId="";
         $('input[name="agency"]:checked').each(function(){
@@ -77,6 +80,7 @@
         });
         if(chk_value.length==0){
             layer.msg('你还没有勾选经销商！', {icon:2,time:1000});
+            return;
         }
         for(var i=0;i<chk_value.length;i++){
             if(i==(chk_value.length-1)){
